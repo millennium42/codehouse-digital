@@ -128,16 +128,18 @@
 - [ ] Sem dados legais (v1)
 
 ### H-09 — Dark mode e Light mode
-**Como** visitante, **quero** que a página respeite minha preferência de tema do sistema e permita troca manual.
-- [ ] Light mode default no `:root`
-- [ ] Override `@media (prefers-color-scheme: dark)`
-- [ ] Override `[data-theme="dark"]` / `light` no `<html>`
-- [ ] Toggle sol/lua nav
-- [ ] Persiste em `localStorage` key `ch-theme`
-- [ ] Lê antes do render no `<head>`
-- [ ] `--cloud` levemente adaptada se necessário
-- [ ] Contraste ok em ambos
-- [ ] Mockups ok em ambos
+**Como** visitante, **quero** que a página respeite minha preferência de tema do sistema e permita troca manual, **para** ter conforto visual em qualquer ambiente.
+- [x] Tokens CSS em `:root` (light mode — padrão)
+- [x] Override via `@media (prefers-color-scheme: dark)` redefinindo apenas os tokens
+- [x] Override via `:root[data-theme="dark"]` e `:root[data-theme="light"]` — toggle manual vence o media query em ambas direções
+- [x] `data-theme` aplicado no elemento `<html>`, não em `<body>`
+- [x] Toggle (botão sol/lua) visível na nav em desktop — ícone SVG, sem texto
+- [x] Ao clicar no toggle: alterna o atributo `data-theme` no `<html>` e persiste no `localStorage` com key `ch-theme`
+- [x] Ao carregar a página: lê `localStorage` e aplica o tema salvo antes do primeiro render (script inline no `<head>` para evitar flash)
+- [x] Dark mode não é inversão: azul nuvem `--cloud` levemente mais claro no dark para manter legibilidade em fundo escuro
+- [x] Contraste verificado em ambos os temas (critério H-11)
+- [x] Nenhum elemento usa cor hardcoded fora dos tokens (exceto cores semânticas das tags de status)
+- [x] Mockups CSS dos exemplos funcionam em ambos os temas sem CSS duplicado
 
 ### H-10 — Responsividade
 **Como** visitante mobile, **quero** que a página seja utilizável em qualquer tamanho de tela.

@@ -38,6 +38,38 @@
   --radius-default: 2px;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1720;
+    --surface: #17232E;
+    --surface-raised: #1C2B39;
+    --cloud: #4BA1D1;
+    --cloud-hover: #5BB1E1;
+    --cloud-light: #2A5A78;
+    --cloud-faint: #1A3749;
+    --ink: #F0F4F8;
+    --ink-muted: #B4CCE0;
+    --ink-faint: #7A9AAF;
+    --border: #2A4054;
+    --border-strong: #3D5A73;
+  }
+}
+
+[data-theme="dark"] {
+  --bg: #0F1720;
+  --surface: #17232E;
+  --surface-raised: #1C2B39;
+  --cloud: #4BA1D1;
+  --cloud-hover: #5BB1E1;
+  --cloud-light: #2A5A78;
+  --cloud-faint: #1A3749;
+  --ink: #F0F4F8;
+  --ink-muted: #B4CCE0;
+  --ink-faint: #7A9AAF;
+  --border: #2A4054;
+  --border-strong: #3D5A73;
+}
+
 /* ==========================================================================
    Reset
    ========================================================================== */
@@ -113,6 +145,40 @@ button, input, textarea {
 .btn-outline:hover {
   background: var(--cloud);
   color: var(--bg);
+}
+
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--ink);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--surface);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+[data-theme="dark"] .icon-moon { display: none; }
+[data-theme="light"] .icon-sun { display: none; }
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .icon-moon { display: none; }
+  html:not([data-theme="light"]) .icon-sun { display: block; }
+}
+
+@media (prefers-color-scheme: light) {
+  html:not([data-theme="dark"]) .icon-sun { display: none; }
+  html:not([data-theme="dark"]) .icon-moon { display: block; }
 }
 
 /* ==========================================================================
