@@ -198,9 +198,9 @@
 
 ### H-17 — Página 404 customizada
 **Como** visitante, **quero** 404 customizada.
-- [ ] `404.html`
-- [ ] Mesmo design system
-- [ ] "Esta página não existe. Mas a solução que você precisa, a gente constrói."
+- [x] `404.html`
+- [x] Mesmo design system
+- [x] "Esta página não existe. Mas a solução que você precisa, a gente constrói."
 
 ### H-18 — Performance — Core Web Vitals
 **Como** dono, **quero** página em threshold green no Google.

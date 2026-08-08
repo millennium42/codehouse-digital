@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Code House</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script>
+    (function() {
+      var savedTheme = localStorage.getItem('ch-theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="container" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    <h1 class="font-mono" style="font-size: 4rem; color: var(--cloud);">404</h1>
+    <h2 style="margin-bottom: var(--space-4);">Página não encontrada</h2>
+    <p class="text-muted" style="max-width: 500px; margin-bottom: var(--space-6);">Esta página não existe. Mas a solução que você precisa, a gente constrói.</p>
+    <a href="/" class="btn btn-solid">Voltar para o início</a>
+  </div>
+</body>
+</html>
