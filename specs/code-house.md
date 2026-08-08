@@ -72,15 +72,15 @@
 
 ### H-04 — Seção de serviços
 **Como** visitante, **quero** ver as soluções que a Code House oferece com descrição clara, **para** identificar se têm o que eu preciso.
-- [ ] Eyebrow monospace: `// serviços`
-- [ ] Título H2: "O que a Code House entrega"
-- [ ] Grid 5 colunas, `border: 1px solid var(--border)`
-- [ ] Card: ícone SVG inline + nome em monospace + descrição
-- [ ] Hover sutil: `background: var(--surface)`
-- [ ] Ícones SVG: stroke `currentColor`, 16x16
-- [ ] Mobile < 900px: 2 colunas, `border-bottom`
-- [ ] Mobile < 600px: 1 coluna
-- [ ] `id="servicos"`
+- [x] Eyebrow monospace: `// serviços`
+- [x] Título H2: "O que a Code House entrega"
+- [x] Grid 5 colunas, `border: 1px solid var(--border)`
+- [x] Card: ícone SVG inline + nome em monospace + descrição
+- [x] Hover sutil: `background: var(--surface)`
+- [x] Ícones SVG: stroke `currentColor`, 16x16
+- [x] Mobile < 900px: 2 colunas, `border-bottom`
+- [x] Mobile < 600px: 1 coluna
+- [x] `id="servicos"`
 
 ### H-05 — Seção de processo
 **Como** visitante, **quero** entender como funciona o processo de trabalho da Code House, **para** saber o que esperar.

@@ -503,6 +503,58 @@ button, input, textarea {
   }
 }
 
+/* Services Section (H-04) */
+.services-section {
+  padding: var(--space-16) var(--space-4);
+}
+
+.section-header {
+  margin-bottom: var(--space-8);
+}
+.section-header h2 {
+  font-size: 2rem;
+  letter-spacing: -0.01em;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background-color: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-default);
+}
+
+.service-card {
+  background-color: var(--bg);
+  padding: var(--space-6) var(--space-4);
+  transition: background-color 0.2s ease;
+}
+
+.service-card:hover {
+  background-color: var(--surface);
+}
+
+.service-icon {
+  margin-bottom: var(--space-4);
+  color: var(--cloud);
+}
+.service-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.service-title {
+  font-size: 0.875rem;
+  margin-bottom: var(--space-2);
+  color: var(--ink);
+}
+
+.service-desc {
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
 /* ==========================================================================
    Responsividade
    ========================================================================== */
@@ -528,5 +580,14 @@ button, input, textarea {
   }
   .hero-actions {
     flex-direction: column;
+  }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .services-grid {
+    grid-template-columns: 1fr;
   }
 }
