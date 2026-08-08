@@ -143,23 +143,23 @@
 
 ### H-10 — Responsividade
 **Como** visitante mobile, **quero** que a página seja utilizável em qualquer tamanho de tela.
-- [ ] Breakpoints 900px e 600px
-- [ ] Nenhum `overflow-x` no body
-- [ ] Botões e inputs `min-height: 44px`
-- [ ] Texto >= 14px em mobile
-- [ ] Testado em SE portrait/landscape, tablet, desktop
-- [ ] Imagens/mockups `max-width: 100%`
+- [x] Breakpoints 900px e 600px
+- [x] Nenhum `overflow-x` no body
+- [x] Botões e inputs `min-height: 44px`
+- [x] Texto >= 14px em mobile
+- [x] Testado em SE portrait/landscape, tablet, desktop
+- [x] Imagens/mockups `max-width: 100%`
 
 ### H-11 — Acessibilidade e performance
 **Como** visitante, **quero** página acessível e rápida.
-- [ ] Focus visível
-- [ ] `prefers-reduced-motion` desabilita animações/smooth-scroll
-- [ ] Contraste WCAG AA
-- [ ] `aria-hidden` ou `aria-label` adequados para SVGs
-- [ ] Formulário com labels semânticos
-- [ ] `<html lang="pt-BR">`
-- [ ] LCP < 2.5s, CLS < 0.1, INP < 200ms
-- [ ] Sem JS bloqueante, CSS inline ou bloco único
+- [x] Focus visível
+- [x] `prefers-reduced-motion` desabilita animações/smooth-scroll
+- [x] Contraste WCAG AA
+- [x] `aria-hidden` ou `aria-label` adequados para SVGs
+- [x] Formulário com labels semânticos
+- [x] `<html lang="pt-BR">`
+- [x] LCP < 2.5s, CLS < 0.1, INP < 200ms
+- [x] Sem JS bloqueante, CSS inline ou bloco único
 
 ### H-12 — SEO e metadados
 **Como** dono da Code House, **quero** metadados completos.
