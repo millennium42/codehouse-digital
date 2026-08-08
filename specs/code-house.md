@@ -161,11 +161,11 @@
 
 ### H-12 — SEO e metadados
 **Como** dono da Code House, **quero** metadados completos.
-- [ ] Meta e Open Graph completos (title, description, image, url)
-- [ ] Twitter card
-- [ ] JSON-LD LocalBusiness
+- [x] Meta e Open Graph completos (title, description, image, url)
+- [x] Twitter card
+- [x] JSON-LD LocalBusiness
 - [ ] H1 único, hierarquia ok
-- [ ] robots.txt e sitemap.xml
+- [x] robots.txt e sitemap.xml
 
 ### H-13 — Deploy no Render
 **Como** dono, **quero** landing publicada no Render rastreável como código.
