@@ -1,546 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <script>
-    (function() {
-      var savedTheme = localStorage.getItem('ch-theme');
-      if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-      } else {
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+  <style>
+    /* ==========================================================================
+       TOKENS
+       ========================================================================== */
+    :root {
+      --bg:             #F0F4F8;
+      --surface:        #E2EBF4;
+      --surface-raised: #FAFCFE;
+      --cloud:          #3E82AB;
+      --cloud-hover:    #2E6E95;
+      --cloud-light:    #6AAFD6;
+      --cloud-faint:    #C0D8EC;
+      --ink:            #17232E;
+      --ink-muted:      #4A6275;
+      --ink-faint:      #7A9AAF;
+      --border:         #B4CCE0;
+      --border-strong:  #7AADC8;
+      --font-sans: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+      --font-mono: 'Courier New', 'Courier', monospace;
+    }
+
+    @media (prefers-color-scheme: dark) { 
+      :root {
+        --bg:             #0C141D;
+        --surface:        #13202E;
+        --surface-raised: #192B3C;
+        --cloud:          #5898C0;
+        --cloud-hover:    #6AAFD6;
+        --cloud-faint:    #1C3A52;
+        --ink:            #D8E8F4;
+        --ink-muted:      #7A9AB4;
+        --ink-faint:      #4A6880;
+        --border:         #1E3A52;
+        --border-strong:  #2E567A;
       }
-    })();
-  </script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Code House — Soluções Personalizadas em TI para Pequenas Empresas</title>
-  
-  <meta name="description" content="Soluções de TI personalizadas para pequenas empresas: CRM, ERP, E-shop e Site Institucional adaptados ao seu jeito de trabalhar.">
-  <link rel="canonical" href="https://codehouse.com.br/">
+    }
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Code House — Soluções Personalizadas em TI para Pequenas Empresas">
-  <meta property="og:description" content="Soluções de TI personalizadas para pequenas empresas: CRM, ERP, E-shop e Site Institucional adaptados ao seu jeito de trabalhar.">
-  <meta property="og:url" content="https://codehouse.com.br/">
-  <meta property="og:image" content="https://codehouse.com.br/og-image.png">
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:site_name" content="Code House">
+    :root[data-theme="dark"] {
+      --bg:             #0C141D;
+      --surface:        #13202E;
+      --surface-raised: #192B3C;
+      --cloud:          #5898C0;
+      --cloud-hover:    #6AAFD6;
+      --cloud-faint:    #1C3A52;
+      --ink:            #D8E8F4;
+      --ink-muted:      #7A9AB4;
+      --ink-faint:      #4A6880;
+      --border:         #1E3A52;
+      --border-strong:  #2E567A;
+    }
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Code House — Soluções Personalizadas em TI para Pequenas Empresas">
-  <meta name="twitter:description" content="Soluções de TI personalizadas para pequenas empresas: CRM, ERP, E-shop e Site Institucional adaptados ao seu jeito de trabalhar.">
-  <meta name="twitter:image" content="https://codehouse.com.br/og-image.png">
+    :root[data-theme="light"] {
+      --bg:             #F0F4F8;
+      --surface:        #E2EBF4;
+      --surface-raised: #FAFCFE;
+      --cloud:          #3E82AB;
+      --cloud-hover:    #2E6E95;
+      --cloud-light:    #6AAFD6;
+      --cloud-faint:    #C0D8EC;
+      --ink:            #17232E;
+      --ink-muted:      #4A6275;
+      --ink-faint:      #7A9AAF;
+      --border:         #B4CCE0;
+      --border-strong:  #7AADC8;
+    }
 
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Code House",
-    "description": "Soluções de TI personalizadas para pequenas empresas: CRM, ERP, E-shop e Site Institucional adaptados ao seu jeito de trabalhar.",
-    "url": "https://codehouse.com.br/",
-    "image": "https://codehouse.com.br/og-image.png"
-  }
-  </script>
+    /* ==========================================================================
+       RESET
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  <meta name="theme-color" content="#3E82AB">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%233E82AB'/><text x='50%' y='55%' font-family='monospace' font-weight='bold' font-size='20' fill='%23FFFFFF' text-anchor='middle' dominant-baseline='middle'>C</text></svg>">
-  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' fill='%233E82AB'/><text x='50%' y='55%' font-family='monospace' font-weight='bold' font-size='110' fill='%23FFFFFF' text-anchor='middle' dominant-baseline='middle'>C</text></svg>">
-  
-  <link rel="stylesheet" href="css/styles.css">
+    /* ==========================================================================
+       BASE
+       ========================================================================== */
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+    }
+
+    /* ==========================================================================
+       COMPONENTES REUTILIZAVEIS
+       ========================================================================== */
+
+    /* ==========================================================================
+       LAYOUT
+       ========================================================================== */
+
+    /* ==========================================================================
+       RESPONSIVIDADE
+       ========================================================================== */
+  </style>
 </head>
-<body id="top">
-  <nav class="global-nav">
-    <div class="nav-container">
-      <a href="#top" class="nav-logo font-mono text-uppercase">CODE<span class="logo-dot">.</span>HOUSE</a>
-      
-      <div class="nav-links">
-        <a href="#servicos" class="nav-link">Serviços</a>
-        <a href="#processo" class="nav-link">Processo</a>
-        <a href="#exemplos" class="nav-link">Exemplos</a>
-        
-        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema claro/escuro">
-          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        </button>
-
-        <a href="#contato" class="btn btn-outline nav-cta">Falar com a gente</a>
-      </div>
-    </div>
-  </nav>
-
-  <main>
-    <section class="hero-section">
-      <div class="container hero-container">
-        <div class="hero-text">
-          <p class="eyebrow font-mono text-uppercase">Soluções Personalizadas em TI</p>
-          <h1 class="headline">Sistemas feitos para o <span class="highlight">seu</span> jeito de trabalhar.</h1>
-          <p class="subtitle">A Code House constrói CRM, ERP, lojas virtuais e sites institucionais. Sistemas que se adaptam ao seu negócio, não o contrário. Diga adeus aos templates genéricos.</p>
-          <div class="hero-actions">
-            <a href="#contato" class="btn btn-solid">Falar com a gente</a>
-            <a href="#exemplos" class="btn btn-outline">Ver exemplos</a>
-          </div>
-        </div>
-        <div class="hero-mockup-wrapper" aria-hidden="true">
-          <div class="mockup-window">
-            <div class="mockup-header">
-              <div class="mockup-dots">
-                <span class="dot dot-red"></span>
-                <span class="dot dot-yellow"></span>
-                <span class="dot dot-green"></span>
-              </div>
-              <div class="mockup-title font-mono">CRM — Clientes</div>
-            </div>
-            <div class="mockup-body">
-              <aside class="mockup-sidebar">
-                <ul class="mockup-nav">
-                  <li class="mockup-nav-item active">Clientes</li>
-                  <li class="mockup-nav-item">Negócios</li>
-                  <li class="mockup-nav-item">Tarefas</li>
-                  <li class="mockup-nav-item">Relatórios</li>
-                  <li class="mockup-nav-item">Config</li>
-                </ul>
-              </aside>
-              <div class="mockup-content">
-                <header class="mockup-content-header">
-                  <h3 class="mockup-h3">Clientes ativos</h3>
-                  <span class="mockup-badge">42 registros</span>
-                </header>
-                
-                <div class="mockup-stats">
-                  <div class="mockup-stat-card stat-accent">
-                    <div class="stat-label">Total</div>
-                    <div class="stat-value">42</div>
-                  </div>
-                  <div class="mockup-stat-card">
-                    <div class="stat-label">Novos</div>
-                    <div class="stat-value">7</div>
-                  </div>
-                  <div class="mockup-stat-card">
-                    <div class="stat-label">Taxa</div>
-                    <div class="stat-value">94%</div>
-                  </div>
-                </div>
-
-                <table class="mockup-table">
-                  <thead>
-                    <tr>
-                      <th>Nome</th>
-                      <th>Empresa</th>
-                      <th>Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Ana Silva</td>
-                      <td>Tech LTDA</td>
-                      <td><span class="mockup-tag tag-green">Ativo</span></td>
-                    </tr>
-                    <tr>
-                      <td>Carlos Reis</td>
-                      <td>Design Studio</td>
-                      <td><span class="mockup-tag tag-blue">Proposta</span></td>
-                    </tr>
-                    <tr>
-                      <td>Marina Costa</td>
-                      <td>Logística BR</td>
-                      <td><span class="mockup-tag tag-green">Ativo</span></td>
-                    </tr>
-                    <tr>
-                      <td>Pedro Santos</td>
-                      <td>Comércio Local</td>
-                      <td><span class="mockup-tag tag-blue">Proposta</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="servicos" class="services-section container">
-      <header class="section-header">
-        <p class="eyebrow font-mono text-uppercase">// serviços</p>
-        <h2>O que a Code House entrega</h2>
-      </header>
-
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-          </div>
-          <h3 class="service-title font-mono text-uppercase">CRM</h3>
-          <p class="service-desc text-muted">Gestão de clientes, funil de vendas e histórico de relacionamento.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-          </div>
-          <h3 class="service-title font-mono text-uppercase">ERP</h3>
-          <p class="service-desc text-muted">Controle integrado de estoque, financeiro, compras e operações.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-          </div>
-          <h3 class="service-title font-mono text-uppercase">Site Institucional</h3>
-          <p class="service-desc text-muted">Presença digital com identidade visual e conteúdo da sua empresa.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-          </div>
-          <h3 class="service-title font-mono text-uppercase">E-shop</h3>
-          <p class="service-desc text-muted">Loja virtual com catálogo, pagamentos e gestão de pedidos.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-          </div>
-          <h3 class="service-title font-mono text-uppercase">Sob Medida</h3>
-          <p class="service-desc text-muted">Qualquer solução de TI adaptada ao seu processo, do zero.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="processo" class="process-section container">
-      <header class="section-header">
-        <p class="eyebrow font-mono text-uppercase">// como funciona</p>
-        <h2>Do problema à solução em três etapas</h2>
-      </header>
-
-      <div class="process-grid">
-        <div class="process-card">
-          <div class="process-number font-mono text-faint">Etapa 01</div>
-          <h3 class="process-title">Entendemos seu negócio</h3>
-          <p class="process-desc text-muted">Conversamos sobre fluxo, gargalos e o que você quer automatizar ou organizar melhor.</p>
-        </div>
-
-        <div class="process-card">
-          <div class="process-number font-mono text-faint">Etapa 02</div>
-          <h3 class="process-title">Construímos a solução</h3>
-          <p class="process-desc text-muted">Sistema personalizado com a sua linguagem, seu fluxo e suas regras; não um template com funcionalidades genéricas.</p>
-        </div>
-
-        <div class="process-card">
-          <div class="process-number font-mono text-faint">Etapa 03</div>
-          <h3 class="process-title">Acompanhamos o crescimento</h3>
-          <p class="process-desc text-muted">Suporte contínuo, melhorias conforme o negócio evolui e novas necessidades aparecem.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="credibilidade" class="credibility-section container">
-      <div class="credibility-grid">
-        <div class="credibility-item">
-          <div class="credibility-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          </div>
-          <div class="credibility-content">
-            <h3 class="credibility-title">Entregas no prazo</h3>
-            <p class="credibility-desc text-muted">Sem atrasos surpresa ou escopo infinito.</p>
-          </div>
-        </div>
-        
-        <div class="credibility-item">
-          <div class="credibility-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-          </div>
-          <div class="credibility-content">
-            <h3 class="credibility-title">100% código próprio</h3>
-            <p class="credibility-desc text-muted">Não usamos templates genéricos ou plataformas engessadas.</p>
-          </div>
-        </div>
-
-        <div class="credibility-item">
-          <div class="credibility-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-          </div>
-          <div class="credibility-content">
-            <h3 class="credibility-title">Suporte direto</h3>
-            <p class="credibility-desc text-muted">Fale direto com quem desenvolveu o seu sistema.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="exemplos" class="work-section container">
-      <header class="section-header">
-        <p class="eyebrow font-mono text-uppercase">// exemplos de sistemas</p>
-        <h2>O que sistemas feitos assim parecem</h2>
-      </header>
-
-      <div class="work-grid">
-        <article class="work-card">
-          <h3 class="work-title">CRM de Vendas</h3>
-          <p class="work-desc text-muted">Acompanhe funis e negócios.</p>
-          <div class="work-mockup-wrapper" aria-hidden="true">
-            <div class="mockup-window">
-              <div class="mockup-header">
-                <div class="mockup-dots">
-                  <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
-                </div>
-              </div>
-              <div class="mockup-kanban">
-                <div class="kanban-col">
-                  <div class="kanban-title">Leads (3)</div>
-                  <div class="kanban-card"></div>
-                  <div class="kanban-card"></div>
-                  <div class="kanban-card"></div>
-                </div>
-                <div class="kanban-col">
-                  <div class="kanban-title">Propostas (1)</div>
-                  <div class="kanban-card"></div>
-                </div>
-                <div class="kanban-col">
-                  <div class="kanban-title">Fechados (2)</div>
-                  <div class="kanban-card"></div>
-                  <div class="kanban-card"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="work-card">
-          <h3 class="work-title">ERP de Estoque</h3>
-          <p class="work-desc text-muted">Gestão financeira e logística.</p>
-          <div class="work-mockup-wrapper" aria-hidden="true">
-            <div class="mockup-window">
-              <div class="mockup-header">
-                <div class="mockup-dots">
-                  <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
-                </div>
-              </div>
-              <div class="mockup-erp">
-                <div class="erp-chart">
-                  <div class="erp-bar" style="height: 40%"></div>
-                  <div class="erp-bar" style="height: 70%"></div>
-                  <div class="erp-bar" style="height: 30%"></div>
-                  <div class="erp-bar" style="height: 90%; background: var(--cloud)"></div>
-                  <div class="erp-bar" style="height: 50%"></div>
-                </div>
-                <div class="erp-table">
-                  <div class="erp-row"><div class="erp-line"></div></div>
-                  <div class="erp-row"><div class="erp-line" style="width: 80%"></div></div>
-                  <div class="erp-row"><div class="erp-line" style="width: 60%"></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="work-card">
-          <h3 class="work-title">Loja Virtual</h3>
-          <p class="work-desc text-muted">Catálogo rápido e checkout transparente.</p>
-          <div class="work-mockup-wrapper" aria-hidden="true">
-            <div class="mockup-window">
-              <div class="mockup-header">
-                <div class="mockup-dots">
-                  <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
-                </div>
-              </div>
-              <div class="mockup-shop">
-                <div class="shop-grid">
-                  <div class="shop-item">
-                    <div class="shop-img"></div>
-                    <div class="shop-lines"></div>
-                    <div class="shop-lines short"></div>
-                  </div>
-                  <div class="shop-item">
-                    <div class="shop-img"></div>
-                    <div class="shop-lines"></div>
-                    <div class="shop-lines short"></div>
-                  </div>
-                  <div class="shop-item">
-                    <div class="shop-img"></div>
-                    <div class="shop-lines"></div>
-                    <div class="shop-lines short"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="work-card">
-          <h3 class="work-title">Site Institucional</h3>
-          <p class="work-desc text-muted">Presença elegante e otimizada para SEO.</p>
-          <div class="work-mockup-wrapper" aria-hidden="true">
-            <div class="mockup-window">
-              <div class="mockup-header">
-                <div class="mockup-dots">
-                  <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
-                </div>
-              </div>
-              <div class="mockup-site">
-                <div class="site-nav">
-                  <div class="site-logo"></div>
-                  <div class="site-links"><div class="site-link"></div><div class="site-link"></div></div>
-                </div>
-                <div class="site-hero">
-                  <div class="site-h1"></div>
-                  <div class="site-p"></div>
-                  <div class="site-btn"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="contato" class="contact-section container">
-      <div class="contact-grid">
-        <div class="contact-copy">
-          <p class="eyebrow font-mono text-uppercase">// fale com a gente</p>
-          <h2>Pronto para tirar sua ideia do papel?</h2>
-          <p class="subtitle">Nos conte um pouco sobre o seu negócio e o que você precisa. Retornamos em até 24h úteis.</p>
-          <a href="#" class="btn btn-outline" style="margin-top: var(--space-4);">Chamar no WhatsApp</a>
-        </div>
-        <div class="contact-form-wrapper">
-          <form id="contact-form" class="contact-form" novalidate>
-            <div class="form-group">
-              <label for="nome" class="font-mono text-uppercase">Nome *</label>
-              <input type="text" id="nome" name="nome" class="form-control" required>
-              <span class="error-msg" id="error-nome"></span>
-            </div>
-            <div class="form-group">
-              <label for="empresa" class="font-mono text-uppercase">Empresa (opcional)</label>
-              <input type="text" id="empresa" name="empresa" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="necessidade" class="font-mono text-uppercase">Necessidade *</label>
-              <textarea id="necessidade" name="necessidade" class="form-control" rows="4" required></textarea>
-              <span class="error-msg" id="error-necessidade"></span>
-            </div>
-            <button type="submit" class="btn btn-solid" style="width: 100%;">Enviar mensagem</button>
-          </form>
-          <div id="contact-success" class="contact-success" aria-hidden="true" style="display: none;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--cloud)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="success-icon"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-            <h3>Mensagem recebida!</h3>
-            <p class="text-muted">Obrigado, <span id="success-name"></span>. Retornaremos em breve.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a href="#" class="logo font-mono">CODE<span class="logo-dot">.</span>HOUSE</a>
-        <p class="text-muted mt-2">Sistemas feitos para o seu jeito de trabalhar.</p>
-        <div class="footer-contacts mt-4">
-          <a href="https://wa.me/5500000000000" class="footer-link">WhatsApp: (00) 0000-0000</a>
-          <a href="mailto:contato@codehouse.com.br" class="footer-link">contato@codehouse.com.br</a>
-        </div>
-      </div>
-      <div class="footer-nav">
-        <h3 class="font-mono text-uppercase">Navegação</h3>
-        <nav class="footer-links mt-2">
-          <a href="#servicos" class="footer-link">Serviços</a>
-          <a href="#processo" class="footer-link">Processo</a>
-          <a href="#exemplos" class="footer-link">Exemplos</a>
-          <a href="#contato" class="footer-link">Falar com a gente</a>
-        </nav>
-      </div>
-    </div>
-    <div class="container footer-copyright text-muted">
-      <p>&copy; 2026 Code House. Todos os direitos reservados.</p>
-    </div>
-  </footer>
-
-  <!-- WhatsApp CTA (H-14) -->
-  <a href="https://wa.me/5500000000000" class="floating-whatsapp" aria-label="Falar pelo WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#25D366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-    <span class="whatsapp-tooltip">Falar pelo WhatsApp</span>
-  </a>
-
-  <script>
-    document.getElementById('theme-toggle').addEventListener('click', function() {
-      var html = document.documentElement;
-      var currentTheme = html.getAttribute('data-theme');
-      var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('ch-theme', newTheme);
-    });
-
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var nome = document.getElementById('nome').value.trim();
-      var necessidade = document.getElementById('necessidade').value.trim();
-      var errorNome = document.getElementById('error-nome');
-      var errorNecessidade = document.getElementById('error-necessidade');
-      var valid = true;
-
-      if (!nome) {
-        errorNome.textContent = 'Informe seu nome.';
-        valid = false;
-      } else {
-        errorNome.textContent = '';
-      }
-
-      if (!necessidade) {
-        errorNecessidade.textContent = 'Descreva sua necessidade.';
-        valid = false;
-      } else {
-        errorNecessidade.textContent = '';
-      }
-
-      if (valid) {
-        var btn = this.querySelector('button[type="submit"]');
-        btn.textContent = 'Enviando...';
-        btn.disabled = true;
-
-        setTimeout(function() {
-          document.getElementById('contact-form').style.display = 'none';
-          var successDiv = document.getElementById('contact-success');
-          successDiv.style.display = 'block';
-          successDiv.removeAttribute('aria-hidden');
-          document.getElementById('success-name').textContent = nome;
-        }, 800);
-      }
-    });
-
-    // Scroll Reveal Animado (IntersectionObserver)
-    document.addEventListener("DOMContentLoaded", function() {
-      // Elementos que receberão a animação
-      var revealElements = document.querySelectorAll('.section-header, .service-card, .process-card, .credibility-item, .work-card, .contact-copy, .contact-form-wrapper');
-      
-      // Adiciona classe base hidden
-      revealElements.forEach(function(el) {
-        el.classList.add('reveal');
-      });
-
-      var observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-      };
-
-      var observer = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-
-      // Inicia observação
-      revealElements.forEach(function(el) {
-        observer.observe(el);
-      });
-    });
-  </script>
+<body>
 </body>
 </html>
