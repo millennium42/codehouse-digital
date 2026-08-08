@@ -478,6 +478,36 @@
       line-height: 1.5;
     }
 
+    .credibility {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .credibility-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .credibility-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .credibility-icon {
+      color: var(--cloud);
+      flex-shrink: 0;
+    }
+    .credibility-title {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+      color: var(--ink);
+    }
+    .credibility-desc {
+      font-size: 0.875rem;
+      color: var(--ink-muted);
+      line-height: 1.4;
+    }
+
     /* ==========================================================================
        RESPONSIVIDADE
        ========================================================================== */
@@ -516,6 +546,9 @@
       }
       .process-card:last-child {
         border-bottom: none;
+      }
+      .credibility-grid {
+        grid-template-columns: 1fr;
       }
     }
     @media (max-width: 599px) {
@@ -689,6 +722,34 @@
             <p class="step-num">Etapa 03</p>
             <h3 class="process-name">Acompanhamos a evolução</h3>
             <p class="process-desc">O negócio muda, o sistema acompanha. Oferecemos suporte e melhorias contínuas pós-lançamento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section credibility">
+      <div class="container">
+        <div class="credibility-grid">
+          <div class="credibility-item">
+            <svg class="credibility-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <div class="credibility-text">
+              <h3 class="credibility-title">Sem templates genéricos</h3>
+              <p class="credibility-desc">Cada sistema é único e construído para a sua realidade.</p>
+            </div>
+          </div>
+          <div class="credibility-item">
+            <svg class="credibility-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            <div class="credibility-text">
+              <h3 class="credibility-title">Adaptado ao seu fluxo</h3>
+              <p class="credibility-desc">O sistema se molda à empresa, não o contrário.</p>
+            </div>
+          </div>
+          <div class="credibility-item">
+            <svg class="credibility-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+            <div class="credibility-text">
+              <h3 class="credibility-title">Acompanhamento contínuo</h3>
+              <p class="credibility-desc">Estamos junto com você após o lançamento do sistema.</p>
+            </div>
           </div>
         </div>
       </div>
