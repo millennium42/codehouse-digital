@@ -825,6 +825,75 @@ button, input, textarea {
   border-radius: 20px;
 }
 
+/* Contact Section (H-07) */
+.contact-section {
+  padding: var(--space-16) var(--space-8);
+  background-color: var(--surface);
+  border-radius: var(--radius-default);
+  margin-bottom: var(--space-16);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.contact-copy h2 {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.02em;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+.form-control {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-default);
+  padding: var(--space-3);
+  font-family: var(--font-sans);
+  color: var(--ink);
+  transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--cloud);
+}
+
+.error-msg {
+  color: #FF5F56;
+  font-size: 0.75rem;
+  min-height: 14px;
+}
+
+.contact-success {
+  text-align: center;
+  padding: var(--space-8);
+}
+.success-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--space-4);
+}
+
 /* ==========================================================================
    Responsividade
    ========================================================================== */
@@ -862,6 +931,9 @@ button, input, textarea {
     gap: var(--space-8);
   }
   .work-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-grid {
     grid-template-columns: 1fr;
   }
 }

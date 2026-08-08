@@ -105,17 +105,17 @@
 
 ### H-07 — Seção de contato
 **Como** visitante interessado, **quero** entrar em contato com a Code House, **para** iniciar o projeto.
-- [ ] Fundo `var(--surface)`
-- [ ] Layout 2 colunas (desktop): copy + form
-- [ ] Eyebrow, H2, Subtítulo, Link WhatsApp abaixo
-- [ ] Formulário com Nome, Empresa (opcional), Necessidade (textarea)
-- [ ] Labels em monospace uppercase
-- [ ] `border-color: var(--cloud)` ao focus
-- [ ] Validação de submit (erro inline, "Informe seu nome...") sem envio real
-- [ ] Sucesso: delay 800ms, form substituído por "Mensagem recebida..."
-- [ ] Proteção XSS via `textContent`
-- [ ] Mobile: 1 coluna
-- [ ] `id="contato"`
+- [x] Fundo `var(--surface)`
+- [x] Layout 2 colunas (desktop): copy + form
+- [x] Eyebrow, H2, Subtítulo, Link WhatsApp abaixo
+- [x] Formulário com Nome, Empresa (opcional), Necessidade (textarea)
+- [x] Labels em monospace uppercase
+- [x] `border-color: var(--cloud)` ao focus
+- [x] Validação de submit (erro inline, "Informe seu nome...") sem envio real
+- [x] Sucesso: delay 800ms, form substituído por "Mensagem recebida..."
+- [x] Proteção XSS via `textContent`
+- [x] Mobile: 1 coluna
+- [x] `id="contato"`
 
 ### H-08 — Footer
 **Como** visitante, **quero** um rodapé com informações básicas da empresa e links, **para** referência.

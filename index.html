@@ -398,6 +398,41 @@
         </article>
       </div>
     </section>
+
+    <section id="contato" class="contact-section container">
+      <div class="contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow font-mono text-uppercase">// fale com a gente</p>
+          <h2>Pronto para tirar sua ideia do papel?</h2>
+          <p class="subtitle">Nos conte um pouco sobre o seu negócio e o que você precisa. Retornamos em até 24h úteis.</p>
+          <a href="#" class="btn btn-outline" style="margin-top: var(--space-4);">Chamar no WhatsApp</a>
+        </div>
+        <div class="contact-form-wrapper">
+          <form id="contact-form" class="contact-form" novalidate>
+            <div class="form-group">
+              <label for="nome" class="font-mono text-uppercase">Nome *</label>
+              <input type="text" id="nome" name="nome" class="form-control" required>
+              <span class="error-msg" id="error-nome"></span>
+            </div>
+            <div class="form-group">
+              <label for="empresa" class="font-mono text-uppercase">Empresa (opcional)</label>
+              <input type="text" id="empresa" name="empresa" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="necessidade" class="font-mono text-uppercase">Necessidade *</label>
+              <textarea id="necessidade" name="necessidade" class="form-control" rows="4" required></textarea>
+              <span class="error-msg" id="error-necessidade"></span>
+            </div>
+            <button type="submit" class="btn btn-solid" style="width: 100%;">Enviar mensagem</button>
+          </form>
+          <div id="contact-success" class="contact-success" aria-hidden="true" style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--cloud)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="success-icon"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <h3>Mensagem recebida!</h3>
+            <p class="text-muted">Obrigado, <span id="success-name"></span>. Retornaremos em breve.</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script>
@@ -407,6 +442,43 @@
       var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', newTheme);
       localStorage.setItem('ch-theme', newTheme);
+    });
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var nome = document.getElementById('nome').value.trim();
+      var necessidade = document.getElementById('necessidade').value.trim();
+      var errorNome = document.getElementById('error-nome');
+      var errorNecessidade = document.getElementById('error-necessidade');
+      var valid = true;
+
+      if (!nome) {
+        errorNome.textContent = 'Informe seu nome.';
+        valid = false;
+      } else {
+        errorNome.textContent = '';
+      }
+
+      if (!necessidade) {
+        errorNecessidade.textContent = 'Descreva sua necessidade.';
+        valid = false;
+      } else {
+        errorNecessidade.textContent = '';
+      }
+
+      if (valid) {
+        var btn = this.querySelector('button[type="submit"]');
+        btn.textContent = 'Enviando...';
+        btn.disabled = true;
+
+        setTimeout(function() {
+          document.getElementById('contact-form').style.display = 'none';
+          var successDiv = document.getElementById('contact-success');
+          successDiv.style.display = 'block';
+          successDiv.removeAttribute('aria-hidden');
+          document.getElementById('success-name').textContent = nome;
+        }, 800);
+      }
     });
   </script>
 </body>
