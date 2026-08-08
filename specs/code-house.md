@@ -60,15 +60,15 @@
 
 ### H-03 — Hero mockup — preview CRM
 **Como** visitante, **quero** ver um preview visual real de como um sistema CRM da Code House parece, **para** sentir a qualidade concretamente.
-- [ ] `aria-hidden="true"`
-- [ ] Janela de app com barra de título, dots macOS style, "CRM — Clientes"
-- [ ] Sidebar com 5 itens; Clientes ativo com `--cloud-faint` e borda esquerda `--cloud`
-- [ ] Área de conteúdo com Header, badge 42 registros
-- [ ] Grid de 3 stat cards
-- [ ] Tabela com 4 linhas, fonte em escala reduzida
-- [ ] Apenas tokens; ok em dark mode
-- [ ] Bordas em `--border`, max `border-radius: 4px`
-- [ ] Mobile: mockup reduzido proporcionalmente, sem scroll-x
+- [x] `aria-hidden="true"`
+- [x] Janela de app com barra de título, dots macOS style, "CRM — Clientes"
+- [x] Sidebar com 5 itens; Clientes ativo com `--cloud-faint` e borda esquerda `--cloud`
+- [x] Área de conteúdo com Header, badge 42 registros
+- [x] Grid de 3 stat cards
+- [x] Tabela com 4 linhas, fonte em escala reduzida
+- [x] Apenas tokens; ok em dark mode
+- [x] Bordas em `--border`, max `border-radius: 4px`
+- [x] Mobile: mockup reduzido proporcionalmente, sem scroll-x
 
 ### H-04 — Seção de serviços
 **Como** visitante, **quero** ver as soluções que a Code House oferece com descrição clara, **para** identificar se têm o que eu preciso.
