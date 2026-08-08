@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: code-house-landing
+    env: static
+    buildCommand: ""
+    staticPublishPath: ./
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /404.html

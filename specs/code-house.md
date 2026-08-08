@@ -171,10 +171,10 @@
 
 ### H-13 — Deploy no Render
 **Como** dono, **quero** landing publicada no Render rastreável como código.
-- [ ] `index.html` e `render.yaml` (static site)
-- [ ] Headers HTTP configurados em `_headers`
-- [ ] Rota fallback para 404
-- [ ] Rollback possível via Render
+- [x] `index.html` e `render.yaml` (static site)
+- [x] Headers HTTP configurados em `_headers`
+- [x] Rota fallback para 404
+- [x] Rollback possível via Render
 
 ### H-14 — CTA flutuante WhatsApp
 **Como** visitante, **quero** botão flutuante rápido para o WhatsApp.
@@ -204,8 +204,8 @@
 
 ### H-18 — Performance — Core Web Vitals
 **Como** dono, **quero** página em threshold green no Google.
-- [ ] Lighthouse scores >= 90
-- [ ] JS inline de tema no `<head>`, resto no final do `<body>` ou com defer
+- [x] Lighthouse scores >= 90
+- [x] JS inline de tema no `<head>`, resto no final do `<body>` ou com defer
 
 ## Critérios de rejeição
 - **P0**: Erro de load, Scroll-x no body, H1 duplicado/ausente, link quebrado (404 interno), XSS em formulário, CSS sem token, `render.yaml` erro.
