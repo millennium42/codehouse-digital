@@ -34,17 +34,17 @@
 
 ### H-01 — Navegação global
 **Como** visitante, **quero** uma barra de navegação fixa com links para as seções, **para** acessar qualquer parte da página sem perder contexto de onde estou.
-- [ ] Logo `CODE.HOUSE` em monospace à esquerda; ponto separador na cor `--cloud`
-- [ ] Clique no logo ancora ao topo da página
-- [ ] Links: Serviços / Processo / Exemplos / "Falar com a gente"
-- [ ] CTA "Falar com a gente": borda azul nuvem; hover → preenchimento sólido azul, texto fundo
-- [ ] Barra `position: sticky; top: 0`
-- [ ] `background: var(--bg)` + `border-bottom: 1px solid var(--border)`
-- [ ] `z-index` acima de todos
-- [ ] Em mobile (< 900px): apenas logo + botão CTA; demais links ocultados
-- [ ] Focus visível (outline)
-- [ ] Links são âncoras HTML
-- [ ] Cada seção destino tem `id` correspondente
+- [x] Logo `CODE.HOUSE` em monospace à esquerda; ponto separador na cor `--cloud`
+- [x] Clique no logo ancora ao topo da página
+- [x] Links: Serviços / Processo / Exemplos / "Falar com a gente"
+- [x] CTA "Falar com a gente": borda azul nuvem; hover → preenchimento sólido azul, texto fundo
+- [x] Barra `position: sticky; top: 0`
+- [x] `background: var(--bg)` + `border-bottom: 1px solid var(--border)`
+- [x] `z-index` acima de todos
+- [x] Em mobile (< 900px): apenas logo + botão CTA; demais links ocultados
+- [x] Focus visível (outline)
+- [x] Links são âncoras HTML
+- [x] Cada seção destino tem `id` correspondente
 
 ### H-02 — Hero — mensagem principal
 **Como** visitante que chegou pela primeira vez, **quero** entender em 5 segundos o que a Code House faz e para quem, **para** decidir se vale continuar lendo.

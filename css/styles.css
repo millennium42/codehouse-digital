@@ -91,11 +91,84 @@ button, input, textarea {
 /* ==========================================================================
    Componentes
    ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 var(--space-4);
+  font-weight: bold;
+  border-radius: var(--radius-default);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-outline {
+  border: 1px solid var(--cloud);
+  color: var(--cloud);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--cloud);
+  color: var(--bg);
+}
 
 /* ==========================================================================
    Layout
    ========================================================================== */
+.global-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  font-weight: bold;
+  font-size: 1.125rem;
+  letter-spacing: 0.1em;
+}
+
+.logo-dot {
+  color: var(--cloud);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--cloud);
+}
 
 /* ==========================================================================
    Responsividade
    ========================================================================== */
+@media (max-width: 899px) {
+  .nav-link {
+    display: none;
+  }
+  .nav-links {
+    gap: var(--space-3);
+  }
+}
