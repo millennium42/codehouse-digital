@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Process Section (H-05)
+   ========================================================================== */
+.process {
+    padding: 6rem 5%;
+}
+
+.process h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+}
+
+.process-card {
+    padding: 3rem 2rem;
+    border-right: 1px solid var(--border-color);
+}
+
+.process-card:last-child {
+    border-right: none;
+}
+
+.process-step {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.process-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.process-card p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* Mobile Process */
+@media (max-width: 900px) {
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .process-card {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .process-card:last-child {
+        border-bottom: none;
+    }
+}

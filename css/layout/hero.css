@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Hero Section (H-02)
+   ========================================================================== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6rem 5%;
+    gap: 4rem;
+    min-height: 80vh;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.highlight {
+    color: var(--accent-cloud);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Mobile Hero */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        padding: 4rem 5%;
+        text-align: center;
+    }
+    
+    .hero-text {
+        margin: 0 auto;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        margin: 0 auto 2rem;
+    }
+    
+    .hero-actions {
+        justify-content: center;
+        flex-direction: column; 
+    }
+    
+    @media (max-width: 480px) {
+        .hero-actions .btn {
+            width: 100%;
+        }
+    }
+
+    .hero-mockup {
+        width: 100%;
+        order: -1; /* H-02: mockup aparece acima do texto em mobile */
+    }
+}
