@@ -119,13 +119,13 @@
 
 ### H-08 — Footer
 **Como** visitante, **quero** um rodapé com informações básicas da empresa e links, **para** referência.
-- [ ] `border-top: 1px solid var(--border)`
-- [ ] Layout 2 colunas
-- [ ] Esquerda: Logo, Tagline, WhatsApp, Email
-- [ ] Direita: Links (Serviços / Processo / Exemplos / Contato)
-- [ ] Linha final copyright
-- [ ] Mobile: coluna única
-- [ ] Sem dados legais (v1)
+- [x] `border-top: 1px solid var(--border)`
+- [x] Layout 2 colunas
+- [x] Esquerda: Logo, Tagline, WhatsApp, Email
+- [x] Direita: Links (Serviços / Processo / Exemplos / Contato)
+- [x] Linha final copyright
+- [x] Mobile: coluna única
+- [x] Sem dados legais (v1)
 
 ### H-09 — Dark mode e Light mode
 **Como** visitante, **quero** que a página respeite minha preferência de tema do sistema e permita troca manual, **para** ter conforto visual em qualquer ambiente.
