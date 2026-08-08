@@ -894,6 +894,50 @@ button, input, textarea {
   margin-bottom: var(--space-4);
 }
 
+/* Floating WhatsApp (H-14) */
+.floating-whatsapp {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  width: 52px;
+  height: 52px;
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 90;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+[data-theme="dark"] .floating-whatsapp {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  right: 64px;
+  background-color: var(--ink);
+  color: var(--bg);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.floating-whatsapp:hover .whatsapp-tooltip {
+  opacity: 1;
+}
+
 /* ==========================================================================
    Responsividade
    ========================================================================== */
@@ -933,8 +977,14 @@ button, input, textarea {
   .work-grid {
     grid-template-columns: 1fr;
   }
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+  .whatsapp-tooltip {
+    display: none;
   }
 }
 

@@ -178,11 +178,11 @@
 
 ### H-14 — CTA flutuante WhatsApp
 **Como** visitante, **quero** botão flutuante rápido para o WhatsApp.
-- [ ] Botão fixo inferior direito (52x52px)
-- [ ] Ícone SVG `#25D366`
-- [ ] Tooltip em CSS puro "Falar pelo WhatsApp"
-- [ ] Z-index correto
-- [ ] Número placeholder `5500000000000`
+- [x] Botão fixo inferior direito (52x52px)
+- [x] Ícone SVG `#25D366`
+- [x] Tooltip em CSS puro "Falar pelo WhatsApp"
+- [x] Z-index correto
+- [x] Número placeholder `5500000000000`
 
 ### H-15 — Favicon e assets básicos
 **Como** visitante, **quero** aba identificável.
