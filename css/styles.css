@@ -555,6 +555,42 @@ button, input, textarea {
   line-height: 1.4;
 }
 
+/* Process Section (H-05) */
+.process-section {
+  padding: var(--space-16) var(--space-4);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background-color: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-default);
+}
+
+.process-card {
+  background-color: var(--bg);
+  padding: var(--space-8) var(--space-6);
+}
+
+.process-number {
+  font-size: 0.75rem;
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.process-title {
+  font-size: 1.125rem;
+  margin-bottom: var(--space-3);
+}
+
+.process-desc {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 /* ==========================================================================
    Responsividade
    ========================================================================== */
@@ -583,6 +619,9 @@ button, input, textarea {
   }
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .process-grid {
+    grid-template-columns: 1fr;
   }
 }
 

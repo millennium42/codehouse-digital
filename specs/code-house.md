@@ -84,13 +84,13 @@
 
 ### H-05 — Seção de processo
 **Como** visitante, **quero** entender como funciona o processo de trabalho da Code House, **para** saber o que esperar.
-- [ ] Eyebrow monospace: `// como funciona`
-- [ ] Título H2: "Do problema à solução em três etapas"
-- [ ] Grid 3 colunas, bordas
-- [ ] Cada etapa: "Etapa 0X" + H3 + descrição
-- [ ] Numeração legível, não apenas ornamento
-- [ ] Mobile: 1 coluna com `border-bottom` (última sem borda)
-- [ ] `id="processo"`
+- [x] Eyebrow monospace: `// como funciona`
+- [x] Título H2: "Do problema à solução em três etapas"
+- [x] Grid 3 colunas, mesmo padrão visual dos serviços (com borders)
+- [x] Etapas numeradas "Etapa 01", etc. (monospace faint)
+- [x] Mobile: 1 coluna com `border-bottom` (via gap)
+- [x] Textos aplicados conforme spec
+- [x] `id="processo"`
 
 ### H-06 — Seção de exemplos de sistemas
 **Como** visitante, **quero** ver previews visuais dos sistemas que a Code House constrói, **para** ter confiança na qualidade.
