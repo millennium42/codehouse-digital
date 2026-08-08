@@ -508,6 +508,143 @@
       line-height: 1.4;
     }
 
+    .bg-surface {
+      background: var(--surface-raised);
+    }
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .example-card {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.5rem;
+      background: var(--bg);
+    }
+    .example-title {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+      color: var(--ink);
+    }
+    .mockup-small {
+      height: 250px;
+    }
+    .p-small {
+      padding: 0.5rem;
+      gap: 0.5rem;
+    }
+    .mb-small {
+      margin-bottom: 0.5rem;
+    }
+    
+    .mockup-chart {
+      flex: 1;
+      display: flex;
+      align-items: flex-end;
+      gap: 0.5rem;
+      padding-top: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .mockup-chart .bar {
+      flex: 1;
+      background: var(--border-strong);
+      border-radius: 2px 2px 0 0;
+    }
+    
+    .mockup-grid-3x2 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      height: 100%;
+    }
+    .mockup-product {
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-img {
+      flex: 1;
+      background: linear-gradient(135deg, var(--surface) 0%, var(--border) 100%);
+    }
+    .product-price {
+      padding: 0.25rem;
+      font-size: 0.65rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .mockup-site {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .site-nav {
+      background: var(--ink);
+      padding: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-logo {
+      width: 40px;
+      height: 10px;
+      background: var(--ink-faint);
+      border-radius: 2px;
+    }
+    .site-links {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .site-link {
+      width: 20px;
+      height: 4px;
+      background: var(--ink-muted);
+      border-radius: 2px;
+    }
+    .site-hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      gap: 0.5rem;
+      text-align: center;
+    }
+    .site-h1 {
+      width: 80%;
+      height: 16px;
+      background: var(--ink);
+      border-radius: 2px;
+      margin-bottom: 0.5rem;
+    }
+    .site-p {
+      width: 90%;
+      height: 8px;
+      background: var(--ink-muted);
+      border-radius: 2px;
+    }
+    .site-p.short {
+      width: 60%;
+    }
+    .site-btns {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .site-btn {
+      width: 60px;
+      height: 20px;
+      background: var(--cloud);
+      border-radius: 2px;
+    }
+    .site-btn.outline {
+      background: transparent;
+      border: 1px solid var(--cloud);
+    }
+
     /* ==========================================================================
        RESPONSIVIDADE
        ========================================================================== */
@@ -548,6 +685,9 @@
         border-bottom: none;
       }
       .credibility-grid {
+        grid-template-columns: 1fr;
+      }
+      .examples-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -749,6 +889,143 @@
             <div class="credibility-text">
               <h3 class="credibility-title">Acompanhamento contínuo</h3>
               <p class="credibility-desc">Estamos junto com você após o lançamento do sistema.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="exemplos" class="section bg-surface">
+      <div class="container">
+        <p class="eyebrow">// exemplos práticos</p>
+        <h2 class="section-title">O que construímos</h2>
+        
+        <div class="examples-grid">
+          <!-- Card 1: CRM Funil -->
+          <div class="example-card">
+            <h3 class="example-title">CRM de Vendas</h3>
+            <div class="example-mockup" aria-hidden="true">
+              <div class="app-window mockup-small">
+                <div class="app-header">
+                  <div class="app-dots"><span style="background:#ff5f56"></span><span style="background:#ffbd2e"></span><span style="background:#27c93f"></span></div>
+                  <div class="app-title font-mono">Funil</div>
+                </div>
+                <div class="app-body">
+                  <div class="app-content p-small">
+                    <div class="app-table">
+                      <div class="app-tr app-th"><div>Lead</div><div>Valor</div><div>Status</div></div>
+                      <div class="app-tr"><div>Padaria Central</div><div class="font-mono">R$ 5k</div><div><span class="app-tag tag-blue">Proposta</span></div></div>
+                      <div class="app-tr"><div>Mecânica São Jorge</div><div class="font-mono">R$ 12k</div><div><span class="app-tag tag-green">Fechado</span></div></div>
+                      <div class="app-tr"><div>Clínica Bem Estar</div><div class="font-mono">R$ 8k</div><div><span class="app-tag tag-blue">Proposta</span></div></div>
+                      <div class="app-tr"><div>Mercado Silva</div><div class="font-mono">R$ 3k</div><div><span class="app-tag tag-green">Fechado</span></div></div>
+                      <div class="app-tr"><div>Escola Aprender</div><div class="font-mono">R$ 15k</div><div><span class="app-tag tag-blue">Reunião</span></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: ERP Painel -->
+          <div class="example-card">
+            <h3 class="example-title">ERP Financeiro</h3>
+            <div class="example-mockup" aria-hidden="true">
+              <div class="app-window mockup-small">
+                <div class="app-header">
+                  <div class="app-dots"><span style="background:#ff5f56"></span><span style="background:#ffbd2e"></span><span style="background:#27c93f"></span></div>
+                  <div class="app-title font-mono">Dashboard</div>
+                </div>
+                <div class="app-body">
+                  <div class="app-content p-small">
+                    <div class="app-stats mb-small">
+                      <div class="app-stat"><span>Receita</span><strong>R$ 45k</strong></div>
+                      <div class="app-stat"><span>Custos</span><strong>R$ 12k</strong></div>
+                      <div class="app-stat"><span>Caixa</span><strong>R$ 33k</strong></div>
+                    </div>
+                    <div class="mockup-chart">
+                      <div class="bar" style="height: 30%"></div>
+                      <div class="bar" style="height: 50%"></div>
+                      <div class="bar" style="height: 40%"></div>
+                      <div class="bar" style="height: 80%; background: var(--cloud)"></div>
+                      <div class="bar" style="height: 60%"></div>
+                      <div class="bar" style="height: 90%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: E-shop -->
+          <div class="example-card">
+            <h3 class="example-title">Loja Virtual</h3>
+            <div class="example-mockup" aria-hidden="true">
+              <div class="app-window mockup-small">
+                <div class="app-header">
+                  <div class="app-dots"><span style="background:#ff5f56"></span><span style="background:#ffbd2e"></span><span style="background:#27c93f"></span></div>
+                  <div class="app-title font-mono">Catálogo</div>
+                </div>
+                <div class="app-body">
+                  <div class="app-content p-small">
+                    <div class="mockup-grid-3x2">
+                      <div class="mockup-product">
+                        <div class="product-img"></div>
+                        <div class="product-price font-mono">R$ 120</div>
+                      </div>
+                      <div class="mockup-product">
+                        <div class="product-img"></div>
+                        <div class="product-price font-mono">R$ 85</div>
+                      </div>
+                      <div class="mockup-product">
+                        <div class="product-img"></div>
+                        <div class="product-price font-mono">R$ 200</div>
+                      </div>
+                      <div class="mockup-product">
+                        <div class="product-img"></div>
+                        <div class="product-price font-mono">R$ 50</div>
+                      </div>
+                      <div class="mockup-product">
+                        <div class="product-img"></div>
+                        <div class="product-price font-mono">R$ 110</div>
+                      </div>
+                      <div class="mockup-product">
+                        <div class="product-img"></div>
+                        <div class="product-price font-mono">R$ 90</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Site -->
+          <div class="example-card">
+            <h3 class="example-title">Site Institucional</h3>
+            <div class="example-mockup" aria-hidden="true">
+              <div class="app-window mockup-small">
+                <div class="app-header">
+                  <div class="app-dots"><span style="background:#ff5f56"></span><span style="background:#ffbd2e"></span><span style="background:#27c93f"></span></div>
+                  <div class="app-title font-mono">Página Inicial</div>
+                </div>
+                <div class="app-body">
+                  <div class="mockup-site">
+                    <div class="site-nav">
+                      <div class="site-logo"></div>
+                      <div class="site-links"><div class="site-link"></div><div class="site-link"></div></div>
+                    </div>
+                    <div class="site-hero">
+                      <div class="site-h1"></div>
+                      <div class="site-p"></div>
+                      <div class="site-p short"></div>
+                      <div class="site-btns">
+                        <div class="site-btn"></div>
+                        <div class="site-btn outline"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
