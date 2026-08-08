@@ -591,6 +591,71 @@ button, input, textarea {
   line-height: 1.5;
 }
 
+/* Work Section (H-06) */
+.work-section {
+  padding: var(--space-16) var(--space-4);
+}
+
+.work-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.work-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.work-card-reverse .work-content {
+  order: 2;
+}
+
+.work-card-reverse .work-mockup-wrapper {
+  order: 1;
+}
+
+.work-content {
+  max-width: 90%;
+}
+
+.work-title {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-3);
+}
+
+.work-tags {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.work-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-family: monospace;
+  text-transform: uppercase;
+  background-color: var(--surface);
+  color: var(--ink-muted);
+  border: 1px solid var(--border);
+}
+
+.work-desc {
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.mockup-placeholder-h07 {
+  min-height: 250px;
+  background-color: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 4px;
+}
+
 /* ==========================================================================
    Responsividade
    ========================================================================== */
@@ -622,6 +687,16 @@ button, input, textarea {
   }
   .process-grid {
     grid-template-columns: 1fr;
+  }
+  .work-card {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  .work-card-reverse .work-content {
+    order: 1;
+  }
+  .work-card-reverse .work-mockup-wrapper {
+    order: 2;
   }
 }
 

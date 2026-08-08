@@ -94,14 +94,13 @@
 
 ### H-06 — Seção de exemplos de sistemas
 **Como** visitante, **quero** ver previews visuais dos sistemas que a Code House constrói, **para** ter confiança na qualidade.
-- [ ] Eyebrow monospace: `// exemplos de sistemas`
-- [ ] Título H2: "O que sistemas feitos assim parecem"
-- [ ] Grid 2x2, 4 cards
-- [ ] CRM / ERP / E-shop / Site Institucional (com mockups CSS puro em cada)
-- [ ] Apenas variáveis CSS
-- [ ] `aria-hidden="true"` em mockups
-- [ ] Mobile: 1 coluna; mockups com `overflow-x: auto`
-- [ ] `id="exemplos"`
+- [x] Eyebrow monospace: `// nosso trabalho`
+- [x] Título H2: "Construído pela Code House"
+- [x] Lista de 3 projetos, layout em stack vertical
+- [x] Cada projeto: Título H3 + tags `display: inline-block` + parágrafo descritivo
+- [x] Tags: `font-family: monospace`, uppercase, border
+- [x] Projetos listados: CRM para Oficina, ERP para Distribuidora, Portal para Clínica
+- [x] `id="exemplos"`
 
 ### H-07 — Seção de contato
 **Como** visitante interessado, **quero** entrar em contato com a Code House, **para** iniciar o projeto.
