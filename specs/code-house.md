@@ -48,15 +48,15 @@
 
 ### H-02 — Hero — mensagem principal
 **Como** visitante que chegou pela primeira vez, **quero** entender em 5 segundos o que a Code House faz e para quem, **para** decidir se vale continuar lendo.
-- [ ] Layout em 2 colunas (desktop)
-- [ ] Eyebrow monospace: "Soluções Personalizadas em TI"
-- [ ] Headline H1: "Sistemas feitos para o *seu* jeito de trabalhar." ("seu" em `--cloud`)
-- [ ] H1 único na página
-- [ ] Subtítulo (1 parágrafo)
-- [ ] Dois botões em linha: "Falar com a gente" (sólido, `#contato`) + "Ver exemplos" (outline, `#exemplos`)
-- [ ] Fade-in suave no mockup (sem reduced-motion)
-- [ ] Em mobile (< 900px): layout em 1 coluna; mockup antes do texto
-- [ ] Padding top do hero acomoda a nav sticky
+- [x] Layout em 2 colunas (desktop)
+- [x] Eyebrow monospace: "Soluções Personalizadas em TI"
+- [x] Headline H1: "Sistemas feitos para o *seu* jeito de trabalhar." ("seu" em `--cloud`)
+- [x] H1 único na página
+- [x] Subtítulo (1 parágrafo)
+- [x] Dois botões em linha: "Falar com a gente" (sólido, `#contato`) + "Ver exemplos" (outline, `#exemplos`)
+- [x] Fade-in suave no mockup (sem reduced-motion)
+- [x] Em mobile (< 900px): layout em 1 coluna; mockup antes do texto
+- [x] Padding top do hero acomoda a nav sticky
 
 ### H-03 — Hero mockup — preview CRM
 **Como** visitante, **quero** ver um preview visual real de como um sistema CRM da Code House parece, **para** sentir a qualidade concretamente.
@@ -166,7 +166,7 @@
 - [x] Meta e Open Graph completos (title, description, image, url)
 - [x] Twitter card
 - [x] JSON-LD LocalBusiness
-- [ ] H1 único, hierarquia ok
+- [x] H1 único, hierarquia ok
 - [x] robots.txt e sitemap.xml
 
 ### H-13 — Deploy no Render
