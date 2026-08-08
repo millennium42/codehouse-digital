@@ -151,9 +151,72 @@
       color: var(--bg);
     }
 
+    .btn-solid {
+      background: var(--cloud);
+      color: var(--bg);
+      border: 1px solid var(--cloud);
+    }
+    .btn-solid:hover {
+      background: var(--cloud-hover);
+      border-color: var(--cloud-hover);
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      color: var(--cloud);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 2rem;
+      height: 2px;
+      background: var(--cloud);
+    }
+
     /* ==========================================================================
        LAYOUT
        ========================================================================== */
+    .hero {
+      padding-top: 4rem; /* Accounts for sticky nav + some space */
+      padding-bottom: 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: var(--ink);
+    }
+    .hero-content h1 span {
+      color: var(--cloud);
+    }
+    .hero-content .subtitle {
+      font-size: 1.125rem;
+      line-height: 1.5;
+      color: var(--ink-muted);
+      margin-bottom: 2rem;
+      max-width: 90%;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
     .nav-global {
       position: sticky;
       top: 0;
@@ -219,6 +282,16 @@
        ========================================================================== */
     @media (max-width: 899px) {
       .nav-link-desktop { display: none; }
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 2rem;
+      }
+      .hero-mockup {
+        grid-row: 1; /* Mockup above text in mobile */
+      }
+      .hero-content {
+        grid-row: 2;
+      }
     }
   </style>
 </head>
@@ -241,6 +314,23 @@
       </div>
     </div>
   </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Soluções em TI</p>
+        <h1>Sistemas feitos para o <span>seu</span> jeito de trabalhar.</h1>
+        <p class="subtitle">A Code House desenvolve CRM, ERP, lojas virtuais e sites institucionais. Criamos soluções sob medida, totalmente adaptadas ao fluxo real da sua empresa, sem impor templates genéricos ou sistemas engessados.</p>
+        <div class="hero-actions">
+          <a href="#contato" class="btn btn-solid">Falar com a gente</a>
+          <a href="#exemplos" class="btn btn-outline">Ver exemplos</a>
+        </div>
+      </div>
+      <div class="hero-mockup" aria-hidden="true">
+        <!-- Mockup CRM in H-03 -->
+      </div>
+    </section>
+  </main>
 
   <script>
     document.getElementById('theme-toggle').addEventListener('click', function() {
