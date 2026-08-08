@@ -511,6 +511,36 @@
         }, 800);
       }
     });
+
+    // Scroll Reveal Animado (IntersectionObserver)
+    document.addEventListener("DOMContentLoaded", function() {
+      // Elementos que receberão a animação
+      var revealElements = document.querySelectorAll('.section-header, .service-card, .process-card, .credibility-item, .work-card, .contact-copy, .contact-form-wrapper');
+      
+      // Adiciona classe base hidden
+      revealElements.forEach(function(el) {
+        el.classList.add('reveal');
+      });
+
+      var observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+      };
+
+      var observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Inicia observação
+      revealElements.forEach(function(el) {
+        observer.observe(el);
+      });
+    });
   </script>
 </body>
 </html>
