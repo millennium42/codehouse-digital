@@ -447,6 +447,37 @@
       line-height: 1.5;
     }
 
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+    }
+    .process-card {
+      padding: 2rem 1.5rem;
+      border-right: 1px solid var(--border);
+    }
+    .process-card:last-child {
+      border-right: none;
+    }
+    .step-num {
+      font-family: var(--font-mono);
+      color: var(--ink-faint);
+      margin-bottom: 1rem;
+      font-size: 0.875rem;
+    }
+    .process-name {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+    .process-desc {
+      font-size: 1rem;
+      color: var(--ink-muted);
+      line-height: 1.5;
+    }
+
     /* ==========================================================================
        RESPONSIVIDADE
        ========================================================================== */
@@ -475,6 +506,16 @@
       .service-card:last-child {
         border-bottom: none;
         grid-column: 1 / -1;
+      }
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+      .process-card {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+      .process-card:last-child {
+        border-bottom: none;
       }
     }
     @media (max-width: 599px) {
@@ -623,6 +664,31 @@
             <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
             <h3 class="service-name">SOB MEDIDA</h3>
             <p class="service-desc">Qualquer solução de TI adaptada ao seu processo, do zero.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="processo" class="section">
+      <div class="container">
+        <p class="eyebrow">// como funciona</p>
+        <h2 class="section-title">Do problema à solução em três etapas</h2>
+        
+        <div class="process-grid">
+          <div class="process-card">
+            <p class="step-num">Etapa 01</p>
+            <h3 class="process-name">Entendemos seu negócio</h3>
+            <p class="process-desc">Conversamos sobre o seu fluxo diário, gargalos e o que você realmente precisa automatizar ou organizar.</p>
+          </div>
+          <div class="process-card">
+            <p class="step-num">Etapa 02</p>
+            <h3 class="process-name">Construímos a solução</h3>
+            <p class="process-desc">Desenvolvemos o sistema sob medida, usando a sua linguagem e regras de negócio, sem forçar processos engessados.</p>
+          </div>
+          <div class="process-card">
+            <p class="step-num">Etapa 03</p>
+            <h3 class="process-name">Acompanhamos a evolução</h3>
+            <p class="process-desc">O negócio muda, o sistema acompanha. Oferecemos suporte e melhorias contínuas pós-lançamento.</p>
           </div>
         </div>
       </div>
