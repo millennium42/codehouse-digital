@@ -184,9 +184,9 @@
 
 ### H-15 — Favicon e assets básicos
 **Como** visitante, **quero** aba identificável.
-- [ ] Favicon SVG inline (letra "C" + fundo `--cloud`)
-- [ ] `<meta name="theme-color">`
-- [ ] Imagem estática `og-image.png` (fundo + CODE.HOUSE)
+- [x] Favicon SVG inline (letra "C" + fundo `--cloud`)
+- [x] `<meta name="theme-color">`
+- [x] Imagem estática `og-image.png` (fundo + CODE.HOUSE)
 
 ### H-16 — Seção de credibilidade
 **Como** visitante, **quero** indicadores de confiança.
