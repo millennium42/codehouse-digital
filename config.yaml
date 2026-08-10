@@ -1,0 +1,27 @@
+prospecting:
+  segment: "clinicas"
+  city: "Curitiba"
+  limit: 20
+  min_score: 50          # só qualificados >= min_score recebem abordagem
+
+n8n:
+  outbound_webhook: "${N8N_WEBHOOK_URL}"
+  inbound_webhook: "${N8N_INBOUND_WEBHOOK_URL}"
+
+llm:
+  base_url: "${CODEHOUSE_LLM_BASE_URL}"
+  api_key: "${CODEHOUSE_LLM_API_KEY}"
+  model: "${CODEHOUSE_LLM_MODEL}"
+
+calendar:
+  enabled: ${GOOGLE_CALENDAR_ENABLED}
+  token: "${GOOGLE_CALENDAR_TOKEN}"
+  calendar_id: "${GOOGLE_CALENDAR_ID}"
+
+apify:
+  token: "${APIFY_TOKEN}"
+
+db:
+  url: "${CODEHOUSE_DB_URL}"
+
+dry_run: ${CODEHOUSE_DRY_RUN}
