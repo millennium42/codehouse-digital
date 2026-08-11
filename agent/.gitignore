@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Env / secrets
+.env
+
+# Local DB (dev)
+*.db
+codehouse_dryrun.db
+
+# IDE
+.idea/
+.vscode/
+.DS_Store
+
+# WhatsApp Web bridge session + QR
+whatsapp-bridge/.wwebjs_auth/
+whatsapp-bridge/qr.png

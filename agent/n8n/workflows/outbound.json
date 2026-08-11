@@ -1,0 +1,59 @@
+{
+  "name": "CodeHouse Outbound (WhatsApp via Meta Cloud API)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "codehouse-outbound",
+        "responseMode": "onReceived"
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "codehouse-outbound"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v19.0/{{$env.WHATSAPP_PHONE_ID}}/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "=Bearer {{$env.WHATSAPP_TOKEN}}" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"{{$json.to}}\",\n  \"type\": \"text\",\n  \"text\": { \"body\": \"{{$json.message}}\" }\n}"
+      },
+      "name": "Meta Cloud API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [520, 300]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            { "name": "status", "value": "=sent" },
+            { "name": "lead_id", "value": "={{$json.lead_id}}" },
+            { "name": "wa_response", "value": "={{JSON.stringify($json)}}" }
+          ]
+        }
+      },
+      "name": "Respond",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [800, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": { "main": [[{ "node": "Meta Cloud API", "type": "main", "index": 0 }]] },
+    "Meta Cloud API": { "main": [[{ "node": "Respond", "type": "main", "index": 0 }]] }
+  },
+  "settings": {},
+  "active": true,
+  "versionId": 1
+}
