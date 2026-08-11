@@ -105,6 +105,7 @@ class Message(Base):
     conteudo: Mapped[str] = mapped_column(Text, nullable=False)
     canal: Mapped[str] = mapped_column(String(20), default="whatsapp", nullable=False)
     tipo: Mapped[str] = mapped_column(String(30), default="abordagem", nullable=False)
+    processed: Mapped[bool] = mapped_column(default=False, nullable=False)
     timestamp: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=_now)
 
     lead: Mapped[Lead] = relationship(back_populates="messages")
@@ -124,6 +125,10 @@ class Event(Base):
 
 class Database:
     def __init__(self, url: str) -> None:
+        # Ponytail: timeout de conexão na URL (Psycopg 3 respeita query param)
+        if "connect_timeout" not in url:
+            sep = "?" if "://" in url and "?" not in url else "&"
+            url = f"{url}{sep}connect_timeout=10&sslmode=disable"
         self.engine = create_engine(url, future=True)
         self._session_factory = sessionmaker(bind=self.engine, expire_on_commit=False)
 

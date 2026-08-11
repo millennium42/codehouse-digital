@@ -1,0 +1,50 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: codehouse-pg
+    environment:
+      POSTGRES_USER: codehouse
+      POSTGRES_PASSWORD: codehouse
+      POSTGRES_DB: codehouse
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U codehouse"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: codehouse-n8n
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      # Dev local: sem auth para facilitar import via API/CLI
+      N8N_USER_MANAGEMENT_DISABLED: "true"
+      N8N_SECURE_COOKIE: "false"
+      N8N_BASIC_AUTH_DISABLED: "true"
+      WEBHOOK_URL: "http://localhost:5678"
+      GENERIC_TIMEZONE: "America/Sao_Paulo"
+      DB_TYPE: "postgresdb"
+      DB_POSTGRESDB_HOST: "postgres"
+      DB_POSTGRESDB_PORT: "5432"
+      DB_POSTGRESDB_DATABASE: "codehouse"
+      DB_POSTGRESDB_USER: "codehouse"
+      DB_POSTGRESDB_PASSWORD: "codehouse"
+    ports:
+      - "5678:5678"
+    volumes:
+      - n8ndata:/home/node/.n8n
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:5678/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  pgdata:
+  n8ndata:

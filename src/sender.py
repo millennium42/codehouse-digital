@@ -66,18 +66,29 @@ class Sender:
         self.writer = writer
         self.webhook_url = webhook_url or os.environ.get("N8N_WEBHOOK_URL", "")
         self.dry_run = dry_run
+        self.meta_token = os.environ.get("WHATSAPP_TOKEN", "")
+        self.meta_phone_id = os.environ.get("WHATSAPP_PHONE_ID", "")
 
     def send_first_contact(self, lead: Lead, enrichment: Enrichment) -> SendResult:
         if lead.opt_out:
             return SendResult("", False, self.dry_run)
         text = self.writer.write(lead, enrichment)
         sent = False
-        if not self.dry_run and self.webhook_url:
-            requests.post(self.webhook_url, json={
-                "to": lead.contato_tel, "message": text,
-                "lead_id": lead.id,
-            }, timeout=10)
-            sent = True
+        if not self.dry_run:
+            if self.webhook_url:
+                requests.post(self.webhook_url, json={
+                    "to": lead.contato_tel, "message": text,
+                    "lead_id": lead.id,
+                }, timeout=10)
+                sent = True
+            elif self.meta_token and self.meta_phone_id:
+                # Fallback: Meta Cloud API direto (sem n8n)
+                url = f"https://graph.facebook.com/v19.0/{self.meta_phone_id}/messages"
+                requests.post(url, json={
+                    "messaging_product": "whatsapp", "to": lead.contato_tel,
+                    "type": "text", "text": {"body": text},
+                }, headers={"Authorization": f"Bearer {self.meta_token}"}, timeout=10)
+                sent = True
         with self.db.session() as s:
             l = s.get(Lead, lead.id)
             l.status = LeadStatus.CONTATADO
