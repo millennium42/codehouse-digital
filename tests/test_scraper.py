@@ -18,7 +18,8 @@ def test_dryrun_discover_returns_normalized():
     assert leads[2].site is None
 
 
-def test_apify_requires_token():
+def test_apify_requires_token(monkeypatch):
+    monkeypatch.setenv("APIFY_TOKEN", "")
     src = ApifyLeadSource(token="", dry_run=False)
     try:
         src.discover("clinicas", "Curitiba", 3)

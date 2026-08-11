@@ -42,6 +42,8 @@ class ProspectingConfig:
 class N8NConfig:
     outbound_webhook: str = ""
     inbound_webhook: str = ""
+    # Bridge WhatsApp Web (QR) para teste local: POST {to, message} em /send
+    whatsapp_bridge_url: str = ""
 
 
 @dataclass
@@ -96,6 +98,7 @@ class Config:
             n8n=N8NConfig(
                 outbound_webhook=n.get("outbound_webhook", ""),
                 inbound_webhook=n.get("inbound_webhook", ""),
+                whatsapp_bridge_url=n.get("whatsapp_bridge_url", ""),
             ),
             llm=LLMConfig(
                 base_url=l.get("base_url", ""),

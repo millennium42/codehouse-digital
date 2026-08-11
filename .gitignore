@@ -15,3 +15,7 @@ codehouse_dryrun.db
 .idea/
 .vscode/
 .DS_Store
+
+# WhatsApp Web bridge session + QR
+whatsapp-bridge/.wwebjs_auth/
+whatsapp-bridge/qr.png

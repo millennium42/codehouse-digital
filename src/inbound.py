@@ -47,11 +47,11 @@ class FakeInboundSource(InboundSource):
 
 def classify_intent(text: str) -> str:
     t = text.strip().lower()
-    if any(w in t for w in ["sair", "nao", "não", "pare", "descadastrar", "remove"]):
+    if any(w in t for w in ["sair", "nao", "não", "pare", "descadastrar", "remove", "cancel"]):
         return "opt_out"
-    if any(w in t for w in ["horario", "agenda", "reuniao", "reunião", "demo", "demonstracao", "disponivel"]):
+    if any(w in t for w in ["horario", "agenda", "reuniao", "reunião", "demo", "demonstracao", "disponivel", "link", "agendar"]):
         return "schedule"
-    if any(w in t for w in ["sim", "interessa", "quero", "pode", "ok", "topo"]):
+    if any(w in t for w in ["sim", "interessa", "quero", "pode", "ok", "topo", "saber mais", "mais inform", "informacao", "informações", "detalhe", "detalhes", "como funciona"]):
         return "accept"
     return "neutral"
 
@@ -69,10 +69,11 @@ def build_proposal(schedule_url: str) -> str:
 
 class InboundHandler:
     def __init__(self, db: Database, source: InboundSource,
-                 schedule_url: str = "") -> None:
+                 schedule_url: str = "", bridge_url: str = "") -> None:
         self.db = db
         self.source = source
         self.schedule_url = schedule_url
+        self.bridge_url = bridge_url
 
     def process_once(self) -> int:
         processed = 0
@@ -99,8 +100,39 @@ class InboundHandler:
                 lead.status = LeadStatus.RESPONDEU
             if intent in ("accept", "schedule"):
                 lead.status = LeadStatus.AGENDOU
+                prop = build_proposal(self.schedule_url)
                 s.add(Message(lead_id=lead.id, direcao="out",
-                              conteudo=build_proposal(self.schedule_url),
+                              conteudo=prop,
                               canal="whatsapp",
                               tipo="proposta_agendamento"))
+                # envia a proposta via bridge WhatsApp (se configurado)
+                if self.bridge_url:
+                    from src.sender import Sender
+                    Sender._send_via_bridge(
+                        self.bridge_url,
+                        Sender._phone_to_whatsapp(lead.contato_tel),
+                        prop,
+                    )
             s.commit()
+
+
+class DBInboundSource(InboundSource):
+    """Lê mensagens `in` não processadas do Postgres e marca como processadas."""
+
+    def __init__(self, db: Database) -> None:
+        self.db = db
+
+    def poll(self) -> list[InboundMessage]:
+        out: list[InboundMessage] = []
+        with self.db.session() as s:
+            rows = (
+                s.query(Message)
+                .filter(Message.direcao == "in", Message.processed == False)  # noqa: E712
+                .order_by(Message.id)
+                .all()
+            )
+            for r in rows:
+                out.append(InboundMessage(lead_id=r.lead_id, text=r.conteudo))
+                r.processed = True
+            s.commit()
+        return out

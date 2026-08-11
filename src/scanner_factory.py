@@ -32,7 +32,9 @@ def build_pipeline(cfg: Config, db: Database) -> dict:
     return {
         "source": source,
         "scorer": scorer,
-        "sender": Sender(db, writer, cfg.n8n.outbound_webhook, cfg.dry_run),
+        "sender": Sender(db, writer, cfg.n8n.outbound_webhook, cfg.dry_run,
+                        cfg.n8n.whatsapp_bridge_url),
         "scheduler": Scheduler(db, backend, cfg.calendar.schedule_url),
-        "inbound": InboundHandler(db, FakeInboundSource(), cfg.calendar.schedule_url),
+        "inbound": InboundHandler(db, FakeInboundSource(), cfg.calendar.schedule_url,
+                                  cfg.n8n.whatsapp_bridge_url),
     }

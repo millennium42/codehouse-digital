@@ -74,13 +74,33 @@ class LLMMessageWriter(MessageWriter):
 
 class Sender:
     def __init__(self, db: Database, writer: MessageWriter,
-                 webhook_url: str = "", dry_run: bool = True) -> None:
+                 webhook_url: str = "", dry_run: bool = True,
+                 whatsapp_bridge_url: str = "") -> None:
         self.db = db
         self.writer = writer
         self.webhook_url = webhook_url or os.environ.get("N8N_WEBHOOK_URL", "")
         self.dry_run = dry_run
+        self.whatsapp_bridge_url = whatsapp_bridge_url or os.environ.get("WHATSAPP_BRIDGE_URL", "")
         self.meta_token = os.environ.get("WHATSAPP_TOKEN", "")
         self.meta_phone_id = os.environ.get("WHATSAPP_PHONE_ID", "")
+
+    @staticmethod
+    def _phone_to_whatsapp(tel: str) -> str:
+        # Bridge usa formato 5511999999999@c.us
+        digits = "".join(ch for ch in (tel or "") if ch.isdigit())
+        return f"{digits}@c.us"
+
+    @staticmethod
+    def _send_via_bridge(bridge_url: str, tel: str, message: str) -> bool:
+        """Envia mensagem via bridge WhatsApp Web (usado pelo inbound)."""
+        try:
+            requests.post(bridge_url.rstrip("/") + "/send",
+                          json={"to": Sender._phone_to_whatsapp(tel),
+                                "message": message}, timeout=15)
+            return True
+        except Exception as e:
+            print(f"[sender] erro ao enviar via bridge: {e}")
+            return False
 
     def send_first_contact(self, lead: Lead, enrichment: Enrichment) -> SendResult:
         if lead.opt_out:
@@ -88,7 +108,13 @@ class Sender:
         text = self.writer.write(lead, enrichment)
         sent = False
         if not self.dry_run:
-            if self.webhook_url:
+            if self.whatsapp_bridge_url:
+                # Bridge WhatsApp Web (QR) - teste local
+                requests.post(self.whatsapp_bridge_url.rstrip("/") + "/send",
+                              json={"to": self._phone_to_whatsapp(lead.contato_tel),
+                                    "message": text}, timeout=15)
+                sent = True
+            elif self.webhook_url:
                 requests.post(self.webhook_url, json={
                     "to": lead.contato_tel, "message": text,
                     "lead_id": lead.id,

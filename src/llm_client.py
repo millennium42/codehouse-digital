@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import json
 import os
+import time
 
 import requests
 
@@ -18,8 +19,9 @@ def chat_completion(
     system: str,
     user: str,
     timeout: int = 30,
+    max_retries: int = 3,
 ) -> str:
-    """Retorna o texto da resposta do assistente."""
+    """Retorna o texto da resposta do assistente (com retry/backoff)."""
     url = base_url.rstrip("/") + "/chat/completions"
     headers = {"Content-Type": "application/json"}
     if api_key:
@@ -32,10 +34,25 @@ def chat_completion(
         ],
         "temperature": 0.3,
     }
-    resp = requests.post(url, headers=headers, json=payload, timeout=timeout)
-    resp.raise_for_status()
-    data = resp.json()
-    return data["choices"][0]["message"]["content"]
+    last_err = None
+    for attempt in range(max_retries):
+        try:
+            resp = requests.post(url, headers=headers, json=payload, timeout=timeout)
+            if resp.status_code == 429:
+                wait = 2 ** attempt * 5
+                time.sleep(wait)
+                last_err = "429 rate limit"
+                continue
+            resp.raise_for_status()
+            data = resp.json()
+            return data["choices"][0]["message"]["content"]
+        except requests.HTTPError as e:
+            last_err = e
+            if resp.status_code == 429:
+                time.sleep(2 ** attempt * 5)
+                continue
+            raise
+    raise RuntimeError(f"LLM falhou apos {max_retries} tentativas: {last_err}")
 
 
 def chat_completion_json(
