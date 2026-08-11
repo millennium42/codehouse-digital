@@ -83,6 +83,10 @@ class InboundHandler:
         return processed
 
     def _handle(self, msg: InboundMessage) -> None:
+        from src.conversation import reply
+        from src.scorer import Enrichment
+        from src.config import Config
+        cfg = Config.load("config.yaml")
         with self.db.session() as s:
             lead = s.get(Lead, msg.lead_id)
             if lead is None:
@@ -98,21 +102,28 @@ class InboundHandler:
                 return
             if lead.status == LeadStatus.CONTATADO:
                 lead.status = LeadStatus.RESPONDEU
-            if intent in ("accept", "schedule"):
-                lead.status = LeadStatus.AGENDOU
-                prop = build_proposal(self.schedule_url)
-                s.add(Message(lead_id=lead.id, direcao="out",
-                              conteudo=prop,
-                              canal="whatsapp",
-                              tipo="proposta_agendamento"))
-                # envia a proposta via bridge WhatsApp (se configurado)
+            # gera resposta do Pablo via LLM (mantem historico)
+            enr = Enrichment(lead.site, lead.rede_social, False, None, 0, "")
+            try:
+                text = reply(self.db, lead, enr, msg.text, cfg.llm.base_url,
+                             cfg.llm.api_key, cfg.llm.model, self.schedule_url)
+            except Exception as e:
+                print(f"[inbound] erro LLM: {e}")
+                text = ""
+            if text:
+                # extrai link de agenda se o Pablo mandou
+                link = ""
+                if "LINK_AGENDA:" in text:
+                    link = text.split("LINK_AGENDA:")[1].strip().split("\n")[0].strip()
+                    text = text.split("LINK_AGENDA:")[0].strip()
+                    lead.status = LeadStatus.AGENDOU
+                s.add(Message(lead_id=lead.id, direcao="out", conteudo=text,
+                              canal="whatsapp", tipo="resposta_agente"))
                 if self.bridge_url:
                     from src.sender import Sender
-                    Sender._send_via_bridge(
-                        self.bridge_url,
-                        Sender._phone_to_whatsapp(lead.contato_tel),
-                        prop,
-                    )
+                    Sender._send_via_bridge(self.bridge_url, lead.contato_tel, text)
+                if link:
+                    lead.append_consent(f"link de agendamento enviado: {link[:60]}")
             s.commit()
 
 

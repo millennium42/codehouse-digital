@@ -59,7 +59,7 @@ class ApifyLeadSource(LeadSource):
 
     def _run_actor(self, segment: str, city: str, limit: int) -> list[dict]:
         # Apify REST: start run -> poll -> fetch dataset
-        actor_id = "lukassimko/google-maps-scraper"
+        actor_id = "nwua9Gu5YrADL7ZDj"
         headers = {"Authorization": f"Bearer {self.token}"}
         start_url = (
             f"https://api.apify.com/v2/acts/{actor_id}/runs"

@@ -19,22 +19,30 @@ def test_classify_intent():
     assert classify_intent("tudo bem, obrigado") == "neutral"
 
 
-def test_inbound_accept_moves_to_agendou(tmp_path):
+def test_inbound_accept_moves_to_agendou(tmp_path, monkeypatch):
+    def fake_reply(db, lead, enr, text, *a, **k):
+        return f"Combinado! LINK_AGENDA: https://calendar.google.com/XYZ"
+
+    monkeypatch.setattr("src.conversation.reply", fake_reply)
     db = Database(f"sqlite:///{tmp_path / 'i.db'}")
     db.init()
     lid = _seed(db)
     src = FakeInboundSource({lid: ["sim, quero demo"]})
-    InboundHandler(db, src).process_once()
+    InboundHandler(db, src, schedule_url="https://calendar.google.com/XYZ").process_once()
     with db.session() as s:
         l = s.get(Lead, lid)
         assert l.status == LeadStatus.AGENDOU
-        # 1 in + 1 out(proposta)
         types = [m.tipo for m in l.messages]
         assert "resposta" in types
-        assert "proposta_agendamento" in types
+        assert "resposta_agente" in types
+        assert "https://calendar.google.com/XYZ" in l.consent_log
 
 
-def test_inbound_proposal_includes_schedule_link(tmp_path):
+def test_inbound_proposal_includes_schedule_link(tmp_path, monkeypatch):
+    def fake_reply(db, lead, enr, text, *a, **k):
+        return f"Otimo! LINK_AGENDA: https://calendar.google.com/XYZ"
+
+    monkeypatch.setattr("src.conversation.reply", fake_reply)
     db = Database(f"sqlite:///{tmp_path / 'p.db'}")
     db.init()
     lid = _seed(db)
@@ -44,8 +52,7 @@ def test_inbound_proposal_includes_schedule_link(tmp_path):
     with db.session() as s:
         l = s.get(Lead, lid)
         assert l.status == LeadStatus.AGENDOU
-        prop = [m for m in l.messages if m.tipo == "proposta_agendamento"][0]
-        assert "https://calendar.google.com/XYZ" in prop.conteudo
+        assert "https://calendar.google.com/XYZ" in l.consent_log
 
 
 def test_scheduler_marks_link_sent(tmp_path):

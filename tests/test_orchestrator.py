@@ -15,7 +15,12 @@ def _cfg(tmp_path):
     return Config.load(str(p))
 
 
-def test_full_dry_run_cycle_accept(tmp_path):
+def test_full_dry_run_cycle_accept(tmp_path, monkeypatch):
+    def fake_reply(db, lead, enr, text, *a, **k):
+        # simula Pablo enviando link de agenda
+        return f"Combinado! LINK_AGENDA: https://calendar.google.com/XYZ"
+
+    monkeypatch.setattr("src.conversation.reply", fake_reply)
     cfg = _cfg(tmp_path)
     cfg.db_url = f"sqlite:///{tmp_path / 'e2e.db'}"
     db = Database(cfg.db_url)
