@@ -9,8 +9,11 @@ from __future__ import annotations
 
 import abc
 import os
+import time
 from dataclasses import dataclass
 from typing import Iterable
+
+import requests
 
 
 @dataclass
@@ -55,8 +58,41 @@ class ApifyLeadSource(LeadSource):
         return [self._normalize(r) for r in rows]
 
     def _run_actor(self, segment: str, city: str, limit: int) -> list[dict]:
-        # ponytail: integração real isolada; fora do escopo do MVP (placeholder).
-        raise NotImplementedError("Acionar Apify MCP/google_maps_actor")
+        # Apify REST: start run -> poll -> fetch dataset
+        actor_id = "lukassimko/google-maps-scraper"
+        headers = {"Authorization": f"Bearer {self.token}"}
+        start_url = (
+            f"https://api.apify.com/v2/acts/{actor_id}/runs"
+            f"?token={self.token}"
+        )
+        payload = {
+            "searchString": f"{segment} em {city}",
+            "maxCrawledPlaces": min(limit, 100),
+            "language": "pt-BR",
+        }
+        r = requests.post(start_url, json=payload, headers=headers, timeout=30)
+        r.raise_for_status()
+        run_id = r.json()["data"]["id"]
+        # poll until finished
+        for _ in range(30):
+            status = requests.get(
+                f"https://api.apify.com/v2/actor-runs/{run_id}?token={self.token}",
+                timeout=30,
+            ).json()["data"]["status"]
+            if status in ("SUCCEEDED", "FAILED", "ABORTED"):
+                break
+            time.sleep(5)
+        if status != "SUCCEEDED":
+            return []
+        ds_id = requests.get(
+            f"https://api.apify.com/v2/actor-runs/{run_id}?token={self.token}",
+            timeout=30,
+        ).json()["data"]["defaultDatasetId"]
+        items = requests.get(
+            f"https://api.apify.com/v2/datasets/{ds_id}/items?token={self.token}",
+            timeout=30,
+        ).json()
+        return items
 
     def _normalize(self, row: dict) -> RawLead:
         return RawLead(

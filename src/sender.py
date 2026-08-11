@@ -14,6 +14,7 @@ from dataclasses import dataclass
 import requests
 
 from src.db import Database, Lead, LeadStatus, Message
+from src.llm_client import chat_completion
 from src.scorer import Enrichment
 
 
@@ -56,7 +57,19 @@ class LLMMessageWriter(MessageWriter):
     def write(self, lead: Lead, enrichment: Enrichment) -> str:
         if self.dry_run or not self.api_key:
             raise RuntimeError("LLMMessageWriter requer api_key e dry_run=false.")
-        raise NotImplementedError("chamada LLM isolada")
+        system = (
+            "Voce e um consultor de vendas da CodeHouse (desenvolvimento de software "
+            "sob medida: paginas, ERPs, CRMs, automacao de chat). Escreva uma primeira "
+            "mensagem de WhatsApp curta, natural, em portugues, para um potencial cliente. "
+            "Identifique a empresa, mostre valor especifico, inclua via de opt-out "
+            "(responder 'sair'). Sem links, no maximo 3 frases."
+        )
+        user = (
+            f"Empresa: {lead.empresa}\nContato: {lead.contato_nome or 'responsavel'}\n"
+            f"Segmento: {lead.segmento}\nDor estimada: {enrichment.dor_estimada or 'evolution de operacao'}\n"
+            f"Ja tem sistema: {'sim' if enrichment.tem_sistema else 'nao'}"
+        )
+        return chat_completion(self.base_url, self.api_key, self.model, system, user).strip()
 
 
 class Sender:

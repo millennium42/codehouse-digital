@@ -13,6 +13,7 @@ import abc
 import os
 from dataclasses import dataclass
 
+from src.llm_client import chat_completion_json
 from src.scraper import RawLead
 
 
@@ -92,4 +93,18 @@ class LLMScorer(Scorer):
         )
 
     def _call_llm(self, lead: RawLead) -> dict:
-        raise NotImplementedError("chamada LLM isolada")
+        system = (
+            "Voce e um analista de prospeccao B2B. Receba dados de uma empresa e "
+            "retorne JSON com: tem_sistema (bool), dor_estimada (string curta), "
+            "score (0-100, quanto maior mais chance de vender software sob medida), "
+            "motivo (string explicando o score). Responda apenas JSON."
+        )
+        user = (
+            f"Empresa: {lead.empresa}\nSegmento: {lead.segmento}\n"
+            f"Site: {lead.site or 'sem site'}\n"
+            f"Rede social: {lead.rede_social or 'sem rede'}\n"
+            f"Contato: {lead.contato_nome or 'desconhecido'}"
+        )
+        return chat_completion_json(
+            self.base_url, self.api_key, self.model, system, user
+        )
