@@ -1,0 +1,35 @@
+# ===== CodeHouse Digital — monorepo root .gitignore =====
+# Combina regras de Python, Node, segredos e runtime.
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+*.db
+codehouse_dryrun.db
+.pytest_cache/
+
+# --- Node / WhatsApp bridge ---
+node_modules/
+.venv/
+.wwebjs_auth/
+.wwebjs_cache/
+baileys_auth/
+qr.png
+
+# --- Segredos / env ---
+.env
+.env.*
+!.env.example
+
+# --- IDE / OS ---
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# --- Local runtime artifacts (não versionar) ---
+ops/*/__pycache__/
+*.log

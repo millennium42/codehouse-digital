@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Restaurante Bella Trento Santa Maria",
+    "company": "Restaurante Bella Trento Santa Maria",
+    "sector": "Pizzaria",
+    "phone": "+555532239229",
+    "website": "https://delivery.bellatrento.com.br/",
+    "address": "Endereço: Av. João Luiz Pozzobon, 1599 - Km Três, Santa Maria - RS, 97095-465, Brasil",
+    "source": "apify",
+    "placeId": "ChIJ1X8HP__KA5URHMKLr-4JgyQ",
+    "tem_site": true,
+    "franquia": false,
+    "site_feio": true,
+    "motivo": "site feio/simples -> vender site institucional"
+  },
+  {
+    "name": "Bovinu'S Santa Maria",
+    "company": "Bovinu'S Santa Maria",
+    "sector": "Restaurante",
+    "phone": "+555532211790",
+    "website": "https://bovinus.com.br/bovinus-santa-maria/",
+    "address": "Endereço: R. Venâncio Aires, 1596 - Centro, Santa Maria - RS, 97010-002, Brasil",
+    "source": "apify",
+    "placeId": "ChIJ43lDCF3LA5URcLHHM2bqALg",
+    "tem_site": true,
+    "franquia": false,
+    "site_feio": true,
+    "motivo": "site feio/simples -> vender site institucional"
+  },
+  {
+    "name": "Loja 7 Santa Maria RS",
+    "company": "Loja 7 Santa Maria RS",
+    "sector": "Loja de variedades",
+    "phone": "+5555992152748",
+    "website": "https://www.instagram.com/loja7santamaria",
+    "address": "Endereço: R. do Acampamento, 431 - Centro, Santa Maria - RS, 97050-001, Brasil",
+    "source": "apify",
+    "placeId": "ChIJGQteQgDLA5URPfuE6E90ZpA",
+    "tem_site": true,
+    "franquia": false,
+    "site_feio": true,
+    "motivo": "site feio/simples -> vender site institucional"
+  },
+  {
+    "name": "Rafael Bortolaso Dentista em Santa Maria",
+    "company": "Rafael Bortolaso Dentista em Santa Maria",
+    "sector": "Cirurgião dentista",
+    "phone": "+5555996578003",
+    "website": "https://dentistarafaelbortolaso.com.br/",
+    "address": "Endereço: R. Pinheiro Machado, 2366 - Sl 416 - Centro, Santa Maria - RS, 97050-600, Brasil",
+    "source": "apify",
+    "placeId": "ChIJXcwrQyLLA5URRJdtr8m7J2c",
+    "tem_site": true,
+    "franquia": false,
+    "site_feio": true,
+    "motivo": "site feio/simples -> vender site institucional"
+  }
+]
