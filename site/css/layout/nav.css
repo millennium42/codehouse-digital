@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Navegação Global (H-01)
+   ========================================================================== */
+.global-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--bg-main);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 1.125rem;
+    letter-spacing: -0.05em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--text-main);
+}
+
+.cta-nav {
+    border: 1px solid var(--accent-cloud);
+    color: var(--accent-cloud);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.cta-nav:hover {
+    background-color: var(--accent-cloud);
+    color: var(--bg-main); /* Contraste inverso */
+}
+
+/* Mobile Nav */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+    }
+}
