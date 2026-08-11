@@ -17,6 +17,7 @@ calendar:
   enabled: ${GOOGLE_CALENDAR_ENABLED}
   token: "${GOOGLE_CALENDAR_TOKEN}"
   calendar_id: "${GOOGLE_CALENDAR_ID}"
+  schedule_url: "${GOOGLE_CALENDAR_SCHEDULE_URL}"
 
 apify:
   token: "${APIFY_TOKEN}"

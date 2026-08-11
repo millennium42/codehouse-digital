@@ -94,7 +94,8 @@ class ProspectingAgent:
 
         # 5) poll inbound + 6) schedule (condução two-way)
         handler = InboundHandler(
-            self.db, FakeInboundSource(inbound_script or {})
+            self.db, FakeInboundSource(inbound_script or {}),
+            schedule_url=self.cfg.calendar.schedule_url,
         )
         stats.replied = handler.process_once()
         # agenda leads que aceitaram (status AGENDOU via inbound)

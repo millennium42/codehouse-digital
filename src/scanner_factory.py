@@ -33,6 +33,6 @@ def build_pipeline(cfg: Config, db: Database) -> dict:
         "source": source,
         "scorer": scorer,
         "sender": Sender(db, writer, cfg.n8n.outbound_webhook, cfg.dry_run),
-        "scheduler": Scheduler(db, backend),
-        "inbound": InboundHandler(db, FakeInboundSource()),
+        "scheduler": Scheduler(db, backend, cfg.calendar.schedule_url),
+        "inbound": InboundHandler(db, FakeInboundSource(), cfg.calendar.schedule_url),
     }

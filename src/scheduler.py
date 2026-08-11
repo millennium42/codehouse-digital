@@ -57,15 +57,25 @@ def default_slots(base: datetime | None = None) -> list[Slot]:
 
 
 class Scheduler:
-    def __init__(self, db: Database, backend: CalendarBackend) -> None:
+    def __init__(self, db: Database, backend: CalendarBackend,
+                 schedule_url: str = "") -> None:
         self.db = db
         self.backend = backend
+        self.schedule_url = schedule_url
 
-    def schedule(self, lead_id: int, slot: Slot) -> Event | None:
+    def schedule(self, lead_id: int, slot: Slot | None = None) -> Event | None:
         with self.db.session() as s:
             lead = s.get(Lead, lead_id)
             if lead is None or lead.opt_out:
                 return None
+            if self.schedule_url:
+                # Lead se auto-agenda via link público (Google Appointment Scheduling)
+                lead.status = LeadStatus.AGENDOU
+                lead.append_consent("link de agendamento enviado ao lead")
+                s.commit()
+                return None
+            if slot is None:
+                slot = default_slots()[0]
             event_id = self.backend.create(lead, slot)
             lead.status = LeadStatus.AGENDOU
             lead.append_consent(f"evento agendado {event_id}")

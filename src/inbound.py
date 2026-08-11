@@ -57,15 +57,22 @@ def classify_intent(text: str) -> str:
 
 
 PROPOSAL = (
-    "Ótimo! Sugiro 3 horários para uma demonstração de 30min: "
-    "ter 10h, qua 14h ou qui 16h. Qual funciona?"
+    "Ótimo! Para escolher o melhor horário para uma demonstração de 30min, "
+    "use meu link de agendamento: {schedule_url}"
 )
 
 
+def build_proposal(schedule_url: str) -> str:
+    return PROPOSAL.format(schedule_url=schedule_url or "<link de agendamento>")
+
+
+
 class InboundHandler:
-    def __init__(self, db: Database, source: InboundSource) -> None:
+    def __init__(self, db: Database, source: InboundSource,
+                 schedule_url: str = "") -> None:
         self.db = db
         self.source = source
+        self.schedule_url = schedule_url
 
     def process_once(self) -> int:
         processed = 0
@@ -93,6 +100,7 @@ class InboundHandler:
             if intent in ("accept", "schedule"):
                 lead.status = LeadStatus.AGENDOU
                 s.add(Message(lead_id=lead.id, direcao="out",
-                              conteudo=PROPOSAL, canal="whatsapp",
+                              conteudo=build_proposal(self.schedule_url),
+                              canal="whatsapp",
                               tipo="proposta_agendamento"))
             s.commit()

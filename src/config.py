@@ -56,6 +56,7 @@ class CalendarConfig:
     enabled: bool = False
     token: str = ""
     calendar_id: str = "primary"
+    schedule_url: str = ""  # link público de agendamento (Google Calendar Appointment Scheduling)
 
 
 @dataclass
@@ -105,6 +106,7 @@ class Config:
                 enabled=str(c.get("enabled", "false")).lower() in ("1", "true", "yes"),
                 token=c.get("token", ""),
                 calendar_id=c.get("calendar_id", "primary"),
+                schedule_url=c.get("schedule_url", ""),
             ),
             apify=ApifyConfig(token=a.get("token", "")),
         )
