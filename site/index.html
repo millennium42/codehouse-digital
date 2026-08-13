@@ -9,12 +9,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Code House — Soluções Personalizadas em TI para Pequenas Empresas</title>
   <meta name="description" content="Soluções de TI personalizadas para pequenas empresas: CRM, ERP, e-shop e sites. Tudo adaptado ao seu fluxo real.">
-  <link rel="canonical" href="PLACEHOLDER_URL">
+  <link rel="canonical" href="https://codehouse.com.br">
   
   <meta property="og:type" content="website">
   <meta property="og:title" content="Code House — Soluções Personalizadas em TI para Pequenas Empresas">
   <meta property="og:description" content="Soluções de TI personalizadas para pequenas empresas: CRM, ERP, e-shop e sites. Tudo adaptado ao seu fluxo real.">
-  <meta property="og:url" content="PLACEHOLDER_URL">
+  <meta property="og:url" content="https://codehouse.com.br">
   <meta property="og:image" content="/og-image.png">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Code House">
@@ -25,64 +25,106 @@
   <meta name="twitter:image" content="/og-image.png">
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"LocalBusiness","name":"Code House",
-  "description":"Soluções de TI personalizadas para pequenas empresas","url":"PLACEHOLDER_URL",
-  "serviceType":["CRM","ERP","E-commerce","Site Institucional"]}
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Code House",
+    "description": "Soluções de TI personalizadas para pequenas empresas",
+    "url": "https://codehouse.com.br",
+    "serviceType": ["CRM", "ERP", "E-commerce", "Site Institucional"]
+  }
   </script>
 
-  <meta name="theme-color" content="#3E82AB">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%233E82AB'/%3E%3Ctext x='50%25' y='55%25' font-family='monospace' font-weight='bold' font-size='20' fill='%23FFFFFF' text-anchor='middle' dominant-baseline='middle'%3EC%3C/text%3E%3C/svg%3E">
-  <link rel="apple-touch-icon" href="/og-image.png">
+  <meta name="theme-color" content="#050505">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23050505'/%3E%3Crect x='3' y='3' width='26' height='26' rx='2' fill='%23FF2E63'/%3E%3Ctext x='50%25' y='55%25' font-family='monospace' font-weight='bold' font-size='18' fill='%23050505' text-anchor='middle' dominant-baseline='middle'%3ECH%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="apple-touch-icon" href="/og-image.png">
   <style>
     /* ==========================================================================
        TOKENS
        ========================================================================== */
     :root {
-      --bg:             #F0F4F8;
-      --surface:        #E2EBF4;
-      --surface-raised: #FAFCFE;
-      --cloud:          #3E82AB;
-      --cloud-hover:    #2E6E95;
-      --cloud-light:    #6AAFD6;
-      --cloud-faint:    #C0D8EC;
-      --ink:            #17232E;
-      --ink-muted:      #4A6275;
-      --ink-faint:      #7A9AAF;
-      --border:         #B4CCE0;
-      --border-strong:  #7AADC8;
+      --void: #050505;
+      --surface: #0C0C0C;
+      --surface-raised: #131313;
+      --surface-hover: #1A1A1A;
+      --border: rgba(255,255,255,0.08);
+      --border-hover: rgba(255,255,255,0.14);
+      --white: #FAFAFA;
+      --muted: #8A8A8A;
+      --muted-2: #5A5A5A;
+      --accent-1: #FF6B35;
+      --accent-2: #FF2E63;
+      --accent-3: #9D4EDD;
+      --accent-grad: linear-gradient(135deg, #FF6B35, #FF2E63, #9D4EDD);
+      --shadow-card: 0 4px 24px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04);
+      --shadow-card-hover: 0 12px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08);
+      --shadow-glow: 0 0 60px rgba(255,46,99,0.15);
       --font-sans: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
       --font-mono: 'Courier New', 'Courier', monospace;
+      /* aliases para compatibilidade com CSS existente */
+      --bg: var(--void);
+      --ink: var(--white);
+      --ink-muted: var(--muted);
+      --ink-faint: var(--muted-2);
+      --cloud: var(--accent-1);
+      --cloud-hover: #E85D2A;
+      --border-strong: var(--border-hover);
+      --cloud-light: var(--accent-2);
+      --cloud-faint: rgba(255,107,53,0.12);
     }
 
     @media (prefers-color-scheme: dark) { 
+      /* mesmos tokens agressivos — dark-first */
       :root {
-        --bg:             #0C141D;
-        --surface:        #13202E;
-        --surface-raised: #192B3C;
-        --cloud:          #5898C0;
-        --cloud-hover:    #6AAFD6;
-        --cloud-faint:    #1C3A52;
-        --ink:            #D8E8F4;
-        --ink-muted:      #7A9AB4;
-        --ink-faint:      #4A6880;
-        --border:         #1E3A52;
-        --border-strong:  #2E567A;
+        --void: #050505;
+        --surface: #0C0C0C;
+        --surface-raised: #131313;
+        --surface-hover: #1A1A1A;
+        --border: rgba(255,255,255,0.08);
+        --border-hover: rgba(255,255,255,0.14);
+        --white: #FAFAFA;
+        --muted: #8A8A8A;
+        --muted-2: #5A5A5A;
+        --accent-1: #FF6B35;
+        --accent-2: #FF2E63;
+        --accent-3: #9D4EDD;
+        --accent-grad: linear-gradient(135deg, #FF6B35, #FF2E63, #9D4EDD);
+        --shadow-card: 0 4px 24px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04);
+        --shadow-card-hover: 0 12px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08);
+        --shadow-glow: 0 0 60px rgba(255,46,99,0.15);
+        --bg: var(--void);
+        --ink: var(--white);
+        --ink-muted: var(--muted);
+        --ink-faint: var(--muted-2);
+        --cloud: var(--accent-1);
+        --cloud-hover: #E85D2A;
+        --border-strong: var(--border-hover);
+        --cloud-light: var(--accent-2);
+        --cloud-faint: rgba(255,107,53,0.12);
+        --font-sans: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+        --font-mono: 'Courier New', 'Courier', monospace;
       }
     }
 
     :root[data-theme="dark"] {
-      --bg:             #0C141D;
-      --surface:        #13202E;
-      --surface-raised: #192B3C;
-      --cloud:          #5898C0;
-      --cloud-hover:    #6AAFD6;
-      --cloud-faint:    #1C3A52;
-      --ink:            #D8E8F4;
-      --ink-muted:      #7A9AB4;
-      --ink-faint:      #4A6880;
-      --border:         #1E3A52;
-      --border-strong:  #2E567A;
-    }
+      --bg:             #050505;
+      --surface:        #0C0C0C;
+      --surface-raised: #131313;
+      --surface-hover:  #1A1A1A;
+      --cloud:          #FF6B35;
+      --cloud-hover:    #E85D2A;
+      --cloud-light:    #FF8C5A;
+      --cloud-faint:    rgba(255,107,53,0.12);
+      --ink:            #FAFAFA;
+      --ink-muted:      #8A8A8A;
+      --ink-faint:      #5A5A5A;
+      --border:         rgba(255,255,255,0.08);
+      --border-strong:  rgba(255,255,255,0.14);
+          --accent-1: #FF2E63;
+      --accent-2: #FF2E63;
+      --accent-3: #9D4EDD;
+}
 
     :root[data-theme="light"] {
       --bg:             #F0F4F8;
@@ -393,6 +435,18 @@
     .theme-toggle svg { width: 24px; height: 24px; }
     
     [data-theme="dark"] .icon-moon { display: none; }
+
+    /* FAQ Accordion */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+    .faq-item:first-child { padding-top: 0; }
+    .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .faq-q { display: flex; justify-content: space-between; align-items: center; cursor: pointer; width: 100%; background: none; border: none; padding: 0; font-size: 1.1rem; font-weight: 600; color: var(--ink); text-align: left; }
+    .faq-q:hover { color: var(--cloud); }
+    .faq-a { margin-top: 1rem; color: var(--ink-muted); line-height: 1.6; }
+    .faq-a.hidden { display: none; }
+    .faq-toggle { transition: transform 0.3s; }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); }
+
     [data-theme="light"] .icon-sun { display: none; }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) .icon-moon { display: none; }
@@ -855,7 +909,30 @@
         gap: 1rem;
       }
     }
-  </style>
+
+    :root[data-theme="dark"] {
+      --bg:             #050505;
+      --surface:        #0C0C0C;
+      --surface-raised: #131313;
+      --surface-hover:  #1A1A1A;
+      --cloud:          #FF6B35;
+      --cloud-hover:    #E85D2A;
+      --cloud-light:    #FF8C5A;
+      --cloud-faint:    rgba(255,107,53,0.12);
+      --ink:            #FAFAFA;
+      --ink-muted:      #8A8A8A;
+      --ink-faint:      #5A5A5A;
+      --border:         rgba(255,255,255,0.08);
+      --border-strong:  rgba(255,255,255,0.14);
+    }
+  
+    /* Stack Grid */
+    .stack-card { transition: all 0.2s ease; }
+    .stack-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(255,107,53,0.18); }
+    .stack-icon { transition: transform 0.3s; }
+    .stack-card:hover .stack-icon { transform: scale(1.1); }
+
+</style>
 </head>
 <body>
   <nav class="nav-global">
@@ -878,10 +955,10 @@
   </nav>
 
   <main>
-    <section class="hero">
+    <section id="hero" class="hero">
       <div class="hero-content">
         <p class="eyebrow">Soluções em TI</p>
-        <h1>Sistemas feitos para o <span>seu</span> jeito de trabalhar.</h1>
+        <h1>Sistemas feitos para o <span class="accent">seu modo de operar</span>.</h1>
         <p class="subtitle">A Code House desenvolve CRM, ERP, lojas virtuais e sites institucionais. Criamos soluções sob medida, totalmente adaptadas ao fluxo real da sua empresa, sem impor templates genéricos ou sistemas engessados.</p>
         <div class="hero-actions">
           <a href="#contato" class="btn btn-solid">Falar com a gente</a>
@@ -932,22 +1009,22 @@
                 </div>
                 <div class="app-tr">
                   <div>João Silva</div>
-                  <div>TechCorp</div>
+                  <div>Empresa A</div>
                   <div><span class="app-tag tag-green">Ativo</span></div>
                 </div>
                 <div class="app-tr">
                   <div>Maria Souza</div>
-                  <div>DesignBR</div>
+                  <div>Empresa B</div>
                   <div><span class="app-tag tag-blue">Proposta</span></div>
                 </div>
                 <div class="app-tr">
                   <div>Carlos Maia</div>
-                  <div>Logística Sul</div>
+                  <div>Empresa C</div>
                   <div><span class="app-tag tag-green">Ativo</span></div>
                 </div>
                 <div class="app-tr">
                   <div>Ana Costa</div>
-                  <div>Varejo SA</div>
+                  <div>Empresa D</div>
                   <div><span class="app-tag tag-blue">Proposta</span></div>
                 </div>
               </div>
@@ -1064,11 +1141,11 @@
                   <div class="app-content p-small">
                     <div class="app-table">
                       <div class="app-tr app-th"><div>Lead</div><div>Valor</div><div>Status</div></div>
-                      <div class="app-tr"><div>Padaria Central</div><div class="font-mono">R$ 5k</div><div><span class="app-tag tag-blue">Proposta</span></div></div>
-                      <div class="app-tr"><div>Mecânica São Jorge</div><div class="font-mono">R$ 12k</div><div><span class="app-tag tag-green">Fechado</span></div></div>
-                      <div class="app-tr"><div>Clínica Bem Estar</div><div class="font-mono">R$ 8k</div><div><span class="app-tag tag-blue">Proposta</span></div></div>
-                      <div class="app-tr"><div>Mercado Silva</div><div class="font-mono">R$ 3k</div><div><span class="app-tag tag-green">Fechado</span></div></div>
-                      <div class="app-tr"><div>Escola Aprender</div><div class="font-mono">R$ 15k</div><div><span class="app-tag tag-blue">Reunião</span></div></div>
+                      <div class="app-tr"><div>Empresa Central</div><div class="font-mono">R$ XXk</div><div><span class="app-tag tag-blue">Proposta</span></div></div>
+                      <div class="app-tr"><div>Empresa São Jorge</div><div class="font-mono">R$ XXk</div><div><span class="app-tag tag-green">Fechado</span></div></div>
+                      <div class="app-tr"><div>Empresa Bem Estar</div><div class="font-mono">R$ XXk</div><div><span class="app-tag tag-blue">Proposta</span></div></div>
+                      <div class="app-tr"><div>Empresa Silva</div><div class="font-mono">R$ XXk</div><div><span class="app-tag tag-green">Fechado</span></div></div>
+                      <div class="app-tr"><div>Empresa Aprender</div><div class="font-mono">R$ XXk</div><div><span class="app-tag tag-blue">Reunião</span></div></div>
                     </div>
                   </div>
                 </div>
@@ -1088,9 +1165,9 @@
                 <div class="app-body">
                   <div class="app-content p-small">
                     <div class="app-stats mb-small">
-                      <div class="app-stat"><span>Receita</span><strong>R$ 45k</strong></div>
-                      <div class="app-stat"><span>Custos</span><strong>R$ 12k</strong></div>
-                      <div class="app-stat"><span>Caixa</span><strong>R$ 33k</strong></div>
+                      <div class="app-stat"><span>Receita</span><strong>R$ XXk</strong></div>
+                      <div class="app-stat"><span>Custos</span><strong>R$ XXk</strong></div>
+                      <div class="app-stat"><span>Caixa</span><strong>R$ XXk</strong></div>
                     </div>
                     <div class="mockup-chart">
                       <div class="bar" style="height: 30%"></div>
@@ -1182,14 +1259,113 @@
       </div>
     </section>
 
-    <section id="contato" class="section contato">
+    
+  <!-- ========== STACK (H-R17) ========== -->
+  <section class="sec" id="stack" style="padding: 4rem 0; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <p class="eyebrow" style="color: var(--cloud); margin-bottom: 0.75rem;">Tecnologias</p>
+      <h2 style="font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 0.5rem;">Stack real, sem enrolação.</h2>
+      <p style="color: var(--ink-muted); font-size: 0.95rem; max-width: 46ch; margin-bottom: 2rem;">Não embaralhamos tecnologias. Estas são as que usamos nos projetos.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem;">
+
+        <div class="stack-card" style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; text-align: center;">
+          <svg class="stack-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cloud)" stroke-width="1.5"><path d="M4 17.5A2.5 2.5 0 1 1 6.5 15 2.5 2.5 0 0 1 4 17.5Z"/></svg>
+          <div style="font-family: var(--font-sans); font-weight: 700; color: var(--ink); margin-bottom: 0.25rem;">Node.js</div>
+          <div style="font-size: 0.7rem; color: var(--ink-muted);">Backend, APIs</div>
+        </div>
+        <div class="stack-card" style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; text-align: center;">
+          <svg class="stack-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cloud)" stroke-width="1.5"><path d="M12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm-.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+          <div style="font-family: var(--font-sans); font-weight: 700; color: var(--ink); margin-bottom: 0.25rem;">Python</div>
+          <div style="font-size: 0.7rem; color: var(--ink-muted);">Scripts, automação, data</div>
+        </div>
+        <div class="stack-card" style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; text-align: center;">
+          <svg class="stack-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cloud)" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+          <div style="font-family: var(--font-sans); font-weight: 700; color: var(--ink); margin-bottom: 0.25rem;">React</div>
+          <div style="font-size: 0.7rem; color: var(--ink-muted);">Frontend, interfaces</div>
+        </div>
+        <div class="stack-card" style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; text-align: center;">
+          <svg class="stack-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cloud)" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <div style="font-family: var(--font-sans); font-weight: 700; color: var(--ink); margin-bottom: 0.25rem;">TypeScript</div>
+          <div style="font-size: 0.7rem; color: var(--ink-muted);">Tipagem forte, segurança</div>
+        </div>
+        <div class="stack-card" style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; text-align: center;">
+          <svg class="stack-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cloud)" stroke-width="1.5"><path d="M3 3h8v8H3V3zm0 10h8v8H3v-8zm10-10h8v8h-8V3zm0 10h8v8h-8v-8z"/></svg>
+          <div style="font-family: var(--font-sans); font-weight: 700; color: var(--ink); margin-bottom: 0.25rem;">PostgreSQL</div>
+          <div style="font-size: 0.7rem; color: var(--ink-muted);">Banco de dados relacional</div>
+        </div>
+        <div class="stack-card" style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; text-align: center;">
+          <svg class="stack-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cloud)" stroke-width="1.5"><path d="M14.5 2.5c0-.83-.67-1.5-1.5-1.5S11.5 1.67 11.5 2.5s.67 1.5 1.5 1.5S14.5 3.33 14.5 2.5zm-6 0c0-.83-.67-1.5-1.5-1.5S3.5 1.67 3.5 2.5 4.17 4 5 4s1.5-.67 1.5-1.5zm12.5 6c0-1.38-1.12-2.5-2.5-2.5s-2.5 1.12-2.5 2.5 1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5zM10 15.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm4-6c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm3.5 4.5c0-1.38-1.12-2.5-2.5-2.5S12.5 6.12 12.5 7.5s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5z"/></svg>
+          <div style="font-family: var(--font-sans); font-weight: 700; color: var(--ink); margin-bottom: 0.25rem;">Docker</div>
+          <div style="font-size: 0.7rem; color: var(--ink-muted);">Containerização, deploy</div>
+        </div>
+        <div class="stack-card" style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; text-align: center;">
+          <svg class="stack-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cloud)" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <div style="font-family: var(--font-sans); font-weight: 700; color: var(--ink); margin-bottom: 0.25rem;">AWS</div>
+          <div style="font-size: 0.7rem; color: var(--ink-muted);">Cloud, escalabilidade</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ (H-R18) ========== -->
+  <section class="sec" id="faq" style="padding: 4rem 0; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <p class="eyebrow" style="color: var(--cloud); margin-bottom: 0.75rem;">Perguntas frequentes</p>
+      <h2 style="font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 2rem;">Tire suas dúvidas antes de começar.</h2>
+      <div style="display: grid; gap: 1rem; max-width: 68ch; margin: 0 auto;">
+        <div class="faq-item" style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem;">
+          <button style="width:100%; background:transparent; border:none; cursor:pointer; font-family:var(--font-sans); font-size:1rem; font-weight:600; color:var(--ink); text-align:left; padding:0; display:flex; justify-content:space-between; align-items:center;">
+            <span>Quanto tempo leva para entregar um sistema?</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <p style="color: var(--ink-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">Depende da complexidade. Um CRM básico pode levar algumas semanas. Um ERP completo pode levar meses. No diagnóstico inicial, eu entrego uma estimativa com prazos para cada etapa — e você valida cada uma antes de avançar.</p>
+        </div>
+        <div class="faq-item" style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem;">
+          <button style="width:100%; background:transparent; border:none; cursor:pointer; font-family:var(--font-sans); font-size:1rem; font-weight:600; color:var(--ink); text-align:left; padding:0; display:flex; justify-content:space-between; align-items:center;">
+            <span>Posso mudar algo depois da entrega?</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <p style="color: var(--ink-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">Sim. Você recebe o código-fonte completo, os acessos e a documentação. Não existe lock-in — o sistema é seu, e eu ajudo com ajustes quando precisar.</p>
+        </div>
+        <div class="faq-item" style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem;">
+          <button style="width:100%; background:transparent; border:none; cursor:pointer; font-family:var(--font-sans); font-size:1rem; font-weight:600; color:var(--ink); text-align:left; padding:0; display:flex; justify-content:space-between; align-items:center;">
+            <span>Como é o custo? É cobrado por projeto ou por hora?</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <p style="color: var(--ink-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">O desenvolvimento é cobrado por projeto, com um valor definido no diagnóstico. O suporte após a entrega pode ser feito por hora ou por pacote — combina-se juntos. Sem surpresas na fatura.</p>
+        </div>
+        <div class="faq-item" style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem;">
+          <button style="width:100%; background:transparent; border:none; cursor:pointer; font-family:var(--font-sans); font-size:1rem; font-weight:600; color:var(--ink); text-align:left; padding:0; display:flex; justify-content:space-between; align-items:center;">
+            <span>Minha empresa é pequena. Vale a pena um sistema sob medida?</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <p style="color: var(--ink-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">Faz sentido — especialmente se o seu processo é específico. Sistemas prontos forçam você a adaptar seu processo ao software. Com desenvolvimento sob medida, o sistema se adapta a você. Um processo único com sistema genérico = workaround todos os dias.</p>
+        </div>
+        <div class="faq-item" style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem;">
+          <button style="width:100%; background:transparent; border:none; cursor:pointer; font-family:var(--font-sans); font-size:1rem; font-weight:600; color:var(--ink); text-align:left; padding:0; display:flex; justify-content:space-between; align-items:center;">
+            <span>Como começa? Preciso ter tudo definido antes?</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <p style="color: var(--ink-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">Não precisa ter tudo definido. Muitos clientes começam com "sabemos que tem um problema, mas não sabemos exatamente como resolver". Eu faço o diagnóstico junto — mapeamos o processo, identificamos oportunidades e definimos o que fazer primeiro. É gratuito e não te compromete a nada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STACK (H-R17) ========== -->
+  
+
+  <!-- ========== FAQ (H-R18) ========== -->
+  
+<section id="contato" class="section contato">
       <div class="container">
         <div class="contato-grid">
           <div class="contato-copy">
             <p class="eyebrow">// vamos conversar</p>
             <h2 class="section-title">Seu sistema ainda não existe. A gente constrói.</h2>
-            <p class="process-desc" style="margin-bottom: 2rem;">Fale com a gente sobre a sua empresa e o que você precisa. Nossa equipe vai entender o seu fluxo e propor a solução ideal, sem compromisso.</p>
-            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #25D366; color: #25D366;">
+            <p class="process-desc" style="margin-bottom: 2rem;">Fale com a gente sobre a sua empresa e o que você precisa. Eu vou entender o seu fluxo e propor a solução ideal, sem compromisso.</p>
+            <p style="font-size: 0.875rem; color: var(--ink-muted); margin-top: 1rem;">ou escreve pra gente: <a href="mailto:codehouse42@gmail.com" style="color: var(--cloud);">codehouse42@gmail.com</a></p>
+            <a href="https://wa.me/55559991441700" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #25D366; color: #25D366;">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
               Chamar no WhatsApp
             </a>
@@ -1223,7 +1399,7 @@
     </section>
   </main>
 
-  <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Orçamento no WhatsApp">
+  <a href="https://wa.me/55559991441700" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Orçamento no WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
     <span>Orçamento</span>
   </a>
@@ -1247,7 +1423,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; <span id="current-year"></span> Code House. Todos os direitos reservados.</p>
+      <p style="font-size: 0.8rem; color: var(--muted);">CNPJ: 68.489.569/0001-04 &nbsp;|&nbsp; &copy; <span id="current-year"></span> Code House. Todos os direitos reservados.</p>
     </div>
   </footer>
 
