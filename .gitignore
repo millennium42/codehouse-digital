@@ -33,3 +33,16 @@ Thumbs.db
 # --- Local runtime artifacts (não versionar) ---
 ops/*/__pycache__/
 *.log
+
+# --- Root-level test/build scripts (movidos para site/.build/) ---
+lead-discovery.js
+test-site.js
+node_modules/
+package.json
+package-lock.json
+
+# --- Sub-repos / worktrees ---
+codehouse-digital/
+
+# --- Site build artifacts ---
+site/.build/

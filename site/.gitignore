@@ -1,0 +1,9 @@
+# Build artifacts (não versionar)
+/build/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

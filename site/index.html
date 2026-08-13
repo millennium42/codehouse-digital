@@ -38,901 +38,9 @@
   <meta name="theme-color" content="#050505">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23050505'/%3E%3Crect x='3' y='3' width='26' height='26' rx='2' fill='%23FF2E63'/%3E%3Ctext x='50%25' y='55%25' font-family='monospace' font-weight='bold' font-size='18' fill='%23050505' text-anchor='middle' dominant-baseline='middle'%3ECH%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/styles.css">
+
 <link rel="apple-touch-icon" href="/og-image.png">
-  <style>
-    /* ==========================================================================
-       TOKENS
-       ========================================================================== */
-    :root {
-      --void: #050505;
-      --surface: #0C0C0C;
-      --surface-raised: #131313;
-      --surface-hover: #1A1A1A;
-      --border: rgba(255,255,255,0.08);
-      --border-hover: rgba(255,255,255,0.14);
-      --white: #FAFAFA;
-      --muted: #8A8A8A;
-      --muted-2: #5A5A5A;
-      --accent-1: #FF6B35;
-      --accent-2: #FF2E63;
-      --accent-3: #9D4EDD;
-      --accent-grad: linear-gradient(135deg, #FF6B35, #FF2E63, #9D4EDD);
-      --shadow-card: 0 4px 24px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04);
-      --shadow-card-hover: 0 12px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08);
-      --shadow-glow: 0 0 60px rgba(255,46,99,0.15);
-      --font-sans: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
-      --font-mono: 'Courier New', 'Courier', monospace;
-      /* aliases para compatibilidade com CSS existente */
-      --bg: var(--void);
-      --ink: var(--white);
-      --ink-muted: var(--muted);
-      --ink-faint: var(--muted-2);
-      --cloud: var(--accent-1);
-      --cloud-hover: #E85D2A;
-      --border-strong: var(--border-hover);
-      --cloud-light: var(--accent-2);
-      --cloud-faint: rgba(255,107,53,0.12);
-    }
-
-    @media (prefers-color-scheme: dark) { 
-      /* mesmos tokens agressivos — dark-first */
-      :root {
-        --void: #050505;
-        --surface: #0C0C0C;
-        --surface-raised: #131313;
-        --surface-hover: #1A1A1A;
-        --border: rgba(255,255,255,0.08);
-        --border-hover: rgba(255,255,255,0.14);
-        --white: #FAFAFA;
-        --muted: #8A8A8A;
-        --muted-2: #5A5A5A;
-        --accent-1: #FF6B35;
-        --accent-2: #FF2E63;
-        --accent-3: #9D4EDD;
-        --accent-grad: linear-gradient(135deg, #FF6B35, #FF2E63, #9D4EDD);
-        --shadow-card: 0 4px 24px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04);
-        --shadow-card-hover: 0 12px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08);
-        --shadow-glow: 0 0 60px rgba(255,46,99,0.15);
-        --bg: var(--void);
-        --ink: var(--white);
-        --ink-muted: var(--muted);
-        --ink-faint: var(--muted-2);
-        --cloud: var(--accent-1);
-        --cloud-hover: #E85D2A;
-        --border-strong: var(--border-hover);
-        --cloud-light: var(--accent-2);
-        --cloud-faint: rgba(255,107,53,0.12);
-        --font-sans: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
-        --font-mono: 'Courier New', 'Courier', monospace;
-      }
-    }
-
-    :root[data-theme="dark"] {
-      --bg:             #050505;
-      --surface:        #0C0C0C;
-      --surface-raised: #131313;
-      --surface-hover:  #1A1A1A;
-      --cloud:          #FF6B35;
-      --cloud-hover:    #E85D2A;
-      --cloud-light:    #FF8C5A;
-      --cloud-faint:    rgba(255,107,53,0.12);
-      --ink:            #FAFAFA;
-      --ink-muted:      #8A8A8A;
-      --ink-faint:      #5A5A5A;
-      --border:         rgba(255,255,255,0.08);
-      --border-strong:  rgba(255,255,255,0.14);
-          --accent-1: #FF2E63;
-      --accent-2: #FF2E63;
-      --accent-3: #9D4EDD;
-}
-
-    :root[data-theme="light"] {
-      --bg:             #F0F4F8;
-      --surface:        #E2EBF4;
-      --surface-raised: #FAFCFE;
-      --cloud:          #3E82AB;
-      --cloud-hover:    #2E6E95;
-      --cloud-light:    #6AAFD6;
-      --cloud-faint:    #C0D8EC;
-      --ink:            #17232E;
-      --ink-muted:      #4A6275;
-      --ink-faint:      #7A9AAF;
-      --border:         #B4CCE0;
-      --border-strong:  #7AADC8;
-    }
-
-    /* ==========================================================================
-       RESET
-       ========================================================================== */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* ==========================================================================
-       BASE
-       ========================================================================== */
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--font-sans);
-    }
-
-    /* ==========================================================================
-       COMPONENTES REUTILIZAVEIS
-       ========================================================================== */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 1rem;
-      min-height: 44px;
-      font-family: var(--font-mono);
-      font-weight: bold;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 2px;
-      transition: all 0.2s;
-      cursor: pointer;
-    }
-    .btn:focus-visible { outline: 2px solid var(--cloud); outline-offset: 2px; }
-
-    .btn-outline {
-      border: 1px solid var(--cloud);
-      color: var(--ink);
-      background: transparent;
-    }
-    .btn-outline:hover {
-      background: var(--cloud);
-      color: var(--bg);
-    }
-
-    .btn-solid {
-      background: var(--cloud);
-      color: var(--bg);
-      border: 1px solid var(--cloud);
-    }
-    .btn-solid:hover {
-      background: var(--cloud-hover);
-      border-color: var(--cloud-hover);
-    }
-
-    .eyebrow {
-      font-family: var(--font-mono);
-      text-transform: uppercase;
-      color: var(--cloud);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
-    .eyebrow::before {
-      content: "";
-      display: inline-block;
-      width: 2rem;
-      height: 2px;
-      background: var(--cloud);
-    }
-
-    /* ==========================================================================
-       LAYOUT
-       ========================================================================== */
-    .hero {
-      padding-top: 4rem; /* Accounts for sticky nav + some space */
-      padding-bottom: 4rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .hero-content h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      color: var(--ink);
-    }
-    .hero-content h1 span {
-      color: var(--cloud);
-    }
-    .hero-content .subtitle {
-      font-size: 1.125rem;
-      line-height: 1.5;
-      color: var(--ink-muted);
-      margin-bottom: 2rem;
-      max-width: 90%;
-    }
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    /* Mockup */
-    .app-window {
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-      background: var(--bg);
-      display: flex;
-      flex-direction: column;
-      font-size: 0.875rem;
-    }
-    .app-header {
-      display: flex;
-      align-items: center;
-      padding: 0.5rem 1rem;
-      border-bottom: 1px solid var(--border);
-      background: var(--surface);
-    }
-    .app-dots {
-      display: flex;
-      gap: 6px;
-      margin-right: 1rem;
-    }
-    .app-dots span {
-      display: block;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-    }
-    .app-title {
-      font-size: 0.75rem;
-      color: var(--ink-muted);
-    }
-    .app-body {
-      display: flex;
-      height: 300px;
-    }
-    .app-sidebar {
-      width: 120px;
-      border-right: 1px solid var(--border);
-      padding: 1rem 0;
-      background: var(--surface-raised);
-    }
-    .app-nav-item {
-      padding: 0.5rem 1rem;
-      color: var(--ink-muted);
-    }
-    .app-nav-item.active {
-      background: var(--cloud-faint);
-      border-left: 2px solid var(--cloud);
-      color: var(--ink);
-      font-weight: bold;
-    }
-    .app-content {
-      flex: 1;
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .app-stats {
-      display: flex;
-      gap: 1rem;
-    }
-    .app-stat {
-      flex: 1;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      padding: 0.75rem;
-      background: var(--surface);
-      display: flex;
-      flex-direction: column;
-    }
-    .app-stat span {
-      font-size: 0.75rem;
-      color: var(--ink-muted);
-      margin-bottom: 0.25rem;
-    }
-    .app-stat strong {
-      font-size: 1.25rem;
-      color: var(--ink);
-    }
-    .app-table {
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      display: flex;
-      flex-direction: column;
-    }
-    .app-tr {
-      display: grid;
-      grid-template-columns: 1fr 1fr 80px;
-      padding: 0.5rem;
-      border-bottom: 1px solid var(--border);
-      align-items: center;
-    }
-    .app-tr:last-child {
-      border-bottom: none;
-    }
-    .app-th {
-      background: var(--surface);
-      color: var(--ink-muted);
-      font-weight: bold;
-      font-size: 0.75rem;
-    }
-    .app-tag {
-      padding: 0.125rem 0.5rem;
-      border-radius: 2px;
-      font-size: 0.7rem;
-      font-weight: bold;
-    }
-    .tag-green { background: rgba(39, 201, 63, 0.2); color: #27c93f; }
-    .tag-blue { background: rgba(62, 130, 171, 0.2); color: var(--cloud); }
-
-    @media (prefers-reduced-motion: no-preference) {
-      .fade {
-        opacity: 0;
-        transition: opacity 0.5s ease-out;
-      }
-      .fade.in {
-        opacity: 1;
-      }
-    }
-
-    .nav-global {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem;
-    }
-    .logo {
-      font-family: var(--font-mono);
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-decoration: none;
-      color: var(--ink);
-    }
-    .logo span { color: var(--cloud); }
-    .logo:focus-visible { outline: 2px solid var(--cloud); outline-offset: 2px; }
-    
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    .nav-link {
-      text-decoration: none;
-      color: var(--ink);
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .nav-link:hover { color: var(--cloud); }
-    .nav-link:focus-visible { outline: 2px solid var(--cloud); outline-offset: 2px; }
-
-    .theme-toggle {
-      background: transparent;
-      border: none;
-      color: var(--ink);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.5rem;
-      border-radius: 2px;
-    }
-    .theme-toggle:focus-visible { outline: 2px solid var(--cloud); outline-offset: 2px; }
-    .theme-toggle svg { width: 24px; height: 24px; }
-    
-    [data-theme="dark"] .icon-moon { display: none; }
-
-    /* FAQ Accordion */
-    .faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
-    .faq-item:first-child { padding-top: 0; }
-    .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .faq-q { display: flex; justify-content: space-between; align-items: center; cursor: pointer; width: 100%; background: none; border: none; padding: 0; font-size: 1.1rem; font-weight: 600; color: var(--ink); text-align: left; }
-    .faq-q:hover { color: var(--cloud); }
-    .faq-a { margin-top: 1rem; color: var(--ink-muted); line-height: 1.6; }
-    .faq-a.hidden { display: none; }
-    .faq-toggle { transition: transform 0.3s; }
-    .faq-item.open .faq-toggle { transform: rotate(45deg); }
-
-    [data-theme="light"] .icon-sun { display: none; }
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) .icon-moon { display: none; }
-      :root:not([data-theme="light"]) .icon-sun { display: block; }
-    }
-    
-    .section {
-      padding: 4rem 1rem;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .section-title {
-      font-size: clamp(1.5rem, 3vw, 2.5rem);
-      margin-bottom: 3rem;
-      color: var(--ink);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 0;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-    }
-    .service-card {
-      padding: 2rem 1.5rem;
-      border-right: 1px solid var(--border);
-      transition: background 0.2s;
-    }
-    .service-card:last-child {
-      border-right: none;
-    }
-    .service-card:hover {
-      background: var(--surface);
-    }
-    .service-icon {
-      margin-bottom: 1rem;
-      color: var(--cloud);
-    }
-    .service-name {
-      font-family: var(--font-mono);
-      font-size: 1rem;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-      color: var(--ink);
-    }
-    .service-desc {
-      font-size: 0.875rem;
-      color: var(--ink-muted);
-      line-height: 1.5;
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-    }
-    .process-card {
-      padding: 2rem 1.5rem;
-      border-right: 1px solid var(--border);
-    }
-    .process-card:last-child {
-      border-right: none;
-    }
-    .step-num {
-      font-family: var(--font-mono);
-      color: var(--ink-faint);
-      margin-bottom: 1rem;
-      font-size: 0.875rem;
-    }
-    .process-name {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-      color: var(--ink);
-    }
-    .process-desc {
-      font-size: 1rem;
-      color: var(--ink-muted);
-      line-height: 1.5;
-    }
-
-    .credibility {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .credibility-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-    .credibility-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-    .credibility-icon {
-      color: var(--cloud);
-      flex-shrink: 0;
-    }
-    .credibility-title {
-      font-size: 1rem;
-      margin-bottom: 0.25rem;
-      color: var(--ink);
-    }
-    .credibility-desc {
-      font-size: 0.875rem;
-      color: var(--ink-muted);
-      line-height: 1.4;
-    }
-
-    .bg-surface {
-      background: var(--surface-raised);
-    }
-    .examples-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-    .example-card {
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 1.5rem;
-      background: var(--bg);
-    }
-    .example-title {
-      font-size: 1.125rem;
-      margin-bottom: 1.5rem;
-      color: var(--ink);
-    }
-    .mockup-small {
-      height: 250px;
-    }
-    .p-small {
-      padding: 0.5rem;
-      gap: 0.5rem;
-    }
-    .mb-small {
-      margin-bottom: 0.5rem;
-    }
-    
-    .mockup-chart {
-      flex: 1;
-      display: flex;
-      align-items: flex-end;
-      gap: 0.5rem;
-      padding-top: 1rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .mockup-chart .bar {
-      flex: 1;
-      background: var(--border-strong);
-      border-radius: 2px 2px 0 0;
-    }
-    
-    .mockup-grid-3x2 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.5rem;
-      height: 100%;
-    }
-    .mockup-product {
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      display: flex;
-      flex-direction: column;
-    }
-    .product-img {
-      flex: 1;
-      background: linear-gradient(135deg, var(--surface) 0%, var(--border) 100%);
-    }
-    .product-price {
-      padding: 0.25rem;
-      font-size: 0.65rem;
-      text-align: center;
-      border-top: 1px solid var(--border);
-    }
-
-    .mockup-site {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-    .site-nav {
-      background: var(--ink);
-      padding: 0.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .site-logo {
-      width: 40px;
-      height: 10px;
-      background: var(--ink-faint);
-      border-radius: 2px;
-    }
-    .site-links {
-      display: flex;
-      gap: 0.5rem;
-    }
-    .site-link {
-      width: 20px;
-      height: 4px;
-      background: var(--ink-muted);
-      border-radius: 2px;
-    }
-    .site-hero {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-      gap: 0.5rem;
-      text-align: center;
-    }
-    .site-h1 {
-      width: 80%;
-      height: 16px;
-      background: var(--ink);
-      border-radius: 2px;
-      margin-bottom: 0.5rem;
-    }
-    .site-p {
-      width: 90%;
-      height: 8px;
-      background: var(--ink-muted);
-      border-radius: 2px;
-    }
-    .site-p.short {
-      width: 60%;
-    }
-    .site-btns {
-      display: flex;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-    .site-btn {
-      width: 60px;
-      height: 20px;
-      background: var(--cloud);
-      border-radius: 2px;
-    }
-    .site-btn.outline {
-      background: transparent;
-      border: 1px solid var(--cloud);
-    }
-    .contato {
-      background: var(--surface);
-    }
-    .contato-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: flex-start;
-    }
-    .contato-copy {
-      max-width: 90%;
-    }
-    .form-container {
-      background: var(--bg);
-      padding: 2rem;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-    }
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-    .form-group label {
-      display: block;
-      font-family: var(--font-mono);
-      font-size: 0.875rem;
-      font-weight: bold;
-      color: var(--ink);
-      margin-bottom: 0.5rem;
-    }
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 0.75rem;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      background: var(--surface-raised);
-      color: var(--ink);
-      font-family: var(--font-sans);
-      font-size: 1rem;
-      transition: border-color 0.2s;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--cloud);
-    }
-    .error-msg {
-      color: #ff5f56;
-      font-size: 0.875rem;
-      margin-top: 0.5rem;
-      min-height: 1.25rem;
-    }
-    .success-msg {
-      background: var(--bg);
-      padding: 3rem 2rem;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      text-align: center;
-    }
-    .success-msg h3 {
-      font-size: 1.5rem;
-      margin: 1rem 0 0.5rem;
-      color: var(--ink);
-    }
-    .success-msg p {
-      color: var(--ink-muted);
-    }
-
-    .whatsapp-float {
-      display: none;
-      position: fixed;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      background: #25D366;
-      color: #fff;
-      padding: 0.75rem 1.25rem;
-      border-radius: 50px;
-      align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      z-index: 1000;
-    }
-
-    .footer {
-      border-top: 1px solid var(--border);
-      background: var(--bg);
-      padding: 4rem 1rem 2rem;
-    }
-    .footer-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-bottom: 4rem;
-    }
-    .footer-brand {
-      max-width: 300px;
-    }
-    .footer-desc {
-      color: var(--ink-muted);
-      font-size: 0.875rem;
-      margin: 1rem 0;
-    }
-    .social-links {
-      display: flex;
-      gap: 1rem;
-    }
-    .social-link {
-      color: var(--ink-muted);
-      transition: color 0.2s;
-    }
-    .social-link:hover {
-      color: var(--cloud);
-    }
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .footer-link {
-      color: var(--ink);
-      text-decoration: none;
-      font-family: var(--font-mono);
-      font-size: 0.875rem;
-      transition: color 0.2s;
-    }
-    .footer-link:hover {
-      color: var(--cloud);
-    }
-    .footer-bottom {
-      border-top: 1px solid var(--border);
-      padding-top: 2rem;
-      text-align: center;
-      font-size: 0.75rem;
-      color: var(--ink-faint);
-    }
-
-    /* ==========================================================================
-       RESPONSIVIDADE
-       ========================================================================== */
-    @media (max-width: 899px) {
-      .nav-link-desktop { display: none; }
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 2rem;
-      }
-      .hero-mockup {
-        grid-row: 1;
-      }
-      .hero-content {
-        grid-row: 2;
-      }
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .service-card {
-        border-right: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
-      }
-      .service-card:nth-child(2n) {
-        border-right: none;
-      }
-      .service-card:last-child {
-        border-bottom: none;
-        grid-column: 1 / -1;
-      }
-      .process-grid {
-        grid-template-columns: 1fr;
-      }
-      .process-card {
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-      }
-      .process-card:last-child {
-        border-bottom: none;
-      }
-      .credibility-grid {
-        grid-template-columns: 1fr;
-      }
-      .examples-grid {
-        grid-template-columns: 1fr;
-      }
-      .contato-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .whatsapp-float {
-        display: flex;
-      }
-    }
-    @media (max-width: 599px) {
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-      .service-card {
-        border-right: none;
-      }
-      .service-card:nth-child(2n) {
-        border-right: none;
-      }
-      .service-card:last-child {
-        grid-column: 1;
-      }
-      .footer-links {
-        flex-direction: column;
-        gap: 1rem;
-      }
-    }
-
-    :root[data-theme="dark"] {
-      --bg:             #050505;
-      --surface:        #0C0C0C;
-      --surface-raised: #131313;
-      --surface-hover:  #1A1A1A;
-      --cloud:          #FF6B35;
-      --cloud-hover:    #E85D2A;
-      --cloud-light:    #FF8C5A;
-      --cloud-faint:    rgba(255,107,53,0.12);
-      --ink:            #FAFAFA;
-      --ink-muted:      #8A8A8A;
-      --ink-faint:      #5A5A5A;
-      --border:         rgba(255,255,255,0.08);
-      --border-strong:  rgba(255,255,255,0.14);
-    }
-  
-    /* Stack Grid */
-    .stack-card { transition: all 0.2s ease; }
-    .stack-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(255,107,53,0.18); }
-    .stack-icon { transition: transform 0.3s; }
-    .stack-card:hover .stack-icon { transform: scale(1.1); }
-
-</style>
 </head>
 <body>
   <nav class="nav-global">
@@ -1258,9 +366,6 @@
         </div>
       </div>
     </section>
-
-    
-  <!-- ========== STACK (H-R17) ========== -->
   <section class="sec" id="stack" style="padding: 4rem 0; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
     <div class="container">
       <p class="eyebrow" style="color: var(--cloud); margin-bottom: 0.75rem;">Tecnologias</p>
@@ -1306,56 +411,50 @@
       </div>
     </div>
   </section>
-
-  <!-- ========== FAQ (H-R18) ========== -->
   <section class="sec" id="faq" style="padding: 4rem 0; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
     <div class="container">
       <p class="eyebrow" style="color: var(--cloud); margin-bottom: 0.75rem;">Perguntas frequentes</p>
       <h2 style="font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 2rem;">Tire suas dúvidas antes de começar.</h2>
       <div style="display: grid; gap: 1rem; max-width: 68ch; margin: 0 auto;">
         <div class="faq-item" style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem;">
-          <button style="width:100%; background:transparent; border:none; cursor:pointer; font-family:var(--font-sans); font-size:1rem; font-weight:600; color:var(--ink); text-align:left; padding:0; display:flex; justify-content:space-between; align-items:center;">
+          <button class="faq-q" style="width:100%; background:transparent; border:none; cursor:pointer; font-family:var(--font-sans); font-size:1rem; font-weight:600; color:var(--ink); text-align:left; padding:0; display:flex; justify-content:space-between; align-items:center;">
             <span>Quanto tempo leva para entregar um sistema?</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <p style="color: var(--ink-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">Depende da complexidade. Um CRM básico pode levar algumas semanas. Um ERP completo pode levar meses. No diagnóstico inicial, eu entrego uma estimativa com prazos para cada etapa — e você valida cada uma antes de avançar.</p>
+          <p class="faq-a hidden" style="color: var(--ink-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">Depende da complexidade. Um CRM básico pode levar algumas semanas. Um ERP completo pode levar meses. No diagnóstico inicial, eu entrego uma estimativa com prazos para cada etapa — e você valida cada uma antes de avançar.</p>
         </div>
         <div class="faq-item" style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem;">
-          <button style="width:100%; background:transparent; border:none; cursor:pointer; font-family:var(--font-sans); font-size:1rem; font-weight:600; color:var(--ink); text-align:left; padding:0; display:flex; justify-content:space-between; align-items:center;">
+          <button class="faq-q" style="width:100%; background:transparent; border:none; cursor:pointer; font-family:var(--font-sans); font-size:1rem; font-weight:600; color:var(--ink); text-align:left; padding:0; display:flex; justify-content:space-between; align-items:center;">
             <span>Posso mudar algo depois da entrega?</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <p style="color: var(--ink-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">Sim. Você recebe o código-fonte completo, os acessos e a documentação. Não existe lock-in — o sistema é seu, e eu ajudo com ajustes quando precisar.</p>
+          <p class="faq-a hidden" style="color: var(--ink-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">Sim. Você recebe o código-fonte completo, os acessos e a documentação. Não existe lock-in — o sistema é seu, e eu ajudo com ajustes quando precisar.</p>
         </div>
         <div class="faq-item" style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem;">
-          <button style="width:100%; background:transparent; border:none; cursor:pointer; font-family:var(--font-sans); font-size:1rem; font-weight:600; color:var(--ink); text-align:left; padding:0; display:flex; justify-content:space-between; align-items:center;">
+          <button class="faq-q" style="width:100%; background:transparent; border:none; cursor:pointer; font-family:var(--font-sans); font-size:1rem; font-weight:600; color:var(--ink); text-align:left; padding:0; display:flex; justify-content:space-between; align-items:center;">
             <span>Como é o custo? É cobrado por projeto ou por hora?</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <p style="color: var(--ink-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">O desenvolvimento é cobrado por projeto, com um valor definido no diagnóstico. O suporte após a entrega pode ser feito por hora ou por pacote — combina-se juntos. Sem surpresas na fatura.</p>
+          <p class="faq-a hidden" style="color: var(--ink-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">O desenvolvimento é cobrado por projeto, com um valor definido no diagnóstico. O suporte após a entrega pode ser feito por hora ou por pacote — combina-se juntos. Sem surpresas na fatura.</p>
         </div>
         <div class="faq-item" style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem;">
-          <button style="width:100%; background:transparent; border:none; cursor:pointer; font-family:var(--font-sans); font-size:1rem; font-weight:600; color:var(--ink); text-align:left; padding:0; display:flex; justify-content:space-between; align-items:center;">
+          <button class="faq-q" style="width:100%; background:transparent; border:none; cursor:pointer; font-family:var(--font-sans); font-size:1rem; font-weight:600; color:var(--ink); text-align:left; padding:0; display:flex; justify-content:space-between; align-items:center;">
             <span>Minha empresa é pequena. Vale a pena um sistema sob medida?</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <p style="color: var(--ink-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">Faz sentido — especialmente se o seu processo é específico. Sistemas prontos forçam você a adaptar seu processo ao software. Com desenvolvimento sob medida, o sistema se adapta a você. Um processo único com sistema genérico = workaround todos os dias.</p>
+          <p class="faq-a hidden" style="color: var(--ink-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">Faz sentido — especialmente se o seu processo é específico. Sistemas prontos forçam você a adaptar seu processo ao software. Com desenvolvimento sob medida, o sistema se adapta a você. Um processo único com sistema genérico = workaround todos os dias.</p>
         </div>
         <div class="faq-item" style="background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem;">
-          <button style="width:100%; background:transparent; border:none; cursor:pointer; font-family:var(--font-sans); font-size:1rem; font-weight:600; color:var(--ink); text-align:left; padding:0; display:flex; justify-content:space-between; align-items:center;">
+          <button class="faq-q" style="width:100%; background:transparent; border:none; cursor:pointer; font-family:var(--font-sans); font-size:1rem; font-weight:600; color:var(--ink); text-align:left; padding:0; display:flex; justify-content:space-between; align-items:center;">
             <span>Como começa? Preciso ter tudo definido antes?</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <p style="color: var(--ink-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">Não precisa ter tudo definido. Muitos clientes começam com "sabemos que tem um problema, mas não sabemos exatamente como resolver". Eu faço o diagnóstico junto — mapeamos o processo, identificamos oportunidades e definimos o que fazer primeiro. É gratuito e não te compromete a nada.</p>
+          <p class="faq-a hidden" style="color: var(--ink-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">Não precisa ter tudo definido. Muitos clientes começam com "sabemos que tem um problema, mas não sabemos exatamente como resolver". Eu faço o diagnóstico junto — mapeamos o processo, identificamos oportunidades e definimos o que fazer primeiro. É gratuito e não te compromete a nada.</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- ========== STACK (H-R17) ========== -->
   
-
-  <!-- ========== FAQ (H-R18) ========== -->
   
 <section id="contato" class="section contato">
       <div class="container">
@@ -1371,7 +470,7 @@
             </a>
           </div>
           <div class="contato-form-wrapper">
-            <form id="contact-form" class="form-container" novalidate>
+            <form id="contact-form" class="form-container" action="https://formspree.io/f/xldbgqvl" method="POST" novalidate>
               <div class="form-group">
                 <label for="nome">NOME *</label>
                 <input type="text" id="nome" name="nome" required aria-describedby="nome-error">
@@ -1427,21 +526,32 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('current-year').textContent = new Date().getFullYear();
+  <script>document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    document.getElementById('theme-toggle').addEventListener('click', function() {
-      var html = document.documentElement;
-      var currentTheme = html.getAttribute('data-theme');
-      
-      if (!currentTheme) {
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        currentTheme = prefersDark ? 'dark' : 'light';
-      }
-      
-      var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('ch-theme', newTheme);
+    var WHATSAPP_NUMBER = '55559991441700';
+    var whatsappLinks = document.querySelectorAll('a[href^="wa.me/"]');
+    whatsappLinks.forEach(function(link) {
+      link.href = 'https://wa.me/' + WHATSAPP_NUMBER;
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-item').forEach(function(item) {
+      var btn = item.querySelector('.faq-q');
+      btn.addEventListener('click', function() {
+        var isOpen = item.classList.contains('open');
+        
+        // Close all
+        document.querySelectorAll('.faq-item.open').forEach(function(openItem) {
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-a').classList.add('hidden');
+        });
+        
+        // Open clicked if was closed
+        if (!isOpen) {
+          item.classList.add('open');
+          item.querySelector('.faq-a').classList.remove('hidden');
+        }
+      });
     });
 
     document.getElementById('contact-form').addEventListener('submit', function(e) {
@@ -1474,17 +584,34 @@
 
       if (valid) {
         var btn = document.getElementById('submit-btn');
+        var form = document.getElementById('contact-form');
         btn.textContent = 'Enviando...';
         btn.disabled = true;
 
-        setTimeout(function() {
-          document.getElementById('contact-form').style.display = 'none';
-          var successMsg = document.getElementById('success-msg');
-          successMsg.style.display = 'block';
-          successMsg.removeAttribute('aria-hidden');
-          // USE textContent to prevent XSS as required
-          document.getElementById('success-name').textContent = nome;
-        }, 800);
+        var formData = new FormData(form);
+        var data = Object.fromEntries(formData.entries());
+
+        fetch('https://formspree.io/f/xldbgqvl', {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+        })
+        .then(function(response) {
+          if (response.ok) {
+            form.style.display = 'none';
+            var successMsg = document.getElementById('success-msg');
+            successMsg.style.display = 'block';
+            successMsg.removeAttribute('aria-hidden');
+            document.getElementById('success-name').textContent = nome;
+          } else {
+            btn.textContent = 'Erro. Tente novamente.';
+            btn.disabled = false;
+          }
+        })
+        .catch(function() {
+          btn.textContent = 'Erro de conexão.';
+          btn.disabled = false;
+        });
       }
     });
 
@@ -1499,7 +626,6 @@
       }, { threshold: 0.1 });
 
       document.querySelectorAll('.fade').forEach(el => observer.observe(el));
-    });
-  </script>
+    });</script>
 </body>
 </html>
