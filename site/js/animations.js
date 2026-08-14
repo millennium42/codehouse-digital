@@ -28,16 +28,28 @@
      ───────────────────────────────────────────── */
   var revealEls = document.querySelectorAll('.reveal');
   if (revealEls.length && 'IntersectionObserver' in window) {
+    // Add will-animate class first (hides elements)
+    revealEls.forEach(function (el) { el.classList.add('will-animate'); });
+    
     var revealObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('revealed');
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    
     revealEls.forEach(function (el) { revealObserver.observe(el); });
-  } else if (revealEls.length) {
-    revealEls.forEach(function (el) { el.classList.add('revealed'); });
+    
+    // Reveal elements already in viewport on load
+    setTimeout(function () {
+      revealEls.forEach(function (el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+          el.classList.add('revealed');
+        }
+      });
+    }, 100);
   }
 
   /* ─────────────────────────────────────────────

@@ -53,6 +53,8 @@ img {
 
 /* Scroll reveal base */
 .reveal {
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
@@ -61,8 +63,13 @@ img {
   transform: translateY(0);
 }
 
-/* JS not loaded fallback */
-.no-js .reveal {
-  opacity: 1 !important;
-  transform: none !important;
+/* Start hidden (added by JS) */
+.reveal.will-animate {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.reveal.will-animate.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
