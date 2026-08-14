@@ -1,0 +1,92 @@
+/* ==========================================================================
+   TOKENS — Variáveis de design (dark-first)
+   ========================================================================== */
+
+:root {
+  /* Paleta dark */
+  --void: #050505;
+  --surface: #0C0C0C;
+  --surface-raised: #131313;
+  --surface-hover: #1A1A1A;
+  --border: rgba(255,255,255,0.08);
+  --border-hover: rgba(255,255,255,0.14);
+  --white: #FAFAFA;
+  --muted: #8A8A8A;
+  --muted-2: #5A5A5A;
+  --accent-1: #FF6B35;
+  --accent-2: #FF2E63;
+  --accent-3: #9D4EDD;
+  --accent-grad: linear-gradient(135deg, #FF6B35, #FF2E63, #9D4EDD);
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04);
+  --shadow-card-hover: 0 12px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08);
+  --shadow-glow: 0 0 60px rgba(255,46,99,0.15);
+  
+  /* Tipografia */
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', 'Courier', monospace;
+  
+  /* Aliases semânticos */
+  --bg: var(--void);
+  --ink: var(--white);
+  --ink-muted: var(--muted);
+  --ink-faint: var(--muted-2);
+  --cloud: var(--accent-1);
+  --cloud-hover: #E85D2A;
+  --cloud-light: var(--accent-2);
+  --cloud-faint: rgba(255,107,53,0.12);
+  --border-strong: var(--border-hover);
+}
+
+:root[data-theme="light"] {
+  --bg:             #F0F4F8;
+  --surface:        #E2EBF4;
+  --surface-raised: #FAFCFE;
+  --surface-hover:  #FFFFFF;
+  --cloud:          #3E82AB;
+  --cloud-hover:    #2E6E95;
+  --cloud-light:    #6AAFD6;
+  --cloud-faint:    #C0D8EC;
+  --ink:            #17232E;
+  --ink-muted:      #4A6275;
+  --ink-faint:      #7A9AAF;
+  --border:         #B4CCE0;
+  --border-strong:  #7AADC8;
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+  --shadow-card-hover: 0 12px 48px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.06);
+  --shadow-glow: 0 0 60px rgba(62,130,171,0.10);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { color-scheme: dark; }
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]):not([data-theme="light"]) {
+    --bg:             #F0F4F8;
+    --surface:        #E2EBF4;
+    --surface-raised: #FAFCFE;
+    --surface-hover:  #FFFFFF;
+    --cloud:          #3E82AB;
+    --cloud-hover:    #2E6E95;
+    --cloud-light:    #6AAFD6;
+    --cloud-faint:    #C0D8EC;
+    --ink:            #17232E;
+    --ink-muted:      #4A6275;
+    --ink-faint:      #7A9AAF;
+    --border:         #B4CCE0;
+    --border-strong:  #7AADC8;
+    --shadow-card: 0 4px 24px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+    --shadow-card-hover: 0 12px 48px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.06);
+    --shadow-glow: 0 0 60px rgba(62,130,171,0.10);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
