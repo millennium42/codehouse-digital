@@ -23,8 +23,9 @@
   --shadow-glow: 0 0 60px rgba(255,46,99,0.15);
   
   /* Typography */
-  --font-sans: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
-  --font-mono: 'Courier New', 'Courier', monospace;
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', 'Courier', monospace;
   
   /* Semantic aliases */
   --bg: var(--void);
@@ -193,6 +194,7 @@ body {
   padding: 1rem;
 }
 .logo {
+  font-family: var(--font-display);
   font-family: var(--font-mono);
   font-size: 1.5rem;
   font-weight: bold;
@@ -255,6 +257,7 @@ body {
 }
 
 .hero-content h1 {
+  font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3.5rem);
   line-height: 1.1;
   margin-bottom: 1.5rem;
