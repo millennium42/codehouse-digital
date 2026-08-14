@@ -145,45 +145,6 @@
 }
 
 /* TABS */
-.tabs-nav {
-  display: flex;
-  gap: 0;
-  margin-bottom: 2rem;
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  overflow: hidden;
-}
-.tab-btn {
-  flex: 1;
-  padding: 0.75rem 1rem;
-  background: transparent;
-  border: none;
-  border-right: 1px solid var(--border);
-  color: var(--ink-muted);
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s;
-  text-align: center;
-}
-.tab-btn:last-child { border-right: none; }
-.tab-btn:hover { background: var(--surface); color: var(--ink); }
-.tab-btn.active {
-  background: var(--cloud);
-  color: var(--bg);
-}
-.tab-panel {
-  display: none;
-  animation: tabFade 0.3s ease;
-}
-.tab-panel.active { display: block; }
-
-@keyframes tabFade {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 /* STACK */
 .stack-card { transition: all 0.2s ease; }
 .stack-card:hover {
@@ -195,35 +156,35 @@
 
 /* FAQ */
 .faq-item {
-  border-bottom: 1px solid var(--border);
-  padding: 1rem 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 0.75rem;
+  background: var(--surface);
+  transition: border-color 0.2s;
 }
-.faq-item:first-child { padding-top: 0; }
-.faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+.faq-item:hover { border-color: var(--border-hover); }
 .faq-q {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
   width: 100%;
-  background: none;
-  border: none;
   padding: 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--ink);
   text-align: left;
-  font-family: var(--font-sans);
 }
 .faq-q:hover { color: var(--cloud); }
 .faq-a {
-  margin-top: 1rem;
   color: var(--ink-muted);
   line-height: 1.6;
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.3s ease;
 }
-.faq-a.hidden { max-height: 0; opacity: 0; margin-top: 0; }
+.faq-item.open .faq-a { max-height: 300px; opacity: 1; margin-top: 0.75rem; }
 .faq-toggle { transition: transform 0.3s; flex-shrink: 0; }
 .faq-item.open .faq-toggle { transform: rotate(45deg); }
 
