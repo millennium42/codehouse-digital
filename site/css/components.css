@@ -18,9 +18,10 @@
   .hero-btns { justify-content: center; }
 }
 
-/* Mockup */
-.mock-float { animation: heroFloat 6s ease-in-out infinite; }
-@keyframes heroFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+/* Mockup - sem animação que treme */
+.mock-float {
+  /* Sem float animado - estava causando tremor */
+}
 .window { border: 1px solid var(--border); border-radius: var(--r-lg); background: var(--surface); overflow: hidden; box-shadow: var(--sh-lg), var(--sh-glow); }
 .window-bar { display: flex; align-items: center; padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); background: var(--surface-raised); }
 .dot { width: 11px; height: 11px; border-radius: 50%; margin-right: 7px; }
