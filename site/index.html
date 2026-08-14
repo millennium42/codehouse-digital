@@ -215,6 +215,87 @@
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section id="faq" class="sec">
+      <div class="container">
+        <p class="eyebrow reveal">// perguntas frequentes</p>
+        <h2 class="section-title reveal" data-delay="100">Tira sua dúvida antes de falar com a gente</h2>
+        <div class="faq-list reveal" data-delay="200">
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-1">
+              <span class="faq-label">Quanto tempo leva pra ficar pronto?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" id="faq-a-1" hidden>
+              <p>Depende do escopo. Um site institucional pode sair em 1-2 semanas. Um CRM completo leva mais. A gente combina um prazo realista no diagnóstico e te mostra funcionando antes de pagar tudo.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-2">
+              <span class="faq-label">Quanto custa?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" id="faq-a-2" hidden>
+              <p>Cada projeto tem seu valor. A gente faz uma estimativa depois de entender o que você precisa. Sem letra miúda, sem cobrança escondida.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-3">
+              <span class="faq-label">Fico com o código-fonte?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" id="faq-a-3" hidden>
+              <p>Sim. O código é seu. A gente entrega fonte, acesso e documentação. Se um dia quiser outro desenvolvedor, não tem lock-in.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-4">
+              <span class="faq-label">E se eu mudar de ideia no meio?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" id="faq-a-4" hidden>
+              <p>Escopo muda. A gente cobra por entrega, não por estimativa fixa. Se você quiser incluir ou remover uma funcionalidade, ajusta o valor só daquela parte.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-5">
+              <span class="faq-label">Minha empresa é pequena. Faz sentido?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" id="faq-a-5" hidden>
+              <p>Esse é o foco. A Code House trabalha com pequenas empresa exatamente porque software sob medida não precisa ser coisa de grande. Se você tem um processo que dá trabalho, a gente resolve.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-6">
+              <span class="faq-label">Quais tecnologias vocês usam?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" id="faq-a-6" hidden>
+              <p>Conforme a necessidade. Node, Python, React, PostgreSQL, Docker. A gente escolhe a ferramenta certa pra cada problema, não força uma stack única.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" aria-controls="faq-a-7">
+              <span class="faq-label">Como começa?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" id="faq-a-7" hidden>
+              <p>Manda uma mensagem no WhatsApp ou preenche o formulário aqui em baixo. A gente responde em até 24 horas com uma estimativa.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- CONTATO -->
     <section id="contato" class="sec cta-sec">
       <div class="container">
@@ -253,7 +334,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div>© <span id="yr"></span> Code House — CNPJ: 68.489.569/0001-04</div>
-      <div class="footer-links"><a href="index.html">Início</a><a href="exemplos.html">Exemplos</a><a href="#contato">Contato</a></div>
+      <div class="footer-links"><a href="index.html">Início</a><a href="exemplos.html">Exemplos</a><a href="politica-privacidade.html">Privacidade</a><a href="#contato">Contato</a></div>
     </div>
   </footer>
 
@@ -264,9 +345,8 @@
   <script src="js/theme.js" defer></script>
   <script src="js/nav.js" defer></script>
   <script src="js/scroll.js" defer></script>
+  <script src="js/faq.js" defer></script>
   <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
-    
     // Form validation + submit
     var form = document.getElementById('contactForm');
     var success = document.getElementById('formSuccess');

@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://pablo-codehouse.surge.sh/sitemap.xml

@@ -16,67 +16,35 @@ document.addEventListener('DOMContentLoaded', function() {
   const cards = document.querySelectorAll('.ex-card');
   const emptyState = document.getElementById('exEmpty');
 
+  function filterCards(cat) {
+    let visible = 0;
+    cards.forEach(function(card) {
+      const cardCat = card.getAttribute('data-cat');
+      if (cardCat === cat) {
+        card.classList.remove('hidden');
+        visible++;
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+    if (emptyState) {
+      emptyState.style.display = visible === 0 ? 'block' : 'none';
+    }
+  }
+
   tabs.forEach(function(tab) {
     tab.addEventListener('click', function() {
       const cat = tab.getAttribute('data-tab');
-      
       tabs.forEach(function(t) { t.classList.remove('active'); });
       tab.classList.add('active');
-
-      let visible = 0;
-      cards.forEach(function(card) {
-        const cardCat = card.getAttribute('data-cat');
-        if (cat === 'all' || cardCat === cat) {
-          card.classList.remove('hidden');
-          visible++;
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-
-      if (emptyState) {
-        emptyState.style.display = visible === 0 ? 'block' : 'none';
-      }
+      filterCards(cat);
     });
   });
 
-  /* --- 3. COUNTER ANIMATION --- */
-  const counters = document.querySelectorAll('.hero-stat .num');
-  
-  function animateCounter(el) {
-    const target = parseInt(el.getAttribute('data-count'), 10);
-    const duration = 1500;
-    let start = null;
-    
-    function step(ts) {
-      if (!start) start = ts;
-      const progress = Math.min((ts - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.round(eased * target);
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      } else {
-        el.textContent = target;
-      }
-    }
-    
-    requestAnimationFrame(step);
-  }
+  // Initial filter: show only CRM on load
+  filterCards('crm');
 
-  if ('IntersectionObserver' in window && counters.length) {
-    const counterObserver = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          animateCounter(e.target);
-          counterObserver.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    
-    counters.forEach(function(c) { counterObserver.observe(c); });
-  } else {
-    counters.forEach(animateCounter);
-  }
+
 
   /* --- 4. MODAL DATA --- */
   const modalData = {

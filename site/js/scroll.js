@@ -1,6 +1,12 @@
 /* scroll.js */
 (function(){
   'use strict';
+  
+  /* === Dynamic Year in Footer === */
+  var yrSpan = document.getElementById('yr');
+  if(yrSpan){ yrSpan.textContent = new Date().getFullYear(); }
+  
+  /* === Reveal on Scroll === */
   var els = document.querySelectorAll('.reveal');
   if(!els.length) return;
   
@@ -30,6 +36,7 @@
     els.forEach(function(el){ el.classList.add('revealed'); });
   }
   
+  /* === Smooth Scroll for Anchors === */
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
     a.addEventListener('click', function(e){
       var id = a.getAttribute('href');
