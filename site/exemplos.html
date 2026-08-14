@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <script>
+    (function(){var t=localStorage.getItem('ch-theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
+  </script>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exemplos — Code House</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/examples.css">
+  <meta name="theme-color" content="#050505">
+</head>
+<body>
+  <div class="bg-gradient"></div>
+  
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">CODE<span>.</span>HOUSE</a>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="exemplos.html" class="nav-link active">Exemplos</a>
+        <a href="index.html#contato" class="nav-link">Contato</a>
+        <button id="themeBtn" class="theme-btn" aria-label="Tema">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+      <button id="hamburger" class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="ex-page">
+    <div class="wrap">
+      <p class="eyebrow reveal">// portfólio</p>
+      <h1 class="page-title reveal" data-delay="100">O que construímos</h1>
+      <p class="page-sub reveal" data-delay="200">Sistemas reais que entregam resultados. Clique em qualquer exemplo para ver mais detalhes.</p>
+
+      <!-- Tabs -->
+      <div class="tabbar reveal" data-delay="300">
+        <button class="tbtn active" data-t="crm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          CRM
+        </button>
+        <button class="tbtn" data-t="erp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+          ERP
+        </button>
+        <button class="tbtn" data-t="shop">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          E-Shop
+        </button>
+        <button class="tbtn" data-t="site">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+          Site
+        </button>
+      </div>
+
+      <!-- CRM -->
+      <div class="tpanel active" id="tp-crm">
+        <div class="ex-grid">
+          <div class="ex-card reveal" onclick="openModal('crm-funil')">
+            <div class="ex-mock funil-mock">
+              <div class="wm"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="wt">Funil</span></div>
+              <div class="wb">
+                <div class="wside"><div class="si active">Leads</div><div class="si">Perdidos</div></div>
+                <div class="wmain">
+                  <div class="wstats"><div class="ws"><span>Total</span><strong>84</strong></div><div class="ws"><span>Novos</span><strong>12</strong></div></div>
+                  <div class="wtb"><div class="wtr th"><div>Empresa</div><div>Valor</div></div><div class="wtr"><div>Alfa</div><div><span class="tg bl">R$45k</span></div></div><div class="wtr"><div>Beta</div><div><span class="tg gr">R$28k</span></div></div></div>
+                </div>
+              </div>
+            </div>
+            <h3>Funil de Vendas</h3>
+            <p>Pipeline visual com leads, propostas e fechamentos.</p>
+          </div>
+          <div class="ex-card reveal" data-delay="100" onclick="openModal('crm-pipeline')">
+            <div class="ex-mock pipe-mock">
+              <div class="wm"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="wt">Pipeline</span></div>
+              <div class="wb">
+                <div class="wstats"><div class="ws"><span>Leads</span><strong>156</strong></div><div class="ws"><span>Ativos</span><strong>92</strong></div></div>
+                <div class="chart-bars"><div class="bar" style="height:40%"></div><div class="bar" style="height:65%"></div><div class="bar" style="height:30%"></div><div class="bar act" style="height:85%"></div><div class="bar" style="height:55%"></div></div>
+              </div>
+            </div>
+            <h3>Pipeline de Clientes</h3>
+            <p>Visão geral do relacionamento e oportunidades.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ERP -->
+      <div class="tpanel" id="tp-erp">
+        <div class="ex-grid">
+          <div class="ex-card reveal" onclick="openModal('erp-dash')">
+            <div class="ex-mock dash-mock">
+              <div class="wm"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="wt">Dashboard</span></div>
+              <div class="wb">
+                <div class="wstats"><div class="ws"><span>Receita</span><strong>128k</strong></div><div class="ws"><span>Custos</span><strong>47k</strong></div><div class="ws"><span>Caixa</span><strong>81k</strong></div></div>
+                <div class="chart-bars"><div class="bar" style="height:30%"></div><div class="bar" style="height:50%"></div><div class="bar" style="height:40%"></div><div class="bar act" style="height:80%"></div><div class="bar" style="height:60%"></div></div>
+              </div>
+            </div>
+            <h3>Dashboard Financeiro</h3>
+            <p>Receita, custos e fluxo de caixa em tempo real.</p>
+          </div>
+          <div class="ex-card reveal" data-delay="100" onclick="openModal('erp-estoque')">
+            <div class="ex-mock estock-mock">
+              <div class="wm"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="wt">Estoque</span></div>
+              <div class="wb">
+                <div class="wtb"><div class="wtr th"><div>Item</div><div>Qtd</div></div><div class="wtr"><div>Produto A</div><div><span class="tg gr">142</span></div></div><div class="wtr"><div>Produto B</div><div><span class="tg bl">8</span></div></div></div>
+              </div>
+            </div>
+            <h3>Controle de Estoque</h3>
+            <p>Gestão de produtos com alertas de estoque baixo.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- E-SHOP -->
+      <div class="tpanel" id="tp-shop">
+        <div class="ex-grid">
+          <div class="ex-card reveal" onclick="openModal('shop-catalogo')">
+            <div class="ex-mock catalog-mock">
+              <div class="wm"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="wt">Catálogo</span></div>
+              <div class="wb"><div class="prod-grid">
+                <div class="prod"><div class="pi"></div><div class="pn"></div><div class="pp"></div></div>
+                <div class="prod"><div class="pi"></div><div class="pn"></div><div class="pp"></div></div>
+                <div class="prod"><div class="pi"></div><div class="pn"></div><div class="pp"></div></div>
+                <div class="prod"><div class="pi"></div><div class="pn"></div><div class="pp"></div></div>
+                <div class="prod"><div class="pi"></div><div class="pn"></div><div class="pp"></div></div>
+                <div class="prod"><div class="pi"></div><div class="pn"></div><div class="pp"></div></div>
+              </div></div>
+            </div>
+            <h3>Catálogo de Produtos</h3>
+            <p>Grid de produtos com imagens, nome e preço.</p>
+          </div>
+          <div class="ex-card reveal" data-delay="100" onclick="openModal('shop-cart')">
+            <div class="ex-mock cart-mock">
+              <div class="wm"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="wt">Carrinho</span></div>
+              <div class="wb">
+                <div class="wtb"><div class="wtr th"><div>Item</div><div>Total</div></div><div class="wtr"><div>Produto X</div><div><span class="tg gr">R$240</span></div></div><div class="wtr"><div>Produto Y</div><div><span class="tg gr">R$85</span></div></div></div>
+              </div>
+            </div>
+            <h3>Carrinho de Compras</h3>
+            <p>Checkout com resumo e cálculo de total.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SITE -->
+      <div class="tpanel" id="tp-site">
+        <div class="ex-grid">
+          <div class="ex-card reveal" onclick="openModal('site-landing')">
+            <div class="ex-mock landing-mock">
+              <div class="wm"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="wt">index.html</span></div>
+              <div class="wb"><div class="landing-inner">
+                <div class="lnav"><div class="logo-bar"></div><div class="nav-dots"><span></span><span></span><span></span></div></div>
+                <div class="lhero"><div class="badge"></div><div class="ltitle"></div><div class="lsub"></div><div class="lbtns"><div class="lbtn-p"></div><div class="lbtn-o"></div></div></div>
+                <div class="lgrid"><div class="lcard"></div><div class="lcard"></div><div class="lcard"></div></div>
+              </div></div>
+            </div>
+            <h3>Landing Page Premium</h3>
+            <p>Página de conversão com hero, CTAs e grid de features.</p>
+          </div>
+          <div class="ex-card reveal" data-delay="100" onclick="openModal('site-institucional')">
+            <div class="ex-mock institucional-mock">
+              <div class="wm"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="wt">Empresa</span></div>
+              <div class="wb"><div class="inst-inner">
+                <div class="inst-top"><div class="inst-logo"></div><div class="inst-links"><span></span><span></span><span></span><span></span></div></div>
+                <div class="inst-banner"><div class="inst-bt"></div><div class="inst-bsub"></div><div class="inst-bbtn"></div></div>
+                <div class="inst-grid"><div class="inst-col"><div class="inst-h"></div><div class="inst-p"></div><div class="inst-p"></div></div><div class="inst-col"><div class="inst-h"></div><div class="inst-p"></div><div class="inst-p"></div></div></div>
+              </div></div>
+            </div>
+            <h3>Página Institucional</h3>
+            <p>Site corporativo com sobre, serviços e contato.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <div>© <span id="yr"></span> Code House</div>
+      <div class="foot-links"><a href="index.html">Início</a><a href="exemplos.html">Exemplos</a><a href="index.html#contato">Contato</a></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/55559991441700" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </a>
+
+  <!-- Modal -->
+  <div id="modal-overlay" class="modal-overlay">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/examples.js"></script>
+  <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>

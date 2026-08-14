@@ -2,8 +2,7 @@
 <html lang="pt-BR">
 <head>
   <script>
-    (function(){var t=localStorage.getItem('ch-theme');
-    if(t)document.documentElement.setAttribute('data-theme',t);})();
+    (function(){var t=localStorage.getItem('ch-theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
   </script>
   <meta charset="utf-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,44 +10,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Code House — Soluções Personalizadas em TI</title>
-  <meta name="description" content="Soluções de TI personalizadas para pequenas empresas: CRM, ERP, e-shop e sites. Tudo adaptado ao seu fluxo real.">
-  <meta property="og:title" content="Code House — Soluções Personalizadas em TI">
-  <meta property="og:description" content="Soluções de TI personalizadas para pequenas empresas: CRM, ERP, e-shop e sites.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Code House — Soluções Personalizadas em TI">
-  <meta name="twitter:description" content="Soluções de TI personalizadas para pequenas empresas: CRM, ERP, e-shop e sites.">
-  <meta name="twitter:image" content="/og-image.png">
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"LocalBusiness","name":"Code House","description":"Soluções de TI personalizadas para pequenas empresas","url":"/","serviceType":["CRM","ERP","E-commerce","Site Institucional"]}
-  </script>
-  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Soluções de TI personalizadas para pequenas empresas: CRM, ERP, e-shop e sites.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23050505'/%3E%3Crect x='3' y='3' width='26' height='26' rx='2' fill='%23FF2E63'/%3E%3Ctext x='50%25' y='55%25' font-family='monospace' font-weight='bold' font-size='18' fill='%23050505' text-anchor='middle' dominant-baseline='middle'%3ECH%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="apple-touch-icon" href="/og-image.png">
+  <meta name="theme-color" content="#050505">
 </head>
 <body>
   <div class="bg-gradient"></div>
-  <div class="noise"></div>
   
-  <nav class="nav-global">
-    <div class="nav-container">
-      <a href="#" class="logo">CODE<span>.</span>HOUSE</a>
-      <div class="nav-links" id="nav-links">
-        <a href="#servicos" class="nav-link">Serviços</a>
-        <a href="#processo" class="nav-link">Processo</a>
-        <a href="#exemplos" class="nav-link">Exemplos</a>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">CODE<span>.</span>HOUSE</a>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link active">Início</a>
+        <a href="exemplos.html" class="nav-link">Exemplos</a>
         <a href="#contato" class="nav-link">Contato</a>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
-          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <button id="themeBtn" class="theme-btn" aria-label="Tema">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <a href="#contato" class="btn btn-solid nav-cta">Falar com a gente</a>
       </div>
       <button id="hamburger" class="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -58,46 +43,39 @@
 
   <main>
     <!-- HERO -->
-    <section id="hero" class="hero">
-      <div class="hero-content">
-        <p class="eyebrow reveal" data-delay="0">Soluções em TI</p>
-        <h1 class="reveal" data-delay="100">Sistemas feitos para o <span class="gradient-text">seu modo de operar</span>.</h1>
-        <p class="subtitle reveal" data-delay="200">A Code House desenvolve CRM, ERP, lojas virtuais e sites institucionais. Criamos soluções sob medida, totalmente adaptadas ao fluxo real da sua empresa, sem impor templates genéricos ou sistemas engessados.</p>
-        <div class="hero-actions reveal" data-delay="300">
-          <a href="#contato" class="btn btn-solid btn-large">Falar com a gente</a>
-          <a href="#exemplos" class="btn btn-outline btn-large">Ver exemplos</a>
-        </div>
-      </div>
-      <div class="hero-mockup reveal" data-delay="400" aria-hidden="true">
-        <div class="app-window">
-          <div class="app-header">
-            <div class="app-dots">
-              <span style="background:#ff5f56"></span>
-              <span style="background:#ffbd2e"></span>
-              <span style="background:#27c93f"></span>
-            </div>
-            <div class="app-title">CRM — Clientes</div>
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <p class="eyebrow reveal">Soluções em TI</p>
+          <h1 class="reveal" data-delay="100">Sistemas feitos para o <span class="grad">seu modo de operar</span>.</h1>
+          <p class="lead reveal" data-delay="200">A Code House desenvolve CRM, ERP, lojas virtuais e sites institucionais. Soluções sob medida adaptadas ao fluxo real da sua empresa.</p>
+          <div class="hero-btns reveal" data-delay="300">
+            <a href="#contato" class="btn btn-primary">Falar com a gente</a>
+            <a href="exemplos.html" class="btn btn-ghost">Ver exemplos</a>
           </div>
-          <div class="app-body">
-            <div class="app-sidebar">
-              <div class="app-nav-item active">Clientes</div>
-              <div class="app-nav-item">Negócios</div>
-              <div class="app-nav-item">Tarefas</div>
-              <div class="app-nav-item">Relatórios</div>
-              <div class="app-nav-item">Configurações</div>
-            </div>
-            <div class="app-content">
-              <div class="app-stats">
-                <div class="app-stat"><span>Total</span><strong>156</strong></div>
-                <div class="app-stat"><span>Novos</span><strong>23</strong></div>
-                <div class="app-stat"><span>Taxa</span><strong>94%</strong></div>
-              </div>
-              <div class="app-table">
-                <div class="app-tr app-th"><div>Nome</div><div>Empresa</div><div>Status</div></div>
-                <div class="app-tr"><div>João Silva</div><div>Tech Ltda</div><div><span class="app-tag tag-green">Ativo</span></div></div>
-                <div class="app-tr"><div>Maria Souza</div><div>Design CO</div><div><span class="app-tag tag-blue">Proposta</span></div></div>
-                <div class="app-tr"><div>Carlos Maia</div><div>Dev House</div><div><span class="app-tag tag-green">Ativo</span></div></div>
-                <div class="app-tr"><div>Ana Costa</div><div>Cloud Inc</div><div><span class="app-tag tag-blue">Proposta</span></div></div>
+        </div>
+        <div class="hero-right reveal" data-delay="400">
+          <div class="mock-float">
+            <div class="window">
+              <div class="window-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="win-title">CRM — Clientes</span></div>
+              <div class="window-body">
+                <div class="sidebar">
+                  <div class="sb-item active">Clientes</div>
+                  <div class="sb-item">Negócios</div>
+                  <div class="sb-item">Tarefas</div>
+                </div>
+                <div class="main-area">
+                  <div class="stats-row">
+                    <div class="stat-box"><span>Total</span><strong>156</strong></div>
+                    <div class="stat-box"><span>Novos</span><strong>23</strong></div>
+                    <div class="stat-box"><span>Taxa</span><strong>94%</strong></div>
+                  </div>
+                  <div class="table">
+                    <div class="tr th"><div>Nome</div><div>Status</div></div>
+                    <div class="tr"><div>João Silva</div><div><span class="tag green">Ativo</span></div></div>
+                    <div class="tr"><div>Maria Souza</div><div><span class="tag blue">Proposta</span></div></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -106,488 +84,91 @@
     </section>
 
     <!-- SERVIÇOS -->
-    <section id="servicos" class="section">
-      <div class="container">
+    <section id="servicos" class="sec">
+      <div class="wrap">
         <p class="eyebrow reveal">// serviços</p>
-        <h2 class="section-title reveal">O que a Code House entrega</h2>
-        <div class="services-grid reveal">
-          <div class="service-card" style="--i:0">
-            <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-            <h3 class="service-name">CRM</h3>
-            <p class="service-desc">Gestão de clientes, funil de vendas e histórico de relacionamento.</p>
-          </div>
-          <div class="service-card" style="--i:1">
-            <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-            <h3 class="service-name">ERP</h3>
-            <p class="service-desc">Controle integrado de estoque, financeiro, compras e operações.</p>
-          </div>
-          <div class="service-card" style="--i:2">
-            <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-            <h3 class="service-name">Site Institucional</h3>
-            <p class="service-desc">Presença digital com identidade visual e conteúdo da sua empresa.</p>
-          </div>
-          <div class="service-card" style="--i:3">
-            <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-            <h3 class="service-name">E-Shop</h3>
-            <p class="service-desc">Loja virtual com catálogo, pagamentos e gestão de pedidos.</p>
-          </div>
-          <div class="service-card" style="--i:4">
-            <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-            <h3 class="service-name">Sob Medida</h3>
-            <p class="service-desc">Qualquer solução de TI adaptada ao seu processo, do zero.</p>
-          </div>
+        <h2 class="reveal">O que entregamos</h2>
+        <div class="cards-5 reveal">
+          <div class="card"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h3>CRM</h3><p>Gestão de clientes, funil de vendas e histórico.</p></div>
+          <div class="card"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg></div><h3>ERP</h3><p>Controle de estoque, financeiro e operações.</p></div>
+          <div class="card"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg></div><h3>Site</h3><p>Presença digital com identidade visual.</p></div>
+          <div class="card"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div><h3>E-Shop</h3><p>Loja virtual com catálogo e pagamentos.</p></div>
+          <div class="card"><div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h3>Sob Medida</h3><p>Qualquer sistema adaptado ao seu processo.</p></div>
         </div>
       </div>
     </section>
 
     <!-- PROCESSO -->
-    <section id="processo" class="section">
-      <div class="container">
+    <section id="processo" class="sec alt">
+      <div class="wrap">
         <p class="eyebrow reveal">// como funciona</p>
-        <h2 class="section-title reveal">Do problema à solução em três etapas</h2>
-        <div class="process-grid reveal">
-          <div class="process-card" style="--i:0">
-            <div class="step-num">01</div>
-            <h3 class="process-name">Entendemos seu negócio</h3>
-            <p class="process-desc">Conversamos sobre o seu fluxo diário, gargalos e o que você realmente precisa automatizar ou organizar.</p>
-          </div>
-          <div class="process-card" style="--i:1">
-            <div class="step-num">02</div>
-            <h3 class="process-name">Construímos a solução</h3>
-            <p class="process-desc">Desenvolvemos o sistema sob medida, usando a sua linguagem e regras de negócio, sem forçar processos engessados.</p>
-          </div>
-          <div class="process-card" style="--i:2">
-            <div class="step-num">03</div>
-            <h3 class="process-name">Acompanhamos a evolução</h3>
-            <p class="process-desc">O negócio muda, o sistema acompanha. Oferecemos suporte e melhorias contínuas pós-lançamento.</p>
-          </div>
+        <h2 class="reveal">Três etapas simples</h2>
+        <div class="steps-3 reveal">
+          <div class="step"><div class="num">01</div><h3>Diagnóstico</h3><p>Entendemos seu fluxo, gargalos e necessidades reais.</p></div>
+          <div class="step"><div class="num">02</div><h3>Construção</h3><p>Desenvolvemos sob medida com sua linguagem e regras.</p></div>
+          <div class="step"><div class="num">03</div><h3>Evolução</h3><p>O sistema acompanha o crescimento do seu negócio.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- CREDIBILIDADE -->
-    <section class="section credibility">
-      <div class="container">
-        <div class="credibility-grid reveal">
-          <div class="credibility-item">
-            <svg class="credibility-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            <h3 class="credibility-title">Sem templates genéricos</h3>
-            <p class="credibility-desc">Cada sistema é único e construído para a sua realidade.</p>
-          </div>
-          <div class="credibility-item">
-            <svg class="credibility-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-            <h3 class="credibility-title">Adaptado ao seu fluxo</h3>
-            <p class="credibility-desc">O sistema se molda à empresa, não o contrário.</p>
-          </div>
-          <div class="credibility-item">
-            <svg class="credibility-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
-            <h3 class="credibility-title">Acompanhamento contínuo</h3>
-            <p class="credibility-desc">Estamos junto com você após o lançamento do sistema.</p>
-          </div>
+    <!-- CRED -->
+    <section class="sec">
+      <div class="wrap">
+        <div class="cred-grid reveal">
+          <div class="cred-item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg><h4>Sem templates genéricos</h4><p>Cada sistema é único.</p></div>
+          <div class="cred-item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><h4>Adaptado ao seu fluxo</h4><p>O sistema se molda à empresa.</p></div>
+          <div class="cred-item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><h4>Suporte contínuo</h4><p>Estamos junto pós-lançamento.</p></div>
         </div>
-      </div>
-    </section>
-
-    <!-- EXEMPLOS COM TABS -->
-    <section id="exemplos" class="section bg-surface">
-      <div class="container">
-        <p class="eyebrow reveal">// exemplos práticos</p>
-        <h2 class="section-title reveal">O que construímos</h2>
-        
-        <div class="tabs-nav reveal">
-          <button class="tab-btn active" data-tab="crm">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
-            CRM
-          </button>
-          <button class="tab-btn" data-tab="erp">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line></svg>
-            ERP
-          </button>
-          <button class="tab-btn" data-tab="eshop">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-            E-Shop
-          </button>
-          <button class="tab-btn" data-tab="site">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line></svg>
-            Site
-          </button>
-        </div>
-
-        <!-- CRM -->
-        <div id="tab-crm" class="tab-panel active reveal">
-          <div class="examples-grid">
-            <div class="example-card">
-              <h3 class="example-title">Funil de Vendas</h3>
-              <div class="app-window mockup-small">
-                <div class="app-header">
-                  <div class="app-dots"><span style="background:#ff5f56"></span><span style="background:#ffbd2e"></span><span style="background:#27c93f"></span></div>
-                  <div class="app-title">Funil</div>
-                </div>
-                <div class="app-body">
-                  <div class="app-content p-small">
-                    <div class="app-table">
-                      <div class="app-tr app-th"><div>Lead</div><div>Valor</div><div>Status</div></div>
-                      <div class="app-tr"><div>Empresa Alfa</div><div>R$ 45k</div><div><span class="app-tag tag-blue">Proposta</span></div></div>
-                      <div class="app-tr"><div>Empresa Beta</div><div>R$ 28k</div><div><span class="app-tag tag-green">Fechado</span></div></div>
-                      <div class="app-tr"><div>Empresa Gama</div><div>R$ 62k</div><div><span class="app-tag tag-blue">Proposta</span></div></div>
-                      <div class="app-tr"><div>Empresa Delta</div><div>R$ 33k</div><div><span class="app-tag tag-green">Fechado</span></div></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="example-card">
-              <h3 class="example-title">Pipeline de Clientes</h3>
-              <div class="app-window mockup-small">
-                <div class="app-header">
-                  <div class="app-dots"><span style="background:#ff5f56"></span><span style="background:#ffbd2e"></span><span style="background:#27c93f"></span></div>
-                  <div class="app-title">Pipeline</div>
-                </div>
-                <div class="app-body">
-                  <div class="app-content p-small">
-                    <div class="app-stats mb-small">
-                      <div class="app-stat"><span>Leads</span><strong>84</strong></div>
-                      <div class="app-stat"><span>Ativos</span><strong>52</strong></div>
-                    </div>
-                    <div class="mockup-chart">
-                      <div class="bar" style="height:40%"></div>
-                      <div class="bar" style="height:65%"></div>
-                      <div class="bar" style="height:30%"></div>
-                      <div class="bar" style="height:85%;background:var(--cloud)"></div>
-                      <div class="bar" style="height:55%"></div>
-                      <div class="bar" style="height:75%"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ERP -->
-        <div id="tab-erp" class="tab-panel reveal">
-          <div class="examples-grid">
-            <div class="example-card">
-              <h3 class="example-title">Dashboard Financeiro</h3>
-              <div class="app-window mockup-small">
-                <div class="app-header">
-                  <div class="app-dots"><span style="background:#ff5f56"></span><span style="background:#ffbd2e"></span><span style="background:#27c93f"></span></div>
-                  <div class="app-title">Dashboard</div>
-                </div>
-                <div class="app-body">
-                  <div class="app-content p-small">
-                    <div class="app-stats mb-small">
-                      <div class="app-stat"><span>Receita</span><strong>R$ 128k</strong></div>
-                      <div class="app-stat"><span>Custos</span><strong>R$ 47k</strong></div>
-                      <div class="app-stat"><span>Caixa</span><strong>R$ 81k</strong></div>
-                    </div>
-                    <div class="mockup-chart">
-                      <div class="bar" style="height:30%"></div>
-                      <div class="bar" style="height:50%"></div>
-                      <div class="bar" style="height:40%"></div>
-                      <div class="bar" style="height:80%;background:var(--cloud)"></div>
-                      <div class="bar" style="height:60%"></div>
-                      <div class="bar" style="height:90%"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="example-card">
-              <h3 class="example-title">Controle de Estoque</h3>
-              <div class="app-window mockup-small">
-                <div class="app-header">
-                  <div class="app-dots"><span style="background:#ff5f56"></span><span style="background:#ffbd2e"></span><span style="background:#27c93f"></span></div>
-                  <div class="app-title">Estoque</div>
-                </div>
-                <div class="app-body">
-                  <div class="app-content p-small">
-                    <div class="app-table">
-                      <div class="app-tr app-th"><div>Item</div><div>Qtd</div><div>Status</div></div>
-                      <div class="app-tr"><div>Produto A</div><div>142</div><div><span class="app-tag tag-green">OK</span></div></div>
-                      <div class="app-tr"><div>Produto B</div><div>8</div><div><span class="app-tag tag-blue">Baixo</span></div></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- E-SHOP -->
-        <div id="tab-eshop" class="tab-panel reveal">
-          <div class="examples-grid">
-            <div class="example-card">
-              <h3 class="example-title">Catálogo de Produtos</h3>
-              <div class="app-window mockup-small">
-                <div class="app-header">
-                  <div class="app-dots"><span style="background:#ff5f56"></span><span style="background:#ffbd2e"></span><span style="background:#27c93f"></span></div>
-                  <div class="app-title">Catálogo</div>
-                </div>
-                <div class="app-body">
-                  <div class="app-content p-small">
-                    <div class="mockup-grid-3x2">
-                      <div class="mockup-product"><div class="product-img"></div><div class="product-price">R$ 120</div></div>
-                      <div class="mockup-product"><div class="product-img"></div><div class="product-price">R$ 85</div></div>
-                      <div class="mockup-product"><div class="product-img"></div><div class="product-price">R$ 200</div></div>
-                      <div class="mockup-product"><div class="product-img"></div><div class="product-price">R$ 50</div></div>
-                      <div class="mockup-product"><div class="product-img"></div><div class="product-price">R$ 110</div></div>
-                      <div class="mockup-product"><div class="product-img"></div><div class="product-price">R$ 90</div></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="example-card">
-              <h3 class="example-title">Carrinho de Compras</h3>
-              <div class="app-window mockup-small">
-                <div class="app-header">
-                  <div class="app-dots"><span style="background:#ff5f56"></span><span style="background:#ffbd2e"></span><span style="background:#27c93f"></span></div>
-                  <div class="app-title">Carrinho</div>
-                </div>
-                <div class="app-body">
-                  <div class="app-content p-small">
-                    <div class="app-table">
-                      <div class="app-tr app-th"><div>Item</div><div>Qtd</div><div>Total</div></div>
-                      <div class="app-tr"><div>Produto X</div><div>2</div><div>R$ 240</div></div>
-                      <div class="app-tr"><div>Produto Y</div><div>1</div><div>R$ 85</div></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- SITE -->
-        <div id="tab-site" class="tab-panel reveal">
-          <div class="examples-grid">
-            <div class="example-card">
-              <h3 class="example-title">Landing Page Premium</h3>
-              <div class="app-window mockup-small">
-                <div class="app-header">
-                  <div class="app-dots"><span style="background:#ff5f56"></span><span style="background:#ffbd2e"></span><span style="background:#27c93f"></span></div>
-                  <div class="app-title">index.html</div>
-                </div>
-                <div class="app-body">
-                  <div class="mockup-site-landing">
-                    <div class="landing-nav">
-                      <div class="nav-logo"></div>
-                      <div class="nav-links"><div class="nav-link"></div><div class="nav-link"></div><div class="nav-link"></div></div>
-                    </div>
-                    <div class="landing-hero">
-                      <div class="hero-badge"></div>
-                      <div class="hero-title-lg"></div>
-                      <div class="hero-subtitle"></div>
-                      <div class="hero-btns"><div class="hero-btn-primary"></div><div class="hero-btn-outline"></div></div>
-                    </div>
-                    <div class="landing-grid">
-                      <div class="landing-card"></div>
-                      <div class="landing-card"></div>
-                      <div class="landing-card"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="example-card">
-              <h3 class="example-title">E-commerce Completo</h3>
-              <div class="app-window mockup-small">
-                <div class="app-header">
-                  <div class="app-dots"><span style="background:#ff5f56"></span><span style="background:#ffbd2e"></span><span style="background:#27c93f"></span></div>
-                  <div class="app-title">loja.com</div>
-                </div>
-                <div class="app-body">
-                  <div class="mockup-site-shop">
-                    <div class="shop-nav">
-                      <div class="shop-logo"></div>
-                      <div class="shop-search"></div>
-                      <div class="shop-cart-icon"></div>
-                    </div>
-                    <div class="shop-hero-banner">
-                      <div class="banner-text"></div>
-                      <div class="banner-btn"></div>
-                    </div>
-                    <div class="shop-grid-4">
-                      <div class="shop-item"><div class="item-img"></div><div class="item-name"></div><div class="item-price"></div></div>
-                      <div class="shop-item"><div class="item-img"></div><div class="item-name"></div><div class="item-price"></div></div>
-                      <div class="shop-item"><div class="item-img"></div><div class="item-name"></div><div class="item-price"></div></div>
-                      <div class="shop-item"><div class="item-img"></div><div class="item-name"></div><div class="item-price"></div></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
 
     <!-- STACK -->
-    <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-      <div class="container">
-        <p class="eyebrow reveal">Tecnologias</p>
-        <h2 class="section-title reveal" style="margin-bottom:0.5rem;">Stack real, sem enrolação.</h2>
-        <p class="reveal" style="color:var(--ink-muted);max-width:46ch;margin-bottom:2.5rem;">Não embaralhamos tecnologias. Estas são as que usamos nos projetos.</p>
-        <div class="reveal stack-grid">
-          <div class="stack-card">
-            <svg class="stack-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cloud)" stroke-width="1.5"><path d="M4 17.5A2.5 2.5 0 1 1 6.5 15 2.5 2.5 0 0 1 4 17.5Z"/></svg>
-            <div class="stack-name">Node.js</div>
-            <div class="stack-role">Backend, APIs</div>
-          </div>
-          <div class="stack-card">
-            <svg class="stack-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cloud)" stroke-width="1.5"><path d="M12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm-.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-            <div class="stack-name">Python</div>
-            <div class="stack-role">Automação, dados</div>
-          </div>
-          <div class="stack-card">
-            <svg class="stack-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cloud)" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
-            <div class="stack-name">React</div>
-            <div class="stack-role">Frontend, interfaces</div>
-          </div>
-          <div class="stack-card">
-            <svg class="stack-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cloud)" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            <div class="stack-name">TypeScript</div>
-            <div class="stack-role">Tipagem forte</div>
-          </div>
-          <div class="stack-card">
-            <svg class="stack-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cloud)" stroke-width="1.5"><path d="M3 3h8v8H3V3zm0 10h8v8H3v-8zm10-10h8v8h-8V3zm0 10h8v8h-8v-8z"/></svg>
-            <div class="stack-name">PostgreSQL</div>
-            <div class="stack-role">Banco relacional</div>
-          </div>
-          <div class="stack-card">
-            <svg class="stack-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cloud)" stroke-width="1.5"><path d="M14.5 2.5c0-.83-.67-1.5-1.5-1.5S11.5 1.67 11.5 2.5s.67 1.5 1.5 1.5S14.5 3.33 14.5 2.5zm-6 0c0-.83-.67-1.5-1.5-1.5S3.5 1.67 3.5 2.5 4.17 4 5 4s1.5-.67 1.5-1.5zm12.5 6c0-1.38-1.12-2.5-2.5-2.5s-2.5 1.12-2.5 2.5 1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5z"/></svg>
-            <div class="stack-name">Docker</div>
-            <div class="stack-role">Deploy, containers</div>
-          </div>
-          <div class="stack-card">
-            <svg class="stack-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cloud)" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            <div class="stack-name">AWS</div>
-            <div class="stack-role">Cloud, escalável</div>
-          </div>
+    <section class="sec alt">
+      <div class="wrap">
+        <p class="eyebrow reveal">// stack</p>
+        <h2 class="reveal">Tecnologias que usamos</h2>
+        <div class="stack-grid reveal">
+          <div class="stack-chip"><span class="chip-icon">⬢</span>Node.js</div>
+          <div class="stack-chip"><span class="chip-icon">🐍</span>Python</div>
+          <div class="stack-chip"><span class="chip-icon">⚛</span>React</div>
+          <div class="stack-chip"><span class="chip-icon">𝐓</span>TypeScript</div>
+          <div class="stack-chip"><span class="chip-icon">🐘</span>PostgreSQL</div>
+          <div class="stack-chip"><span class="chip-icon">🐳</span>Docker</div>
+          <div class="stack-chip"><span class="chip-icon">☁</span>AWS</div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="section" style="background:var(--surface);">
-      <div class="container">
-        <p class="eyebrow reveal">Perguntas frequentes</p>
-        <h2 class="section-title reveal" style="margin-bottom:2rem;">Tire suas dúvidas antes de começar.</h2>
-        <div class="reveal faq-list">
-          <div class="faq-item">
-            <button class="faq-q">
-              <span>Quanto tempo leva para entregar um sistema?</span>
-              <svg class="faq-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            </button>
-            <div class="faq-a">Depende da complexidade. Um CRM básico pode levar algumas semanas. Um ERP completo pode levar meses. No diagnóstico inicial, eu entrego uma estimativa com prazos para cada etapa — e você valida cada uma antes de avançar.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q">
-              <span>Posso mudar algo depois da entrega?</span>
-              <svg class="faq-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            </button>
-            <div class="faq-a">Sim. Você recebe o código-fonte completo, os acessos e a documentação. Não existe lock-in — o sistema é seu, e eu ajudo com ajustes quando precisar.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q">
-              <span>Como é o custo? É cobrado por projeto ou por hora?</span>
-              <svg class="faq-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            </button>
-            <div class="faq-a">O desenvolvimento é cobrado por projeto, com um valor definido no diagnóstico. O suporte após a entrega pode ser feito por hora ou por pacote — combina-se juntos. Sem surpresas na fatura.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q">
-              <span>Minha empresa é pequena. Vale a pena um sistema sob medida?</span>
-              <svg class="faq-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            </button>
-            <div class="faq-a">Faz sentido — especialmente se o seu processo é específico. Sistemas prontos forçam você a adaptar seu processo ao software. Com desenvolvimento sob medida, o sistema se adapta a você.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q">
-              <span>Como começa? Preciso ter tudo definido antes?</span>
-              <svg class="faq-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            </button>
-            <div class="faq-a">Não precisa ter tudo definido. Muitos clientes começam com "sabemos que tem um problema, mas não sabemos exatamente como resolver". Eu faço o diagnóstico junto — mapeamos o processo, identificamos oportunidades e definimos o que fazer primeiro. É gratuito e não te compromete a nada.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTATO -->
-    <section id="contato" class="section contato">
-      <div class="container">
-        <div class="contato-grid">
-          <div class="contato-copy reveal">
-            <p class="eyebrow">// vamos conversar</p>
-            <h2 class="section-title">Seu sistema ainda não existe. A gente constrói.</h2>
-            <p class="process-desc" style="margin-bottom:2rem;">Fale com a gente sobre a sua empresa e o que você precisa. Eu vou entender o seu fluxo e propor a solução ideal, sem compromisso.</p>
-            <p style="font-size:0.875rem;color:var(--ink-muted);margin-top:1rem;">ou escreve pra gente: <a href="mailto:codehouse42@gmail.com" style="color:var(--cloud);">codehouse42@gmail.com</a></p>
-            <a data-whatsapp class="btn btn-outline" style="border-color:#25D366;color:#25D366;margin-top:1.5rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:0.5rem;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-              Chamar no WhatsApp
-            </a>
-          </div>
-          <div class="contato-form-wrapper reveal">
-            <form id="contact-form" class="form-container" action="https://formspree.io/f/xaewbejg" method="POST" novalidate>
-              <div class="form-group">
-                <label for="nome">NOME *</label>
-                <input type="text" id="nome" name="nome" required aria-describedby="nome-error">
-                <div id="nome-error" class="error-msg" aria-live="polite"></div>
-              </div>
-              <div class="form-group">
-                <label for="empresa">EMPRESA (OPCIONAL)</label>
-                <input type="text" id="empresa" name="empresa">
-              </div>
-              <div class="form-group">
-                <label for="necessidade">O QUE VOCÊ PRECISA? *</label>
-                <textarea id="necessidade" name="necessidade" rows="4" required aria-describedby="necessidade-error"></textarea>
-                <div id="necessidade-error" class="error-msg" aria-live="polite"></div>
-              </div>
-              <button type="submit" class="btn btn-solid" id="submit-btn" style="width:100%;">Enviar mensagem</button>
-            </form>
-            <div id="success-msg" class="success-msg" aria-hidden="true" style="display:none;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--cloud)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-              <h3>Mensagem enviada!</h3>
-              <p>Obrigado, <span id="success-name"></span>. Retornaremos o seu contato em breve.</p>
-            </div>
-          </div>
+    <!-- CTA -->
+    <section id="contato" class="sec cta-sec">
+      <div class="wrap">
+        <h2 class="reveal">Seu sistema ainda não existe. A gente constrói.</h2>
+        <p class="reveal" data-delay="100">Fale com a gente sem compromisso.</p>
+        <div class="cta-btns reveal" data-delay="200">
+          <a href="https://wa.me/55559991441700" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            WhatsApp
+          </a>
+          <a href="mailto:codehouse42@gmail.com" class="btn btn-ghost btn-lg">codehouse42@gmail.com</a>
         </div>
       </div>
     </section>
   </main>
 
-  <a data-whatsapp class="whatsapp-float" aria-label="Orçamento no WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-    <span>Orçamento</span>
-  </a>
-
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-brand">
-        <a href="#" class="logo">CODE<span>.</span>HOUSE</a>
-        <p class="footer-desc">Soluções em TI personalizadas para o seu fluxo real.</p>
-        <a href="mailto:codehouse42@gmail.com" class="footer-link" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.5rem;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          codehouse42@gmail.com
-        </a>
-      </div>
-      <div class="footer-links">
-        <a href="#" class="footer-link">Home</a>
-        <a href="#servicos" class="footer-link">Serviços</a>
-        <a href="#processo" class="footer-link">Processo</a>
-        <a href="#exemplos" class="footer-link">Exemplos</a>
-        <a href="#contato" class="footer-link">Contato</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>CNPJ: 68.489.569/0001-04 &nbsp;|&nbsp; &copy; <span id="current-year"></span> Code House. Todos os direitos reservados.</p>
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <div>© <span id="yr"></span> Code House — CNPJ: 68.489.569/0001-04</div>
+      <div class="foot-links"><a href="index.html">Início</a><a href="exemplos.html">Exemplos</a><a href="#contato">Contato</a></div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/contact.js"></script>
+  <a href="https://wa.me/55559991441700" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </a>
+
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/scroll.js"></script>
+  <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 </body>
 </html>
