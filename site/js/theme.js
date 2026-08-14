@@ -1,14 +1,21 @@
 /* theme.js */
 (function(){
+  'use strict';
   var btn = document.getElementById('themeBtn');
-  var saved = localStorage.getItem('ch-theme');
-  var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-  var theme = saved || (prefersLight ? 'light' : 'dark');
-  document.documentElement.setAttribute('data-theme', theme);
-  if(btn) btn.addEventListener('click', function(){
-    var cur = document.documentElement.getAttribute('data-theme');
-    var next = cur === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('ch-theme', next);
-  });
+  
+  // Apenas dark mode (sem light)
+  function applyTheme() {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+  
+  applyTheme();
+  
+  // Toggle (para futuro light mode ou remover)
+  if(btn) {
+    btn.addEventListener('click', function() {
+      // Feedback visual apenas
+      btn.style.transform = 'scale(0.95)';
+      setTimeout(function(){ btn.style.transform = ''; }, 150);
+    });
+  }
 })();

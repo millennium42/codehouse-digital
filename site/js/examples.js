@@ -9,11 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
     tab.addEventListener('click', function() {
       var target = tab.getAttribute('data-tab');
       
-      // Update active tab
       tabs.forEach(function(t) { t.classList.remove('active'); });
       tab.classList.add('active');
       
-      // Update visible panel
       panels.forEach(function(p) {
         p.classList.toggle('active', p.getAttribute('id') === 'panel-' + target);
       });
@@ -21,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Modal functionality
-var modalContent = {
+// Modal content
+var modalData = {
   'crm-funil': {
     title: 'Funil de Vendas',
     body: '<p>Pipeline visual completo para gerenciar leads desde o primeiro contato até o fechamento da venda.</p>' +
@@ -56,7 +54,7 @@ var modalContent = {
   'site-landing': {
     title: 'Landing Page Premium',
     body: '<p>Página de alta conversão com design profissional e performance otimizada.</p>' +
-          '<ul><li>Hero section impactante</li><li>Animações suaves de scroll</li><li>Formulários otimizados</li><li>Tempo de carregamento < 2s</li><li>Mobile-first responsivo</li></ul>'
+          '<ul><li>Hero section impactante</li><li>Animações suaves de scroll</li><li>Formulários otimizados</li><li>Tempo de carregamento inferior a 2s</li><li>Mobile-first responsivo</li></ul>'
   },
   'site-institucional': {
     title: 'Página Institucional',
@@ -66,7 +64,7 @@ var modalContent = {
 };
 
 function openModal(id) {
-  var data = modalContent[id];
+  var data = modalData[id];
   if (!data) return;
   
   var overlay = document.getElementById('modal-overlay');
@@ -83,12 +81,12 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
-// Close modal on overlay click
+// Close on overlay click
 document.getElementById('modal-overlay').addEventListener('click', function(e) {
   if (e.target === this) closeModal();
 });
 
-// Close modal on Escape
+// Close on Escape
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeModal();
 });

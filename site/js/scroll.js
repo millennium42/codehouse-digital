@@ -1,6 +1,6 @@
 /* scroll.js */
 (function(){
-  // Reveal on scroll
+  'use strict';
   var els = document.querySelectorAll('.reveal');
   if(!els.length) return;
   
@@ -18,7 +18,6 @@
     
     els.forEach(function(el){ obs.observe(el); });
     
-    // Already visible on load
     setTimeout(function(){
       els.forEach(function(el){
         var r = el.getBoundingClientRect();
@@ -31,11 +30,10 @@
     els.forEach(function(el){ el.classList.add('revealed'); });
   }
   
-  // Smooth scroll anchors
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
     a.addEventListener('click', function(e){
       var id = a.getAttribute('href');
-      if(id.length > 1){
+      if(id && id.length > 1){
         var t = document.querySelector(id);
         if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
       }
