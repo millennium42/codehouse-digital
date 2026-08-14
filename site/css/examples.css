@@ -59,23 +59,30 @@
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--r-xl);
-  padding: 1.25rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   overflow: hidden;
+}
+
+.ex-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sh-glow);
+  border-color: var(--accent-1);
 }
 
 .ex-card .mock-crm,
 .ex-card .mock-erp,
 .ex-card .mock-shop,
 .ex-card .mock-site {
-  margin-bottom: 0.75rem;
   max-width: 100%;
   overflow: hidden;
 }
 
 .ex-card h3 {
-  padding: 1.25rem 1.25rem 0.5rem;
+  padding: 1rem 1.25rem 0.5rem;
   font-size: 1.1rem;
   color: var(--ink);
 }
@@ -84,12 +91,7 @@
   padding: 0 1.25rem 1.25rem;
   color: var(--ink-muted);
   font-size: 0.85rem;
-}
-
-.ex-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--sh-glow);
-  border-color: var(--accent-1);
+  flex: 1;
 }
 
 /* Mock CRM */
