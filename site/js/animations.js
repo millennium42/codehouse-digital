@@ -1,114 +1,109 @@
-/**
- * animations.js — Scroll reveal, counters, parallax effects
- * Code House — Interactive animations & transitions
- */
+/* animations.js — Scroll reveal, counters, parallax, tabs, FAQ */
 
 (function () {
   'use strict';
 
-  /* ─────────────────────────────────────────────
-     FADE IN (HERO MOCKUP)
-     ───────────────────────────────────────────── */
-  var fadeEls = document.querySelectorAll('.fade');
-  if (fadeEls.length && 'IntersectionObserver' in window) {
-    var fadeObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in');
-        }
-      });
-    }, { threshold: 0.1 });
-    fadeEls.forEach(function (el) { fadeObserver.observe(el); });
-  } else if (fadeEls.length) {
-    fadeEls.forEach(function (el) { el.classList.add('in'); });
-  }
-
-  /* ─────────────────────────────────────────────
-     SCROLL REVEAL (.reveal elements)
-     ───────────────────────────────────────────── */
+  /* ═══════════════════════════════════════════
+     SCROLL REVEAL
+     ═══════════════════════════════════════════ */
   var revealEls = document.querySelectorAll('.reveal');
   if (revealEls.length && 'IntersectionObserver' in window) {
-    // Add will-animate class first (hides elements)
     revealEls.forEach(function (el) { el.classList.add('will-animate'); });
-    
+
     var revealObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-    
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
     revealEls.forEach(function (el) { revealObserver.observe(el); });
-    
-    // Reveal elements already in viewport on load
+
     setTimeout(function () {
       revealEls.forEach(function (el) {
         var rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight) {
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
           el.classList.add('revealed');
         }
       });
-    }, 100);
+    }, 150);
+  } else if (revealEls.length) {
+    revealEls.forEach(function (el) { el.classList.add('revealed'); });
   }
 
-  /* ─────────────────────────────────────────────
-     ANIMATED COUNTERS (credibility section)
-     Uses data-counter="XX" and optional data-suffix=""
-     ───────────────────────────────────────────── */
-  var counters = document.querySelectorAll('[data-counter]');
-  if (counters.length) {
-    function animateCounter(el, target, suffix, duration) {
-      var start = 0;
-      var startTime = null;
-      var isFloat = target % 1 !== 0;
-
-      function step(timestamp) {
-        if (!startTime) startTime = timestamp;
-        var progress = Math.min((timestamp - startTime) / duration, 1);
-        var eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-        var current = start + (target - start) * eased;
-        var display = isFloat ? current.toFixed(1) : Math.floor(current);
-        el.textContent = display + (suffix || '');
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        } else {
-          el.textContent = target + (suffix || '');
-        }
-      }
-      requestAnimationFrame(step);
-    }
-
-    if ('IntersectionObserver' in window) {
-      var counterObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            var target = parseFloat(entry.target.dataset.counter);
-            var suffix = entry.target.dataset.suffix || '';
-            animateCounter(entry.target, target, suffix, 1500);
-            counterObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.5 });
-
-      counters.forEach(function (c) { counterObserver.observe(c); });
-    } else {
-      counters.forEach(function (c) {
-        animateCounter(c, parseFloat(c.dataset.counter), c.dataset.suffix || '', 1500);
-      });
-    }
-  }
-
-  /* ─────────────────────────────────────────────
+  /* ═══════════════════════════════════════════
      PARALLAX HERO
-     ───────────────────────────────────────────── */
+     ═══════════════════════════════════════════ */
   var heroMockup = document.querySelector('.hero-mockup');
   if (heroMockup && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    var heroRaf = null;
     document.addEventListener('mousemove', function (e) {
-      var x = (window.innerWidth / 2 - e.clientX) / 50;
-      var y = (window.innerHeight / 2 - e.clientY) / 50;
-      heroMockup.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+      if (heroRaf) return;
+      heroRaf = requestAnimationFrame(function () {
+        var x = (window.innerWidth / 2 - e.clientX) / 60;
+        var y = (window.innerHeight / 2 - e.clientY) / 60;
+        heroMockup.style.transform = 'perspective(1000px) rotateY(' + x + 'deg) rotateX(' + (-y) + 'deg)';
+        heroRaf = null;
+      });
     });
   }
+
+  /* ═══════════════════════════════════════════
+     TABS (EXAMPLES)
+     ═══════════════════════════════════════════ */
+  var tabBtns = document.querySelectorAll('.tab-btn');
+  var tabPanels = document.querySelectorAll('.tab-panel');
+  if (tabBtns.length && tabPanels.length) {
+    tabBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var target = btn.getAttribute('data-tab');
+
+        tabBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        tabPanels.forEach(function (panel) {
+          if (panel.getAttribute('id') === 'tab-' + target) {
+            panel.classList.add('active');
+          } else {
+            panel.classList.remove('active');
+          }
+        });
+      });
+    });
+  }
+
+  /* ═══════════════════════════════════════════
+     FAQ ACCORDION
+     ═══════════════════════════════════════════ */
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    var btn = item.querySelector('.faq-q');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var isOpen = item.classList.contains('open');
+
+      document.querySelectorAll('.faq-item.open').forEach(function (openItem) {
+        openItem.classList.remove('open');
+      });
+
+      if (!isOpen) {
+        item.classList.add('open');
+      }
+    });
+  });
+
+  /* ═══════════════════════════════════════════
+     SMOOTH SCROLL FOR ANCHOR LINKS
+     ═══════════════════════════════════════════ */
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
 
 })();
