@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Exemplos — Code House</title>
+  <title>Exemplos & Portifolio — Code House</title>
+  <meta name="description" content="Veja sistemas reais entregues: CRMs, ERPs, E-Commerces e landing pages. Interativo, transparente e sem enrolacao.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23FF6B35'/%3E%3Ctext x='50%25' y='58%25' font-family='monospace' font-weight='bold' font-size='16' fill='white' text-anchor='middle' dominant-baseline='middle'%3ECH%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/examples.css">
@@ -16,13 +17,14 @@
 </head>
 <body>
   <div class="bg-effects"></div>
+  <div class="spotlight" id="spotlight"></div>
 
   <!-- NAV -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="logo">CODE<span>.</span>HOUSE</a>
       <div class="nav-menu" id="navMenu">
-        <a href="index.html" class="nav-link">Início</a>
+        <a href="index.html" class="nav-link">Inicio</a>
         <a href="exemplos.html" class="nav-link active">Exemplos</a>
         <a href="index.html#contato" class="nav-link">Contato</a>
       </div>
@@ -32,377 +34,386 @@
     </div>
   </nav>
 
-  <!-- MAIN -->
-  <main style="padding-top: 6rem; min-height: 100vh;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
-      
-      <!-- HEADER -->
-      <div style="text-align: center; margin-bottom: 4rem;">
-        <p class="eyebrow reveal" style="justify-content: center;">// portfólio</p>
-        <h1 class="reveal" data-delay="100" style="font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 1rem;">O que a gente já construiu</h1>
-        <p class="reveal" data-delay="200" style="color: var(--ink-muted); max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Sistemas reais entregues para clientes. Clique em qualquer exemplo para ver detalhes do que foi feito.</p>
+  <!-- HERO -->
+  <section class="ex-hero">
+    <div class="ex-hero-inner">
+      <p class="eyebrow reveal">// portifolio & sistemas entregues</p>
+      <h1 class="reveal" data-delay="100">
+        Sistemas que <span class="gradient-text">geram resultado</span>.<br>
+        Nao so bonito. <span class="gradient-text">Funciona.</span>
+      </h1>
+      <p class="lead reveal" data-delay="200">
+        CRM, ERP, E-Commerce e site institucional. Cada card abaixo abre um modal com escopo completo, stack tecnica e resultado real.
+      </p>
+      <div class="hero-stats reveal" data-delay="300">
+        <div class="hero-stat"><span class="num" data-count="24">0</span><span class="lbl">Projetos entregues</span></div>
+        <div class="hero-stat"><span class="num" data-count="98">0</span><span class="lbl">% Clientes ativos</span></div>
+        <div class="hero-stat"><span class="num" data-count="12">0</span><span class="lbl">Meses em media de vida</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWCASE -->
+  <section class="ex-showcase">
+    <div class="ex-showcase-inner">
+      <div class="ex-tabs" role="tablist">
+        <button class="ex-tab active" data-tab="all" role="tab">Todos</button>
+        <button class="ex-tab" data-tab="crm" role="tab">CRM & Vendas</button>
+        <button class="ex-tab" data-tab="erp" role="tab">ERP & Estoque</button>
+        <button class="ex-tab" data-tab="shop" role="tab">E-Commerce</button>
+        <button class="ex-tab" data-tab="web" role="tab">Web & Landing</button>
       </div>
 
-      <!-- TABS -->
-      <div class="tabs reveal" data-delay="300">
-        <button class="tab active" data-target="panel-crm">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-          CRM
-        </button>
-        <button class="tab" data-target="panel-erp">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
-          ERP
-        </button>
-        <button class="tab" data-target="panel-shop">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          E-Shop
-        </button>
-        <button class="tab" data-target="panel-site">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
-          Sites
-        </button>
-      </div>
+      <!-- GRID -->
+      <div class="ex-grid" id="exGrid">
 
-      <!-- PANELS -->
-
-      <!-- CRM -->
-      <div class="panel active" id="panel-crm">
-        <div class="ex-grid">
-          <div class="ex-card reveal" onclick="openModal('crm-funil')">
-            <div class="mock-crm">
-              <div class="crm-header">
-                <div class="dots"><span></span><span></span><span></span></div>
-                <div class="url-bar">app.clientes.com/funil</div>
+        <!-- CRM 1 -->
+        <article class="ex-card" data-cat="crm" data-id="crm-funil">
+          <div class="ex-card-visual">
+            <div class="window">
+              <div class="window-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="win-title">app.clientes.com/funil</span>
               </div>
-              <div class="crm-body">
-                <aside class="crm-side">
-                  <div class="menu-item active"><span class="icon">👥</span>Clientes</div>
-                  <div class="menu-item"><span class="icon">📊</span>Pipeline</div>
-                  <div class="menu-item"><span class="icon">📋</span>Tarefas</div>
-                  <div class="menu-item"><span class="icon">📈</span>Relatórios</div>
-                  <div class="menu-item"><span class="icon">⚙️</span>Config</div>
+              <div class="window-body">
+                <aside class="wside">
+                  <div class="si active">Leads</div>
+                  <div class="si">Pipeline</div>
+                  <div class="si">Tarefas</div>
+                  <div class="si">Relatorios</div>
                 </aside>
-                <div class="crm-main">
-                  <div class="crm-toolbar">
-                    <input type="text" placeholder="Buscar..." class="search-input">
-                    <button class="btn-add">+ Novo Lead</button>
+                <div class="wmain">
+                  <div class="wstats">
+                    <div class="ws"><span>Leads</span><strong>142</strong></div>
+                    <div class="ws"><span>Prop.</span><strong>67</strong></div>
+                    <div class="ws"><span>Fech.</span><strong>51</strong></div>
                   </div>
-                  <div class="stats-row">
-                    <div class="mini-stat"><span>Total</span><strong>84</strong></div>
-                    <div class="mini-stat"><span>Propostas</span><strong>23</strong></div>
-                    <div class="mini-stat"><span>Fechados</span><strong>61</strong></div>
-                    <div class="mini-stat"><span>Taxa</span><strong>73%</strong></div>
-                  </div>
-                  <div class="table">
-                    <div class="table-row head"><div>Cliente</div><div>Etapa</div><div>Valor</div></div>
-                    <div class="table-row"><div><div class="avatar">JS</div>João Silva</div><div><span class="pill green">Fechado</span></div><div class="price">R$ 45.000</div></div>
-                    <div class="table-row"><div><div class="avatar">MS</div>Maria Souza</div><div><span class="pill orange">Proposta</span></div><div class="price">R$ 28.000</div></div>
-                    <div class="table-row"><div><div class="avatar">CM</div>Carlos Maia</div><div><span class="pill green">Fechado</span></div><div class="price">R$ 33.000</div></div>
+                  <div class="wtb">
+                    <div class="wtr th"><span>Cliente</span><span>Status</span></div>
+                    <div class="wtr"><span>Giovanni B.</span><span class="tg gr">Fechou</span></div>
+                    <div class="wtr"><span>Padaria Silva</span><span class="tg bl">Proposta</span></div>
+                    <div class="wtr"><span>Auto Pecca JK</span><span class="tg gr">Fechou</span></div>
                   </div>
                 </div>
               </div>
             </div>
-            <h3>Funil de Vendas</h3>
-            <p>Pipeline visual com leads, propostas e histórico de interações.</p>
           </div>
-
-          <div class="ex-card reveal" data-delay="100" onclick="openModal('crm-pipeline')">
-            <div class="mock-crm">
-              <div class="crm-header">
-                <div class="dots"><span></span><span></span><span></span></div>
-                <div class="url-bar">app.clientes.com/dashboard</div>
-              </div>
-              <div class="crm-body">
-                <aside class="crm-side">
-                  <div class="menu-item"><span class="icon">👥</span>Clientes</div>
-                  <div class="menu-item active"><span class="icon">📊</span>Pipeline</div>
-                  <div class="menu-item"><span class="icon">📋</span>Tarefas</div>
-                  <div class="menu-item"><span class="icon">📈</span>Relatórios</div>
-                  <div class="menu-item"><span class="icon">⚙️</span>Config</div>
-                </aside>
-                <div class="crm-main">
-                  <div class="crm-toolbar">
-                    <div class="filter-tabs">
-                      <span class="filter active">Semana</span>
-                      <span class="filter">Mês</span>
-                      <span class="filter">Trimestre</span>
-                    </div>
-                  </div>
-                  <div class="stats-row">
-                    <div class="mini-stat"><span>Leads</span><strong>156</strong></div>
-                    <div class="mini-stat"><span>Qualif.</span><strong>92</strong></div>
-                    <div class="mini-stat"><span>Propostas</span><strong>45</strong></div>
-                    <div class="mini-stat"><span>Receita</span><strong>R$ 128k</strong></div>
-                  </div>
-                  <div class="chart-area">
-                    <div class="chart-bars">
-                      <div class="cbar" style="--h:30%"></div>
-                      <div class="cbar" style="--h:50%"></div>
-                      <div class="cbar" style="--h:35%"></div>
-                      <div class="cbar active" style="--h:80%"></div>
-                      <div class="cbar" style="--h:60%"></div>
-                      <div class="cbar" style="--h:45%"></div>
-                      <div class="cbar" style="--h:70%"></div>
-                    </div>
-                    <div class="chart-labels"><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span><span>Dom</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <h3>Pipeline Analytics</h3>
-            <p>Dashboard com métricas e conversão por etapa do funil.</p>
+          <div class="ex-card-meta">
+            <span class="tag">CRM</span>
+            <h3>Funil de Vendas Premium</h3>
+            <p>Pipeline visual com drag-and-drop, score automatico, follow-up automatico e historico completo de interacoes.</p>
+            <span class="cta-link">Ver detalhes</span>
           </div>
-        </div>
-      </div>
+        </article>
 
-      <!-- ERP -->
-      <div class="panel" id="panel-erp">
-        <div class="ex-grid">
-          <div class="ex-card reveal" onclick="openModal('erp-dash')">
-            <div class="mock-erp">
-              <div class="erp-header">
-                <div class="dots"><span></span><span></span><span></span></div>
-                <div class="url-bar">app.erp.com/financeiro</div>
+        <!-- CRM 2 -->
+        <article class="ex-card" data-cat="crm" data-id="crm-dash">
+          <div class="ex-card-visual">
+            <div class="window">
+              <div class="window-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="win-title">app.clientes.com/dashboard</span>
               </div>
-              <div class="erp-body">
-                <div class="erp-stats">
-                  <div class="stat-card">
-                    <div class="stat-icon green">↑</div>
-                    <div class="stat-info"><span>Receita</span><strong>R$ 128.450</strong><em>+12% mês</em></div>
-                  </div>
-                  <div class="stat-card">
-                    <div class="stat-icon red">↓</div>
-                    <div class="stat-info"><span>Despesas</span><strong>R$ 47.230</strong><em>+3% mês</em></div>
-                  </div>
-                  <div class="stat-card">
-                    <div class="stat-icon blue">=</div>
-                    <div class="stat-info"><span>Caixa</span><strong>R$ 81.220</strong><em>Líquido</em></div>
-                  </div>
-                  <div class="stat-card">
-                    <div class="stat-icon orange">★</div>
-                    <div class="stat-info"><span>Ticket Médio</span><strong>R$ 1.840</strong><em>+8% mês</em></div>
-                  </div>
+              <div class="window-body" style="flex-direction:column; padding:0.75rem;">
+                <div class="wstats">
+                  <div class="ws"><span>Receita mes</span><strong>R$ 89k</strong></div>
+                  <div class="ws"><span>Novos leads</span><strong>234</strong></div>
+                  <div class="ws"><span>Conversao</span><strong>31%</strong></div>
+                  <div class="ws"><span>Ticket medio</strong><strong>R$ 4.2k</strong></div>
                 </div>
-                <div class="erp-main">
-                  <div class="erp-chart">
-                    <div class="chart-title">Receita vs Despesas (6 meses)</div>
-                    <div class="big-chart">
-                      <div class="bchart-group"><div class="bcol receita" style="--h:70%"></div><div class="bcol despesa" style="--h:30%"></div></div>
-                      <div class="bchart-group"><div class="bcol receita" style="--h:60%"></div><div class="bcol despesa" style="--h:35%"></div></div>
-                      <div class="bchart-group"><div class="bcol receita" style="--h:85%"></div><div class="bcol despesa" style="--h:40%"></div></div>
-                      <div class="bchart-group"><div class="bcol receita" style="--h:65%"></div><div class="bcol despesa" style="--h:28%"></div></div>
-                      <div class="bchart-group"><div class="bcol receita" style="--h:90%"></div><div class="bcol despesa" style="--h:45%"></div></div>
-                      <div class="bchart-group"><div class="bcol receita" style="--h:75%"></div><div class="bcol despesa" style="--h:38%"></div></div>
-                    </div>
-                    <div class="chart-legend"><span class="legend-dot receita"></span>Receita <span class="legend-dot despesa"></span>Despesa</div>
-                  </div>
+                <div class="chart-bars">
+                  <div class="bar" style="--h:30%"></div>
+                  <div class="bar" style="--h:55%"></div>
+                  <div class="bar" style="--h:40%"></div>
+                  <div class="bar act" style="--h:82%"></div>
+                  <div class="bar" style="--h:65%"></div>
+                  <div class="bar" style="--h:48%"></div>
+                  <div class="bar" style="--h:73%"></div>
                 </div>
               </div>
             </div>
-            <h3>Dashboard Financeiro</h3>
-            <p>Receita, custos e fluxo de caixa em tempo real.</p>
           </div>
+          <div class="ex-card-meta">
+            <span class="tag">CRM</span>
+            <h3>Dashboard Analytics</h3>
+            <p>Visao 360 do ciclo de vendas com forecast, funil invertido e alertas de replesao automatica.</p>
+            <span class="cta-link">Ver detalhes</span>
+          </div>
+        </article>
 
-          <div class="ex-card reveal" data-delay="100" onclick="openModal('erp-estoque')">
-            <div class="mock-erp">
-              <div class="erp-header">
-                <div class="dots"><span></span><span></span><span></span></div>
-                <div class="url-bar">app.erp.com/estoque</div>
+        <!-- ERP 1 -->
+        <article class="ex-card" data-cat="erp" data-id="erp-financeiro">
+          <div class="ex-card-visual">
+            <div class="window">
+              <div class="window-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="win-title">app.erp.com/financeiro</span>
               </div>
-              <div class="erp-body">
-                <div class="erp-stock-header">
-                  <input type="text" placeholder="Buscar produto..." class="search-input">
-                  <button class="btn-add">+ Novo Produto</button>
+              <div class="window-body" style="flex-direction:column; padding:0.75rem;">
+                <div class="wstats">
+                  <div class="ws"><span>Receita</span><strong>R$ 184k</strong></div>
+                  <div class="ws"><span>Despesa</span><strong>R$ 72k</strong></div>
+                  <div class="ws"><span>Lucro liq.</span><strong>R$ 112k</strong></div>
                 </div>
-                <div class="erp-table">
-                  <div class="erow header"><div>Produto</div><div>Categoria</div><div>Qtd</div><div>Status</div></div>
-                  <div class="erow"><div class="prod-cell"><div class="prod-img"></div><span>Notebook Pro</span></div><div>Eletrônicos</div><td class="ok">142</div><div><span class="pill green">OK</span></div></div>
-                  <div class="erow"><div class="prod-cell"><div class="prod-img"></div><span>Mouse Wireless</span></div><div>Acessórios</div><td class="low">8</div><div><span class="pill orange">Baixo</span></div></div>
-                  <div class="erow"><div class="prod-cell"><div class="prod-img"></div><span>Teclado Mecânico</span></div><div>Periféricos</div><td class="ok">85</div><div><span class="pill green">OK</span></div></div>
-                  <div class="erow"><div class="prod-cell"><div class="prod-img"></div><span>Monitor 27"</span></div><div>Eletrônicos</div><td class="critical">2</div><div><span class="pill red">Crítico</span></div></div>
+                <div class="chart-bars">
+                  <div class="bar act" style="--h:85%"></div>
+                  <div class="bar act" style="--h:70%"></div>
+                  <div class="bar act" style="--h:92%"></div>
+                  <div class="bar act" style="--h:78%"></div>
+                  <div class="bar act" style="--h:95%"></div>
+                  <div class="bar act" style="--h:88%"></div>
                 </div>
+                <div style="font-family:var(--font-m);font-size:0.6rem;color:var(--ink-muted);text-align:center;">Receita vs Despesa — ultimos 6 meses</div>
               </div>
             </div>
+          </div>
+          <div class="ex-card-meta">
+            <span class="tag">ERP</span>
+            <h3>Modulo Financeiro</h3>
+            <p>Conciliacao bancaria automatica, DRE em tempo real, centro de custos e fluxo de caixa projetado.</p>
+            <span class="cta-link">Ver detalhes</span>
+          </div>
+        </article>
+
+        <!-- ERP 2 -->
+        <article class="ex-card" data-cat="erp" data-id="erp-estoque">
+          <div class="ex-card-visual">
+            <div class="window">
+              <div class="window-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="win-title">app.erp.com/estoque</span>
+              </div>
+              <div class="window-body" style="flex-direction:column; padding:0.75rem;">
+                <div class="wtb">
+                  <div class="wtr th"><span>Produto</span><span>Qtd</span><span>Status</span></div>
+                  <div class="wtr"><span>Notebook Pro X1</span><span>142</span><span class="tg gr">OK</span></div>
+                  <div class="wtr"><span>Mouse Wireless</span><span>8</span><span class="tg bl">Baixo</span></div>
+                  <div class="wtr"><span>Teclado Mecanico</span><span>85</span><span class="tg gr">OK</span></div>
+                  <div class="wtr"><span>Monitor 27"</span><span>2</span><span class="tg bl">Critico</span></div>
+                </div>
+                <div style="font-family:var(--font-m);font-size:0.55rem;color:var(--ink-muted);text-align:center;">Alertas de estoque minimo com reposicao automatica</div>
+              </div>
+            </div>
+          </div>
+          <div class="ex-card-meta">
+            <span class="tag">ERP</span>
             <h3>Controle de Estoque</h3>
-            <p>Gestão de produtos com alertas visuais de estoque baixo.</p>
-
-      <!-- E-SHOP -->
-      <div class="panel" id="panel-shop">
-        <div class="ex-grid">
-          <div class="ex-card reveal" onclick="openModal('shop-catalogo')">
-            <div class="mock-shop">
-              <div class="shop-header">
-                <div class="dots"><span></span><span></span><span></span></div>
-                <div class="url-bar">loja.exemplo.com</div>
-              </div>
-              <div class="shop-banner">
-                <div class="banner-content">
-                  <div class="banner-text"></div>
-                  <div class="banner-btn"></div>
-                </div>
-              </div>
-              <div class="shop-catalog">
-                <div class="product-card">
-                  <div class="p-img"></div>
-                  <div class="p-name"></div>
-                  <div class="p-price">R$ 120,00</div>
-                  <div class="p-btn">Comprar</div>
-                </div>
-                <div class="product-card">
-                  <div class="p-img"></div>
-                  <div class="p-name"></div>
-                  <div class="p-price">R$ 85,00</div>
-                  <div class="p-btn">Comprar</div>
-                </div>
-                <div class="product-card">
-                  <div class="p-img"></div>
-                  <div class="p-name"></div>
-                  <div class="p-price">R$ 200,00</div>
-                  <div class="p-btn">Comprar</div>
-                </div>
-                <div class="product-card">
-                  <div class="p-img"></div>
-                  <div class="p-name"></div>
-                  <div class="p-price">R$ 50,00</div>
-                  <div class="p-btn">Comprar</div>
-                </div>
-              </div>
-            </div>
-            <h3>Catálogo de Produtos</h3>
-            <p>Vitrine virtual com cards, preços e CTA de compra.</p>
+            <p>Gestao de multiplos depositos, leitura de codigo de barras, curva ABC e alertas de ruptura.</p>
+            <span class="cta-link">Ver detalhes</span>
           </div>
+        </article>
 
-          <div class="ex-card reveal" data-delay="100" onclick="openModal('shop-cart')">
-            <div class="mock-shop">
-              <div class="shop-header">
-                <div class="dots"><span></span><span></span><span></span></div>
-                <div class="url-bar">loja.exemplo.com/checkout</div>
+        <!-- SHOP 1 -->
+        <article class="ex-card" data-cat="shop" data-id="shop-catalogo">
+          <div class="ex-card-visual">
+            <div class="window">
+              <div class="window-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="win-title">loja.exemplo.com/catalogo</span>
               </div>
-              <div class="checkout-body">
-                <div class="cart-items">
-                  <div class="cart-item">
-                    <div class="item-thumb"></div>
-                    <div class="item-details"><div class="item-name"></div><div class="item-var">Tamanho: M</div></div>
-                    <div class="item-qty">
-                      <button class="qty-btn">−</button>
-                      <span>2</span>
-                      <button class="qty-btn">+</button>
-                    </div>
-                    <div class="item-price">R$ 240</div>
-                  </div>
-                  <div class="cart-item">
-                    <div class="item-thumb"></div>
-                    <div class="item-details"><div class="item-name"></div><div class="item-var">Cor: Preto</div></div>
-                    <div class="item-qty">
-                      <button class="qty-btn">−</button>
-                      <span>1</span>
-                      <button class="qty-btn">+</button>
-                    </div>
-                    <div class="item-price">R$ 85</div>
-                  </div>
-                </div>
-                <div class="cart-summary">
-                  <div class="summary-row"><span>Subtotal</span><span>R$ 325,00</span></div>
-                  <div class="summary-row"><span>Frete</span><span>R$ 15,00</span></div>
-                  <div class="summary-row total"><span>Total</span><span class="total-price">R$ 340,00</span></div>
-                  <div class="checkout-btn">Finalizar Compra</div>
+              <div class="window-body" style="flex-direction:column; padding:0.6rem;">
+                <div style="height:3px;background:var(--accent-grad);border-radius:2px;margin-bottom:0.4rem;"></div>
+                <div class="prod-grid">
+                  <div class="prod"><div class="pi"></div><div class="pn"></div><div class="pp"></div></div>
+                  <div class="prod"><div class="pi"></div><div class="pn"></div><div class="pp"></div></div>
+                  <div class="prod"><div class="pi"></div><div class="pn"></div><div class="pp"></div></div>
+                  <div class="prod"><div class="pi"></div><div class="pn"></div><div class="pp"></div></div>
+                  <div class="prod"><div class="pi"></div><div class="pn"></div><div class="pp"></div></div>
+                  <div class="prod"><div class="pi"></div><div class="pn"></div><div class="pp"></div></div>
                 </div>
               </div>
             </div>
-            <h3>Carrinho & Checkout</h3>
-            <p>Resumo com itens, quantidades e cálculo de total.</p>
+          </div>
+          <div class="ex-card-meta">
+            <span class="tag">E-Commerce</span>
+            <h3>Catalogo Inteligente</h3>
+            <p>Vitrine com filtros faceted, buscaElastic, variacoes ilimitadas e avaliacao social.</p>
+            <span class="cta-link">Ver detalhes</span>
+          </div>
+        </article>
+
+        <!-- SHOP 2 -->
+        <article class="ex-card" data-cat="shop" data-id="shop-checkout">
+          <div class="ex-card-visual">
+            <div class="window">
+              <div class="window-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="win-title">loja.exemplo.com/checkout</span>
+              </div>
+              <div class="window-body" style="flex-direction:row; padding:0.6rem;">
+                <div style="flex:1;">
+                  <div class="wtr th" style="grid-template-columns:1fr 60px;"><span>Item</span><span>Total</span></div>
+                  <div class="wtr" style="grid-template-columns:1fr 60px;"><span>Camiseta DryFit</span><span>R$ 89</span></div>
+                  <div class="wtr" style="grid-template-columns:1fr 60px;"><span>Tenis Running Pro</span><span>R$ 320</span></div>
+                  <div class="wtr" style="grid-template-columns:1fr 60px;"><span>Meia Sport</span><span>R$ 29</span></div>
+                </div>
+                <div style="width:100px; margin-left:0.5rem; border-left:1px solid var(--border); padding-left:0.5rem;">
+                  <div style="font-family:var(--font-m);font-size:0.5rem;color:var(--ink-muted);">Resumo</div>
+                  <div style="font-family:var(--font-m);font-size:0.65rem;color:var(--ink); font-weight:700; margin-top:0.3rem;">Total: R$ 438</div>
+                  <div style="margin-top:0.4rem;height:16px;background:var(--accent-1);border-radius:3px;color:#fff;font-family:var(--font-m);font-size:0.5rem;display:flex;align-items:center;justify-content:center;">Pagar via PIX</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ex-card-meta">
+            <span class="tag">E-Commerce</span>
+            <h3>Checkout Otimizado</h3>
+            <p>One-page checkout, multiplos gateways, calculo de frete em tempo real e recuperacao de carrinho.</p>
+            <span class="cta-link">Ver detalhes</span>
+          </div>
+        </article>
+
+        <!-- WEB 1 -->
+        <article class="ex-card" data-cat="web" data-id="web-landing">
+          <div class="ex-card-visual">
+            <div class="window">
+              <div class="window-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="win-title">cliente.com.br</span>
+              </div>
+              <div class="window-body" style="flex-direction:column; padding:0.6rem;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+                  <div style="width:30px;height:5px;background:var(--accent-1);border-radius:1px;"></div>
+                  <div style="display:flex;gap:0.25rem;">
+                    <div style="width:15px;height:3px;background:var(--ink-muted);border-radius:1px;"></div>
+                    <div style="width:15px;height:3px;background:var(--ink-muted);border-radius:1px;"></div>
+                    <div style="width:15px;height:3px;background:var(--ink-muted);border-radius:1px;"></div>
+                  </div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+                  <div style="width:50%;height:8px;background:var(--ink);border-radius:2px;margin-bottom:0.3rem;"></div>
+                  <div style="width:30%;height:5px;background:var(--ink-muted);border-radius:1px;margin-bottom:0.4rem;"></div>
+                  <div style="width:60px;height:14px;background:var(--accent-1);border-radius:3px;"></div>
+                </div>
+                <div style="display:flex;gap:0.25rem;margin-top:0.4rem;">
+                  <div style="flex:1;height:20px;background:var(--surface);border:1px solid var(--border);border-radius:3px;"></div>
+                  <div style="flex:1;height:20px;background:var(--surface);border:1px solid var(--border);border-radius:3px;"></div>
+                  <div style="flex:1;height:20px;background:var(--surface);border:1px solid var(--border);border-radius:3px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ex-card-meta">
+            <span class="tag">Web</span>
+            <h3>Landing Page Conversora</h3>
+            <p>Hero section impacto, forms otimizados, A/B testing nativo e tempo de carga inferior a 1.8s.</p>
+            <span class="cta-link">Ver detalhes</span>
+          </div>
+        </article>
+
+        <!-- WEB 2 -->
+        <article class="ex-card" data-cat="web" data-id="web-institucional">
+          <div class="ex-card-visual">
+            <div class="window">
+              <div class="window-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="win-title">escritorio.com.br</span>
+              </div>
+              <div class="window-body" style="flex-direction:column; padding:0.6rem;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem;">
+                  <div style="width:25px;height:5px;background:var(--accent-1);border-radius:1px;"></div>
+                  <div style="display:flex;gap:0.2rem;">
+                    <div style="width:12px;height:3px;background:var(--ink-muted);border-radius:1px;"></div>
+                    <div style="width:12px;height:3px;background:var(--ink-muted);border-radius:1px;"></div>
+                    <div style="width:12px;height:3px;background:var(--ink-muted);border-radius:1px;"></div>
+                    <div style="width:12px;height:3px;background:var(--ink-muted);border-radius:1px;"></div>
+                  </div>
+                </div>
+                <div style="height:40px;background:var(--accent-grad);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:0.4rem;">
+                  <div style="width:40%;height:6px;background:rgba(255,255,255,0.8);border-radius:1px;"></div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.3rem;flex:1;">
+                  <div><div style="width:70%;height:5px;background:var(--ink);border-radius:1px;margin-bottom:0.2rem;"></div><div style="width:100%;height:3px;background:var(--ink-muted);border-radius:1px;margin-bottom:0.15rem;"></div><div style="width:80%;height:3px;background:var(--ink-muted);border-radius:1px;"></div></div>
+                  <div><div style="width:70%;height:5px;background:var(--ink);border-radius:1px;margin-bottom:0.2rem;"></div><div style="width:100%;height:3px;background:var(--ink-muted);border-radius:1px;margin-bottom:0.15rem;"></div><div style="width:80%;height:3px;background:var(--ink-muted);border-radius:1px;"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ex-card-meta">
+            <span class="tag">Web</span>
+            <h3>Site Institucional</h3>
+            <p>Institucional premium, blog integrado, SEO tecnico e multi-idioma com painel CMS.</p>
+            <span class="cta-link">Ver detalhes</span>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- EMPTY STATE -->
+      <div class="ex-empty" id="exEmpty" style="display:none;">
+        <p>Nenhum projeto nesta categoria ainda.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS / CRED -->
+  <section class="ex-cred">
+    <div class="ex-cred-inner">
+      <div class="ex-cred-grid">
+        <div class="cred-card reveal">
+          <div class="cred-mark">"</div>
+          <p>Em 3 semanas o CRM estava rodando. Em 2 meses dobramos o time de vendas sem perder qualidade. O Pablo entende negocio, nao so codigo.</p>
+          <div class="cred-author">
+            <div class="cred-avatar">RF</div>
+            <div>
+              <div class="cred-name">Rafael Ferreira</div>
+              <div class="cred-role">CEO, Clinca Sao Lucas</div>
+            </div>
+          </div>
+        </div>
+        <div class="cred-card reveal" data-delay="100">
+          <div class="cred-mark">"</div>
+          <p>O ERP que a Code House entregou cortou nosso custo operacional em 40%. Estoque que era um caos virou ciencia. Relatorio que levava 2 dias agora e instantaneo.</p>
+          <div class="cred-author">
+            <div class="cred-avatar">BM</div>
+            <div>
+              <div class="cred-name">Beatriz Moraes</div>
+              <div class="cred-role">Diretora, Bovinu's Burger</div>
+            </div>
+          </div>
+        </div>
+        <div class="cred-card reveal" data-delay="200">
+          <div class="cred-mark">"</div>
+          <p>Landing page simples. Objetiva. Em 60 dias triplicamos os agendamentos. O investimento se pagou no primeiro mes.</p>
+          <div class="cred-author">
+            <div class="cred-avatar">GV</div>
+            <div>
+              <div class="cred-name">Gabriel Vargas</div>
+              <div class="cred-role">Proprietario, Auto Center V</div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- SITES -->
-      <div class="panel" id="panel-site">
-        <div class="ex-grid">
-          <div class="ex-card reveal" onclick="openModal('site-landing')">
-            <div class="mock-site">
-              <div class="site-header">
-                <div class="dots"><span></span><span></span><span></span></div>
-                <div class="url-bar">meusite.com.br</div>
-              </div>
-              <div class="site-content">
-                <div class="site-nav">
-                  <div class="site-logo"></div>
-                  <div class="site-links"><div class="link"></div><div class="link"></div><div class="link"></div></div>
-                </div>
-                <div class="site-hero">
-                  <div class="badge"></div>
-                  <div class="hero-title"></div>
-                  <div class="hero-sub"></div>
-                  <div class="hero-buttons">
-                    <div class="primary-btn"></div>
-                    <div class="ghost-btn"></div>
-                  </div>
-                </div>
-                <div class="site-cards">
-                  <div class="info-card"></div>
-                  <div class="info-card"></div>
-                  <div class="info-card"></div>
-                </div>
-              </div>
-            </div>
-            <h3>Landing Page Premium</h3>
-            <p>Página de conversão com hero, CTAs e grid de features.</p>
-          </div>
-
-          <div class="ex-card reveal" data-delay="100" onclick="openModal('site-institucional')">
-            <div class="mock-site">
-              <div class="site-header">
-                <div class="dots"><span></span><span></span><span></span></div>
-                <div class="url-bar">empresa.com.br</div>
-              </div>
-              <div class="site-content">
-                <div class="site-nav">
-                  <div class="site-logo"></div>
-                  <div class="site-links"><div class="link"></div><div class="link"></div><div class="link"></div><div class="link"></div></div>
-                </div>
-                <div class="site-banner">
-                  <div class="banner-title"></div>
-                  <div class="banner-btn"></div>
-                </div>
-                <div class="site-body">
-                  <div class="about-col">
-                    <div class="col-title"></div>
-                    <div class="col-text"></div>
-                    <div class="col-text short"></div>
-                  </div>
-                  <div class="about-col">
-                    <div class="col-title"></div>
-                    <div class="col-text"></div>
-                    <div class="col-text short"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <h3>Página Institucional</h3>
-            <p>Site corporativo com sobre, serviços e contato.</p>
-          </div>
-        </div>
-      </div>
-
-  </main>
+  <!-- CTA -->
+  <section class="cta-sec">
+    <h2>Pronto para ter um sistema <span class="gradient-text">igual ou melhor</span>?</h2>
+    <p>Converse sem compromisso. Projeto por projeto, sem mensalidade escondida.</p>
+    <div class="cta-btns">
+      <a href="index.html#contato" class="btn btn-primary btn-lg">Iniciar projeto</a>
+      <a href="https://wa.me/555599144170" class="btn btn-ghost btn-lg" target="_blank" rel="noopener">WhatsApp direto</a>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
-      <div>© <span id="yr"></span> Code House</div>
-      <div class="footer-links"><a href="index.html">Início</a><a href="exemplos.html">Exemplos</a><a href="index.html#contato">Contato</a></div>
+      <div>2025 Code House</div>
+      <div class="footer-links"><a href="index.html">Inicio</a><a href="exemplos.html">Exemplos</a><a href="index.html#contato">Contato</a></div>
     </div>
   </footer>
 
   <!-- WA FLOAT -->
-  <a href="https://wa.me/55559991441700" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+  <a href="https://wa.me/555599144170" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
   </a>
 
   <!-- MODAL -->
-  <div id="modal-overlay" class="modal-overlay">
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeModal()">&times;</button>
+  <div id="modal-overlay" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="Fechar">&times;</button>
       <div id="modal-content"></div>
     </div>
   </div>
@@ -411,6 +422,5 @@
   <script src="js/nav.js" defer></script>
   <script src="js/scroll.js" defer></script>
   <script src="js/examples.js" defer></script>
-  <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 </body>
 </html>
