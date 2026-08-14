@@ -42,10 +42,11 @@
 
   /* ─────────────────────────────────────────────
      ANIMATED COUNTERS (credibility section)
+     Uses data-counter="XX" and optional data-suffix=""
      ───────────────────────────────────────────── */
   var counters = document.querySelectorAll('[data-counter]');
-  if (counters.length && 'IntersectionObserver' in window) {
-    function animateCounter(el, target, duration) {
+  if (counters.length) {
+    function animateCounter(el, target, suffix, duration) {
       var start = 0;
       var startTime = null;
       var isFloat = target % 1 !== 0;
@@ -55,34 +56,42 @@
         var progress = Math.min((timestamp - startTime) / duration, 1);
         var eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
         var current = start + (target - start) * eased;
-        el.textContent = isFloat ? current.toFixed(1) : Math.floor(current);
+        var display = isFloat ? current.toFixed(1) : Math.floor(current);
+        el.textContent = display + (suffix || '');
         if (progress < 1) {
           requestAnimationFrame(step);
         } else {
-          el.textContent = target;
+          el.textContent = target + (suffix || '');
         }
       }
       requestAnimationFrame(step);
     }
 
-    var counterObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          var target = parseFloat(entry.target.dataset.counter);
-          animateCounter(entry.target, target, 1500);
-          counterObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
+    if ('IntersectionObserver' in window) {
+      var counterObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var target = parseFloat(entry.target.dataset.counter);
+            var suffix = entry.target.dataset.suffix || '';
+            animateCounter(entry.target, target, suffix, 1500);
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
 
-    counters.forEach(function (c) { counterObserver.observe(c); });
+      counters.forEach(function (c) { counterObserver.observe(c); });
+    } else {
+      counters.forEach(function (c) {
+        animateCounter(c, parseFloat(c.dataset.counter), c.dataset.suffix || '', 1500);
+      });
+    }
   }
 
   /* ─────────────────────────────────────────────
      PARALLAX HERO
      ───────────────────────────────────────────── */
   var heroMockup = document.querySelector('.hero-mockup');
-  if (heroMockup) {
+  if (heroMockup && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
     document.addEventListener('mousemove', function (e) {
       var x = (window.innerWidth / 2 - e.clientX) / 50;
       var y = (window.innerHeight / 2 - e.clientY) / 50;
