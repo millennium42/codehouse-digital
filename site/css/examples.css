@@ -59,9 +59,32 @@
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--r-xl);
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
   overflow: hidden;
-  cursor: pointer;
-  transition: all 0.3s ease;
+}
+
+.ex-card .mock-crm,
+.ex-card .mock-erp,
+.ex-card .mock-shop,
+.ex-card .mock-site {
+  margin-bottom: 0.75rem;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.ex-card h3 {
+  color: var(--ink);
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.ex-card p {
+  color: var(--ink-faint);
+  font-size: 0.8rem;
+  line-height: 1.4;
 }
 
 .ex-card:hover {
@@ -84,9 +107,11 @@
 
 /* Mock CRM */
 .mock-crm {
-  height: 280px;
+  height: 320px;
   background: var(--surface-raised);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .crm-header {
@@ -117,7 +142,7 @@
 
 .crm-body {
   display: flex;
-  height: calc(100% - 32px);
+  flex: 1;
 }
 
 .crm-side {
@@ -329,9 +354,11 @@
 
 /* Mock ERP */
 .mock-erp {
-  height: 280px;
+  height: 320px;
   background: var(--surface-raised);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .erp-header {
@@ -344,7 +371,7 @@
 
 .erp-body {
   padding: 0.5rem;
-  height: calc(100% - 32px);
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -574,7 +601,7 @@
 
 .checkout-body {
   display: flex;
-  height: calc(100% - 32px);
+  flex: 1;
   padding: 0.5rem;
   gap: 0.5rem;
 }
@@ -684,6 +711,8 @@
   height: 320px;
   background: var(--surface-raised);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .site-header {
