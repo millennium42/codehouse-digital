@@ -95,6 +95,83 @@
 .stack-name { font-family: var(--font-m); font-weight: 700; font-size: 0.85rem; color: var(--ink); margin-bottom: 0.25rem; }
 .stack-role { font-size: 0.75rem; color: var(--ink-faint); }
 
+/* Tech Section - Premium */
+.tech-sec { position: relative; overflow: hidden; }
+
+.tech-sec::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(255,107,53,0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+  position: relative;
+}
+
+@media (max-width: 1024px) { .tech-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 640px) { .tech-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.tech-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-grad);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.tech-card:hover::before { transform: scaleX(1); }
+
+.tech-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-1);
+  box-shadow: var(--sh-glow-lg);
+}
+
+.tech-icon {
+  margin: 0 auto 0.75rem;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.tech-card:hover .tech-icon { transform: scale(1.1); }
+
+.tech-name {
+  font-family: var(--font-m);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+
+.tech-role {
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+}
+
 /* Buttons */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0 1.75rem; min-height: 48px; font-family: var(--font-m); font-weight: 700; text-transform: uppercase; text-decoration: none; border-radius: var(--r-md); font-size: 0.85rem; letter-spacing: 0.04em; transition: all 0.25s ease; }
 .btn-lg { padding: 0 2.25rem; min-height: 56px; font-size: 0.9rem; }
