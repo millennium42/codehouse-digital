@@ -11,12 +11,13 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/examples.css">
   <script>(function(){document.documentElement.setAttribute('data-theme','dark');})();</script>
 </head>
 <body>
   <div class="bg-effects"></div>
 
+  <!-- NAV -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="logo">CODE<span>.</span>HOUSE</a>
@@ -24,9 +25,6 @@
         <a href="index.html" class="nav-link">Início</a>
         <a href="exemplos.html" class="nav-link active">Exemplos</a>
         <a href="index.html#contato" class="nav-link">Contato</a>
-        <button id="themeBtn" class="theme-btn" aria-label="Tema">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-        </button>
       </div>
       <button id="hamburger" class="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -34,143 +32,353 @@
     </div>
   </nav>
 
-  <main class="ex-page">
-    <div class="container" style="max-width: 1200px;">
-      <p class="eyebrow reveal">// portfólio</p>
-      <h1 class="reveal" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem;" data-delay="100">O que já construímos</h1>
-      <p class="reveal" data-delay="200" style="color: var(--ink-muted); margin-bottom: 3rem; max-width: 60ch;">Sistemas entregues para clientes reais. Clique em qualquer projeto para ver detalhes do que foi feito e como ajudou o negócio.</p>
+  <!-- MAIN -->
+  <main style="padding-top: 6rem; min-height: 100vh;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+      
+      <!-- HEADER -->
+      <div style="text-align: center; margin-bottom: 4rem;">
+        <p class="eyebrow reveal" style="justify-content: center;">// portfólio</p>
+        <h1 class="reveal" data-delay="100" style="font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 1rem;">O que a gente já construiu</h1>
+        <p class="reveal" data-delay="200" style="color: var(--ink-muted); max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Sistemas reais entregues para clientes. Clique em qualquer exemplo para ver detalhes do que foi feito.</p>
+      </div>
 
-      <!-- Tabs -->
-      <div class="tabbar reveal" data-delay="300">
-        <button class="tab-btn active" data-tab="crm">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+      <!-- TABS -->
+      <div class="tabs reveal" data-delay="300">
+        <button class="tab active" data-target="panel-crm">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
           CRM
         </button>
-        <button class="tab-btn" data-tab="erp">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+        <button class="tab" data-target="panel-erp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
           ERP
         </button>
-        <button class="tab-btn" data-tab="shop">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <button class="tab" data-target="panel-shop">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
           E-Shop
         </button>
-        <button class="tab-btn" data-tab="site">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
-          Site
+        <button class="tab" data-target="panel-site">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+          Sites
         </button>
       </div>
 
+      <!-- PANELS -->
+
       <!-- CRM -->
-      <div class="tab-panel active" id="panel-crm">
+      <div class="panel active" id="panel-crm">
         <div class="ex-grid">
           <div class="ex-card reveal" onclick="openModal('crm-funil')">
-            <div class="ex-mock">
-              <div class="wm"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="wt">Funil de Vendas</span></div>
-              <div class="wb">
-                <div class="wside"><div class="si active">Leads</div><div class="si">Perdidos</div></div>
-                <div class="wmain">
-                  <div class="wstats"><div class="ws"><span>Total</span><strong>84</strong></div><div class="ws"><span>Novos</span><strong>12</strong></div></div>
-                  <div class="wtb"><div class="wtr th"><div>Empresa</div><div>Valor</div></div><div class="wtr"><div>Alfa</div><div><span class="tg bl">R$45k</span></div></div><div class="wtr"><div>Beta</div><div><span class="tg gr">R$28k</span></div></div></div>
+            <div class="mock-crm">
+              <div class="crm-header">
+                <div class="dots"><span></span><span></span><span></span></div>
+                <div class="url-bar">app.clientes.com/funil</div>
+              </div>
+              <div class="crm-body">
+                <aside class="crm-side">
+                  <div class="menu-item active"><span class="icon">👥</span>Clientes</div>
+                  <div class="menu-item"><span class="icon">📊</span>Pipeline</div>
+                  <div class="menu-item"><span class="icon">📋</span>Tarefas</div>
+                  <div class="menu-item"><span class="icon">📈</span>Relatórios</div>
+                  <div class="menu-item"><span class="icon">⚙️</span>Config</div>
+                </aside>
+                <div class="crm-main">
+                  <div class="crm-toolbar">
+                    <input type="text" placeholder="Buscar..." class="search-input">
+                    <button class="btn-add">+ Novo Lead</button>
+                  </div>
+                  <div class="stats-row">
+                    <div class="mini-stat"><span>Total</span><strong>84</strong></div>
+                    <div class="mini-stat"><span>Propostas</span><strong>23</strong></div>
+                    <div class="mini-stat"><span>Fechados</span><strong>61</strong></div>
+                    <div class="mini-stat"><span>Taxa</span><strong>73%</strong></div>
+                  </div>
+                  <div class="table">
+                    <div class="table-row head"><div>Cliente</div><div>Etapa</div><div>Valor</div></div>
+                    <div class="table-row"><div><div class="avatar">JS</div>João Silva</div><div><span class="pill green">Fechado</span></div><div class="price">R$ 45.000</div></div>
+                    <div class="table-row"><div><div class="avatar">MS</div>Maria Souza</div><div><span class="pill orange">Proposta</span></div><div class="price">R$ 28.000</div></div>
+                    <div class="table-row"><div><div class="avatar">CM</div>Carlos Maia</div><div><span class="pill green">Fechado</span></div><div class="price">R$ 33.000</div></div>
+                  </div>
                 </div>
               </div>
             </div>
             <h3>Funil de Vendas</h3>
-            <p>Pipeline visual com leads, propostas e fechamentos.</p>
+            <p>Pipeline visual com leads, propostas e histórico de interações.</p>
           </div>
+
           <div class="ex-card reveal" data-delay="100" onclick="openModal('crm-pipeline')">
-            <div class="ex-mock">
-              <div class="wm"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="wt">Pipeline de Clientes</span></div>
-              <div class="wb">
-                <div class="wstats"><div class="ws"><span>Leads</span><strong>156</strong></div><div class="ws"><span>Ativos</span><strong>92</strong></div></div>
-                <div class="chart-bars"><div class="bar" style="height:40%"></div><div class="bar" style="height:65%"></div><div class="bar" style="height:30%"></div><div class="bar act" style="height:85%"></div><div class="bar" style="height:55%"></div></div>
+            <div class="mock-crm">
+              <div class="crm-header">
+                <div class="dots"><span></span><span></span><span></span></div>
+                <div class="url-bar">app.clientes.com/dashboard</div>
+              </div>
+              <div class="crm-body">
+                <aside class="crm-side">
+                  <div class="menu-item"><span class="icon">👥</span>Clientes</div>
+                  <div class="menu-item active"><span class="icon">📊</span>Pipeline</div>
+                  <div class="menu-item"><span class="icon">📋</span>Tarefas</div>
+                  <div class="menu-item"><span class="icon">📈</span>Relatórios</div>
+                  <div class="menu-item"><span class="icon">⚙️</span>Config</div>
+                </aside>
+                <div class="crm-main">
+                  <div class="crm-toolbar">
+                    <div class="filter-tabs">
+                      <span class="filter active">Semana</span>
+                      <span class="filter">Mês</span>
+                      <span class="filter">Trimestre</span>
+                    </div>
+                  </div>
+                  <div class="stats-row">
+                    <div class="mini-stat"><span>Leads</span><strong>156</strong></div>
+                    <div class="mini-stat"><span>Qualif.</span><strong>92</strong></div>
+                    <div class="mini-stat"><span>Propostas</span><strong>45</strong></div>
+                    <div class="mini-stat"><span>Receita</span><strong>R$ 128k</strong></div>
+                  </div>
+                  <div class="chart-area">
+                    <div class="chart-bars">
+                      <div class="cbar" style="--h:30%"></div>
+                      <div class="cbar" style="--h:50%"></div>
+                      <div class="cbar" style="--h:35%"></div>
+                      <div class="cbar active" style="--h:80%"></div>
+                      <div class="cbar" style="--h:60%"></div>
+                      <div class="cbar" style="--h:45%"></div>
+                      <div class="cbar" style="--h:70%"></div>
+                    </div>
+                    <div class="chart-labels"><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span><span>Dom</span></div>
+                  </div>
+                </div>
               </div>
             </div>
-            <h3>Pipeline de Clientes</h3>
-            <p>Visão geral do relacionamento e oportunidades em andamento.</p>
+            <h3>Pipeline Analytics</h3>
+            <p>Dashboard com métricas e conversão por etapa do funil.</p>
           </div>
         </div>
       </div>
 
       <!-- ERP -->
-      <div class="tab-panel" id="panel-erp">
+      <div class="panel" id="panel-erp">
         <div class="ex-grid">
           <div class="ex-card reveal" onclick="openModal('erp-dash')">
-            <div class="ex-mock">
-              <div class="wm"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="wt">Dashboard Financeiro</span></div>
-              <div class="wb">
-                <div class="wstats"><div class="ws"><span>Receita</span><strong>128k</strong></div><div class="ws"><span>Custos</span><strong>47k</strong></div><div class="ws"><span>Caixa</span><strong>81k</strong></div></div>
-                <div class="chart-bars"><div class="bar" style="height:30%"></div><div class="bar" style="height:50%"></div><div class="bar" style="height:40%"></div><div class="bar act" style="height:80%"></div><div class="bar" style="height:60%"></div></div>
+            <div class="mock-erp">
+              <div class="erp-header">
+                <div class="dots"><span></span><span></span><span></span></div>
+                <div class="url-bar">app.erp.com/financeiro</div>
+              </div>
+              <div class="erp-body">
+                <div class="erp-stats">
+                  <div class="stat-card">
+                    <div class="stat-icon green">↑</div>
+                    <div class="stat-info"><span>Receita</span><strong>R$ 128.450</strong><em>+12% mês</em></div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-icon red">↓</div>
+                    <div class="stat-info"><span>Despesas</span><strong>R$ 47.230</strong><em>+3% mês</em></div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-icon blue">=</div>
+                    <div class="stat-info"><span>Caixa</span><strong>R$ 81.220</strong><em>Líquido</em></div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-icon orange">★</div>
+                    <div class="stat-info"><span>Ticket Médio</span><strong>R$ 1.840</strong><em>+8% mês</em></div>
+                  </div>
+                </div>
+                <div class="erp-main">
+                  <div class="erp-chart">
+                    <div class="chart-title">Receita vs Despesas (6 meses)</div>
+                    <div class="big-chart">
+                      <div class="bchart-group"><div class="bcol receita" style="--h:70%"></div><div class="bcol despesa" style="--h:30%"></div></div>
+                      <div class="bchart-group"><div class="bcol receita" style="--h:60%"></div><div class="bcol despesa" style="--h:35%"></div></div>
+                      <div class="bchart-group"><div class="bcol receita" style="--h:85%"></div><div class="bcol despesa" style="--h:40%"></div></div>
+                      <div class="bchart-group"><div class="bcol receita" style="--h:65%"></div><div class="bcol despesa" style="--h:28%"></div></div>
+                      <div class="bchart-group"><div class="bcol receita" style="--h:90%"></div><div class="bcol despesa" style="--h:45%"></div></div>
+                      <div class="bchart-group"><div class="bcol receita" style="--h:75%"></div><div class="bcol despesa" style="--h:38%"></div></div>
+                    </div>
+                    <div class="chart-legend"><span class="legend-dot receita"></span>Receita <span class="legend-dot despesa"></span>Despesa</div>
+                  </div>
+                </div>
               </div>
             </div>
             <h3>Dashboard Financeiro</h3>
             <p>Receita, custos e fluxo de caixa em tempo real.</p>
           </div>
+
           <div class="ex-card reveal" data-delay="100" onclick="openModal('erp-estoque')">
-            <div class="ex-mock">
-              <div class="wm"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="wt">Controle de Estoque</span></div>
-              <div class="wb">
-                <div class="wtb"><div class="wtr th"><div>Item</div><div>Qtd</div></div><div class="wtr"><div>Produto A</div><div><span class="tg gr">142</span></div></div><div class="wtr"><div>Produto B</div><div><span class="tg bl">8</span></div></div></div>
+            <div class="mock-erp">
+              <div class="erp-header">
+                <div class="dots"><span></span><span></span><span></span></div>
+                <div class="url-bar">app.erp.com/estoque</div>
+              </div>
+              <div class="erp-body">
+                <div class="erp-stock-header">
+                  <input type="text" placeholder="Buscar produto..." class="search-input">
+                  <button class="btn-add">+ Novo Produto</button>
+                </div>
+                <div class="erp-table">
+                  <div class="erow header"><div>Produto</div><div>Categoria</div><div>Qtd</div><div>Status</div></div>
+                  <div class="erow"><div class="prod-cell"><div class="prod-img"></div><span>Notebook Pro</span></div><div>Eletrônicos</div><td class="ok">142</div><div><span class="pill green">OK</span></div></div>
+                  <div class="erow"><div class="prod-cell"><div class="prod-img"></div><span>Mouse Wireless</span></div><div>Acessórios</div><td class="low">8</div><div><span class="pill orange">Baixo</span></div></div>
+                  <div class="erow"><div class="prod-cell"><div class="prod-img"></div><span>Teclado Mecânico</span></div><div>Periféricos</div><td class="ok">85</div><div><span class="pill green">OK</span></div></div>
+                  <div class="erow"><div class="prod-cell"><div class="prod-img"></div><span>Monitor 27"</span></div><div>Eletrônicos</div><td class="critical">2</div><div><span class="pill red">Crítico</span></div></div>
+                </div>
               </div>
             </div>
             <h3>Controle de Estoque</h3>
-            <p>Gestão de produtos com alertas de estoque baixo.</p>
+            <p>Gestão de produtos com alertas visuais de estoque baixo.</p>
           </div>
         </div>
       </div>
 
       <!-- E-SHOP -->
-      <div class="tab-panel" id="panel-shop">
+      <div class="panel" id="panel-shop">
         <div class="ex-grid">
           <div class="ex-card reveal" onclick="openModal('shop-catalogo')">
-            <div class="ex-mock">
-              <div class="wm"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="wt">Catálogo de Produtos</span></div>
-              <div class="wb"><div class="prod-grid">
-                <div class="prod"><div class="pi"></div><div class="pn"></div><div class="pp"></div></div>
-                <div class="prod"><div class="pi"></div><div class="pn"></div><div class="pp"></div></div>
-                <div class="prod"><div class="pi"></div><div class="pn"></div><div class="pp"></div></div>
-                <div class="prod"><div class="pi"></div><div class="pn"></div><div class="pp"></div></div>
-                <div class="prod"><div class="pi"></div><div class="pn"></div><div class="pp"></div></div>
-                <div class="prod"><div class="pi"></div><div class="pn"></div><div class="pp"></div></div>
-              </div></div>
-            </div>
-            <h3>Catálogo de Produtos</h3>
-            <p>Grid de produtos com imagens, nome e preço.</p>
-          </div>
-          <div class="ex-card reveal" data-delay="100" onclick="openModal('shop-cart')">
-            <div class="ex-mock">
-              <div class="wm"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="wt">Carrinho de Compras</span></div>
-              <div class="wb">
-                <div class="wtb"><div class="wtr th"><div>Item</div><div>Total</div></div><div class="wtr"><div>Produto X</div><div><span class="tg gr">R$240</span></div></div><div class="wtr"><div>Produto Y</div><div><span class="tg gr">R$85</span></div></div></div>
+            <div class="mock-shop">
+              <div class="shop-header">
+                <div class="dots"><span></span><span></span><span></span></div>
+                <div class="url-bar">loja.exemplo.com</div>
+              </div>
+              <div class="shop-banner">
+                <div class="banner-content">
+                  <div class="banner-text"></div>
+                  <div class="banner-btn"></div>
+                </div>
+              </div>
+              <div class="shop-catalog">
+                <div class="product-card">
+                  <div class="p-img"></div>
+                  <div class="p-name"></div>
+                  <div class="p-price">R$ 120,00</div>
+                  <div class="p-btn">Comprar</div>
+                </div>
+                <div class="product-card">
+                  <div class="p-img"></div>
+                  <div class="p-name"></div>
+                  <div class="p-price">R$ 85,00</div>
+                  <div class="p-btn">Comprar</div>
+                </div>
+                <div class="product-card">
+                  <div class="p-img"></div>
+                  <div class="p-name"></div>
+                  <div class="p-price">R$ 200,00</div>
+                  <div class="p-btn">Comprar</div>
+                </div>
+                <div class="product-card">
+                  <div class="p-img"></div>
+                  <div class="p-name"></div>
+                  <div class="p-price">R$ 50,00</div>
+                  <div class="p-btn">Comprar</div>
+                </div>
               </div>
             </div>
-            <h3>Carrinho de Compras</h3>
-            <p>Checkout com resumo e cálculo de total.</p>
+            <h3>Catálogo de Produtos</h3>
+            <p>Vitrine virtual com cards, preços e CTA de compra.</p>
+          </div>
+
+          <div class="ex-card reveal" data-delay="100" onclick="openModal('shop-cart')">
+            <div class="mock-shop">
+              <div class="shop-header">
+                <div class="dots"><span></span><span></span><span></span></div>
+                <div class="url-bar">loja.exemplo.com/checkout</div>
+              </div>
+              <div class="checkout-body">
+                <div class="cart-items">
+                  <div class="cart-item">
+                    <div class="item-thumb"></div>
+                    <div class="item-details"><div class="item-name"></div><div class="item-var">Tamanho: M</div></div>
+                    <div class="item-qty">
+                      <button class="qty-btn">−</button>
+                      <span>2</span>
+                      <button class="qty-btn">+</button>
+                    </div>
+                    <div class="item-price">R$ 240</div>
+                  </div>
+                  <div class="cart-item">
+                    <div class="item-thumb"></div>
+                    <div class="item-details"><div class="item-name"></div><div class="item-var">Cor: Preto</div></div>
+                    <div class="item-qty">
+                      <button class="qty-btn">−</button>
+                      <span>1</span>
+                      <button class="qty-btn">+</button>
+                    </div>
+                    <div class="item-price">R$ 85</div>
+                  </div>
+                </div>
+                <div class="cart-summary">
+                  <div class="summary-row"><span>Subtotal</span><span>R$ 325,00</span></div>
+                  <div class="summary-row"><span>Frete</span><span>R$ 15,00</span></div>
+                  <div class="summary-row total"><span>Total</span><span class="total-price">R$ 340,00</span></div>
+                  <div class="checkout-btn">Finalizar Compra</div>
+                </div>
+              </div>
+            </div>
+            <h3>Carrinho & Checkout</h3>
+            <p>Resumo com itens, quantidades e cálculo de total.</p>
           </div>
         </div>
       </div>
 
-      <!-- SITE -->
-      <div class="tab-panel" id="panel-site">
+      <!-- SITES -->
+      <div class="panel" id="panel-site">
         <div class="ex-grid">
           <div class="ex-card reveal" onclick="openModal('site-landing')">
-            <div class="ex-mock">
-              <div class="wm"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="wt">index.html</span></div>
-              <div class="wb" style="display: block; padding: 0.4rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem;"><div style="width: 24px; height: 5px; background: var(--accent-1); border-radius: 1px;"></div><div style="display: flex; gap: 0.2rem;"><div style="width: 12px; height: 3px; background: var(--ink-muted); border-radius: 1px;"></div><div style="width: 12px; height: 3px; background: var(--ink-muted); border-radius: 1px;"></div><div style="width: 12px; height: 3px; background: var(--ink-muted); border-radius: 1px;"></div></div></div>
-                <div style="display: flex; flex-direction: column; align-items: center; gap: 0.15rem; padding: 0.2rem 0;"><div style="width: 16px; height: 4px; background: var(--accent-1); border-radius: 2px;"></div><div style="width: 50%; height: 6px; background: var(--ink); border-radius: 1px;"></div><div style="width: 35%; height: 3px; background: var(--ink-muted); border-radius: 1px;"></div><div style="display: flex; gap: 0.2rem; margin-top: 0.1rem;"><div style="width: 28px; height: 8px; background: var(--accent-1); border-radius: 2px;"></div><div style="width: 28px; height: 8px; border: 1px solid var(--accent-1); border-radius: 2px;"></div></div></div>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.2rem; margin-top: auto;"><div style="height: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 2px;"></div><div style="height: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 2px;"></div><div style="height: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 2px;"></div></div>
+            <div class="mock-site">
+              <div class="site-header">
+                <div class="dots"><span></span><span></span><span></span></div>
+                <div class="url-bar">meusite.com.br</div>
+              </div>
+              <div class="site-content">
+                <div class="site-nav">
+                  <div class="site-logo"></div>
+                  <div class="site-links"><div class="link"></div><div class="link"></div><div class="link"></div></div>
+                </div>
+                <div class="site-hero">
+                  <div class="badge"></div>
+                  <div class="hero-title"></div>
+                  <div class="hero-sub"></div>
+                  <div class="hero-buttons">
+                    <div class="primary-btn"></div>
+                    <div class="ghost-btn"></div>
+                  </div>
+                </div>
+                <div class="site-cards">
+                  <div class="info-card"></div>
+                  <div class="info-card"></div>
+                  <div class="info-card"></div>
+                </div>
               </div>
             </div>
             <h3>Landing Page Premium</h3>
             <p>Página de conversão com hero, CTAs e grid de features.</p>
           </div>
+
           <div class="ex-card reveal" data-delay="100" onclick="openModal('site-institucional')">
-            <div class="ex-mock">
-              <div class="wm"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="wt">Empresa — Site</span></div>
-              <div class="wb" style="display: block; padding: 0.4rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;"><div style="width: 20px; height: 5px; background: var(--accent-1); border-radius: 1px;"></div><div style="display: flex; gap: 0.2rem;"><div style="width: 10px; height: 3px; background: var(--ink-muted); border-radius: 1px;"></div><div style="width: 10px; height: 3px; background: var(--ink-muted); border-radius: 1px;"></div><div style="width: 10px; height: 3px; background: var(--ink-muted); border-radius: 1px;"></div><div style="width: 10px; height: 3px; background: var(--ink-muted); border-radius: 1px;"></div></div></div>
-                <div style="background: var(--accent-grad); border-radius: 4px; padding: 0.3rem; display: flex; flex-direction: column; align-items: center; gap: 0.1rem; margin-bottom: 0.2rem;"><div style="width: 40%; height: 5px; background: rgba(255,255,255,0.8); border-radius: 1px;"></div><div style="width: 30%; height: 3px; background: rgba(255,255,255,0.6); border-radius: 1px;"></div><div style="width: 24px; height: 6px; background: white; border-radius: 2px; margin-top: 0.1rem;"></div></div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.3rem;"><div><div style="height: 5px; width: 80%; background: var(--ink); border-radius: 1px; margin-bottom: 0.1rem;"></div><div style="height: 3px; width: 100%; background: var(--ink-muted); border-radius: 1px;"></div></div><div><div style="height: 5px; width: 80%; background: var(--ink); border-radius: 1px; margin-bottom: 0.1rem;"></div><div style="height: 3px; width: 100%; background: var(--ink-muted); border-radius: 1px;"></div></div></div>
+            <div class="mock-site">
+              <div class="site-header">
+                <div class="dots"><span></span><span></span><span></span></div>
+                <div class="url-bar">empresa.com.br</div>
+              </div>
+              <div class="site-content">
+                <div class="site-nav">
+                  <div class="site-logo"></div>
+                  <div class="site-links"><div class="link"></div><div class="link"></div><div class="link"></div><div class="link"></div></div>
+                </div>
+                <div class="site-banner">
+                  <div class="banner-title"></div>
+                  <div class="banner-btn"></div>
+                </div>
+                <div class="site-body">
+                  <div class="about-col">
+                    <div class="col-title"></div>
+                    <div class="col-text"></div>
+                    <div class="col-text short"></div>
+                  </div>
+                  <div class="about-col">
+                    <div class="col-title"></div>
+                    <div class="col-text"></div>
+                    <div class="col-text short"></div>
+                  </div>
+                </div>
               </div>
             </div>
             <h3>Página Institucional</h3>
@@ -178,9 +386,11 @@
           </div>
         </div>
       </div>
+
     </div>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
       <div>© <span id="yr"></span> Code House</div>
@@ -188,11 +398,12 @@
     </div>
   </footer>
 
+  <!-- WA FLOAT -->
   <a href="https://wa.me/55559991441700" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
   </a>
 
-  <!-- Modal -->
+  <!-- MODAL -->
   <div id="modal-overlay" class="modal-overlay">
     <div class="modal-box">
       <button class="modal-close" onclick="closeModal()">&times;</button>
