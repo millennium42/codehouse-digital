@@ -38,18 +38,21 @@
   
   <nav class="nav-global">
     <div class="nav-container">
-      <a href="#" class="logo reveal">CODE<span>.</span>HOUSE</a>
-      <div class="nav-links">
-        <a href="#servicos" class="nav-link nav-link-desktop reveal">Serviços</a>
-        <a href="#processo" class="nav-link nav-link-desktop reveal">Processo</a>
-        <a href="#exemplos" class="nav-link nav-link-desktop reveal">Exemplos</a>
-        <a href="#contato" class="nav-link nav-link-desktop reveal">Contato</a>
-        <button id="theme-toggle" class="theme-toggle reveal" aria-label="Alternar tema">
+      <a href="#" class="logo">CODE<span>.</span>HOUSE</a>
+      <div class="nav-links" id="nav-links">
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#processo" class="nav-link">Processo</a>
+        <a href="#exemplos" class="nav-link">Exemplos</a>
+        <a href="#contato" class="nav-link">Contato</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
           <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
           <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </button>
-        <a href="#contato" class="btn btn-solid reveal">Falar com a gente</a>
+        <a href="#contato" class="btn btn-solid nav-cta">Falar com a gente</a>
       </div>
+      <button id="hamburger" class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
@@ -360,40 +363,56 @@
         <div id="tab-site" class="tab-panel reveal">
           <div class="examples-grid">
             <div class="example-card">
-              <h3 class="example-title">Landing Page</h3>
+              <h3 class="example-title">Landing Page Premium</h3>
               <div class="app-window mockup-small">
                 <div class="app-header">
                   <div class="app-dots"><span style="background:#ff5f56"></span><span style="background:#ffbd2e"></span><span style="background:#27c93f"></span></div>
                   <div class="app-title">index.html</div>
                 </div>
                 <div class="app-body">
-                  <div class="mockup-site">
-                    <div class="site-nav"><div class="site-logo"></div><div class="site-links"><div class="site-link"></div><div class="site-link"></div></div></div>
-                    <div class="site-hero">
-                      <div class="site-h1"></div>
-                      <div class="site-p"></div>
-                      <div class="site-p short"></div>
-                      <div class="site-btns"><div class="site-btn"></div><div class="site-btn outline"></div></div>
+                  <div class="mockup-site-landing">
+                    <div class="landing-nav">
+                      <div class="nav-logo"></div>
+                      <div class="nav-links"><div class="nav-link"></div><div class="nav-link"></div><div class="nav-link"></div></div>
+                    </div>
+                    <div class="landing-hero">
+                      <div class="hero-badge"></div>
+                      <div class="hero-title-lg"></div>
+                      <div class="hero-subtitle"></div>
+                      <div class="hero-btns"><div class="hero-btn-primary"></div><div class="hero-btn-outline"></div></div>
+                    </div>
+                    <div class="landing-grid">
+                      <div class="landing-card"></div>
+                      <div class="landing-card"></div>
+                      <div class="landing-card"></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="example-card">
-              <h3 class="example-title">Página Institucional</h3>
+              <h3 class="example-title">E-commerce Completo</h3>
               <div class="app-window mockup-small">
                 <div class="app-header">
                   <div class="app-dots"><span style="background:#ff5f56"></span><span style="background:#ffbd2e"></span><span style="background:#27c93f"></span></div>
-                  <div class="app-title">Empresa</div>
+                  <div class="app-title">loja.com</div>
                 </div>
                 <div class="app-body">
-                  <div class="mockup-site">
-                    <div class="site-nav"><div class="site-logo"></div><div class="site-links"><div class="site-link"></div><div class="site-link"></div><div class="site-link"></div></div></div>
-                    <div class="site-hero">
-                      <div class="site-h1"></div>
-                      <div class="site-p"></div>
-                      <div class="site-p short"></div>
-                      <div class="site-btns"><div class="site-btn"></div></div>
+                  <div class="mockup-site-shop">
+                    <div class="shop-nav">
+                      <div class="shop-logo"></div>
+                      <div class="shop-search"></div>
+                      <div class="shop-cart-icon"></div>
+                    </div>
+                    <div class="shop-hero-banner">
+                      <div class="banner-text"></div>
+                      <div class="banner-btn"></div>
+                    </div>
+                    <div class="shop-grid-4">
+                      <div class="shop-item"><div class="item-img"></div><div class="item-name"></div><div class="item-price"></div></div>
+                      <div class="shop-item"><div class="item-img"></div><div class="item-name"></div><div class="item-price"></div></div>
+                      <div class="shop-item"><div class="item-img"></div><div class="item-name"></div><div class="item-price"></div></div>
+                      <div class="shop-item"><div class="item-img"></div><div class="item-name"></div><div class="item-price"></div></div>
                     </div>
                   </div>
                 </div>

@@ -1,14 +1,11 @@
-/**
- * main.js — Theme toggle, initialization, WhatsApp links, current year
- * Code House — Main application entry point
- */
+/** main.js — Theme toggle, hamburger menu, WhatsApp, smooth scroll */
 
 (function () {
   'use strict';
 
-  /* ─────────────────────────────────────────────
+  /* ═══════════════════════════════════════════
      THEME TOGGLE
-     ───────────────────────────────────────────── */
+     ═══════════════════════════════════════════ */
   const themeToggle = document.getElementById('theme-toggle');
 
   function getPreferredTheme() {
@@ -22,7 +19,6 @@
     localStorage.setItem('ch-theme', theme);
   }
 
-  // Apply theme immediately to prevent flash
   applyTheme(getPreferredTheme());
 
   if (themeToggle) {
@@ -33,41 +29,68 @@
     });
   }
 
-  /* ─────────────────────────────────────────────
-     CURRENT YEAR IN FOOTER
-     ───────────────────────────────────────────── */
-  const yearEl = document.getElementById('current-year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
+  /* ═══════════════════════════════════════════
+     HAMBURGER MENU
+     ═══════════════════════════════════════════ */
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', function () {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
+    });
+
+    // Close menu on link click
+    navLinks.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // Close menu on outside click
+    document.addEventListener('click', function (e) {
+      if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
+      }
+    });
+
+    // Close menu on ESC key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
+      }
+    });
   }
 
-  /* ─────────────────────────────────────────────
+  /* ═══════════════════════════════════════════
+     CURRENT YEAR IN FOOTER
+     ═══════════════════════════════════════════ */
+  const yearEl = document.getElementById('current-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ═══════════════════════════════════════════
      WHATSAPP LINKS
-     ───────────────────────────────────────────── */
+     ═══════════════════════════════════════════ */
   const WHATSAPP_NUMBER = '55559991441700';
-  document.querySelectorAll('[data-whatsapp="true"]').forEach(function (link) {
+  document.querySelectorAll('[data-whatsapp]').forEach(function (link) {
     link.href = 'https://wa.me/' + WHATSAPP_NUMBER;
     link.setAttribute('target', '_blank');
     link.setAttribute('rel', 'noopener noreferrer');
   });
 
-  /* ─────────────────────────────────────────────
-     FAQ ACCORDION
-     ───────────────────────────────────────────── */
-  document.querySelectorAll('.faq-item').forEach(function (item) {
-    var btn = item.querySelector('.faq-q');
-    if (!btn) return;
-    btn.addEventListener('click', function () {
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(function (openItem) {
-        openItem.classList.remove('open');
-        var a = openItem.querySelector('.faq-a');
-        if (a) a.classList.add('hidden');
-      });
-      if (!isOpen) {
-        item.classList.add('open');
-        var answer = item.querySelector('.faq-a');
-        if (answer) answer.classList.remove('hidden');
+  /* ═══════════════════════════════════════════
+     SMOOTH SCROLL FOR ANCHOR LINKS
+     ═══════════════════════════════════════════ */
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   });

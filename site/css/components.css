@@ -472,3 +472,199 @@
 .example-title { font-size: 1.1rem; margin-bottom: 1rem; color: var(--ink); font-weight: 600; }
 
 .bg-surface { background: var(--surface-raised); }
+
+/* ---------- Landing Page Mockup ---------- */
+.mockup-site-landing {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0.5rem;
+}
+
+.landing-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.nav-logo {
+  width: 32px;
+  height: 8px;
+  background: var(--cloud);
+  border-radius: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.nav-link {
+  width: 16px;
+  height: 3px;
+  background: var(--ink-muted);
+  border-radius: 1px;
+}
+
+.landing-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 0;
+}
+
+.hero-badge {
+  width: 24px;
+  height: 6px;
+  background: var(--cloud);
+  border-radius: 3px;
+}
+
+.hero-title-lg {
+  width: 70%;
+  height: 10px;
+  background: var(--ink);
+  border-radius: 2px;
+}
+
+.hero-subtitle {
+  width: 50%;
+  height: 5px;
+  background: var(--ink-muted);
+  border-radius: 1px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+}
+
+.hero-btn-primary {
+  width: 40px;
+  height: 12px;
+  background: var(--cloud);
+  border-radius: 2px;
+}
+
+.hero-btn-outline {
+  width: 40px;
+  height: 12px;
+  border: 1px solid var(--cloud);
+  border-radius: 2px;
+}
+
+.landing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.3rem;
+  margin-top: auto;
+  padding: 0.3rem 0;
+}
+
+.landing-card {
+  height: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+
+/* ---------- Shop Mockup ---------- */
+.mockup-site-shop {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0.5rem;
+}
+
+.shop-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.shop-logo {
+  width: 24px;
+  height: 6px;
+  background: var(--cloud);
+  border-radius: 1px;
+}
+
+.shop-search {
+  flex: 1;
+  height: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+
+.shop-cart-icon {
+  width: 14px;
+  height: 14px;
+  background: var(--ink);
+  border-radius: 50%;
+}
+
+.shop-hero-banner {
+  height: 60px;
+  background: linear-gradient(135deg, var(--cloud) 0%, var(--accent-3) 100%);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.banner-text {
+  width: 50%;
+  height: 8px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 1px;
+}
+
+.banner-btn {
+  width: 32px;
+  height: 10px;
+  background: white;
+  border-radius: 2px;
+}
+
+.shop-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.3rem;
+}
+
+.shop-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.item-img {
+  height: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+
+.item-name {
+  width: 80%;
+  height: 4px;
+  background: var(--ink);
+  border-radius: 1px;
+}
+
+.item-price {
+  width: 50%;
+  height: 4px;
+  background: var(--cloud);
+  border-radius: 1px;
+}
