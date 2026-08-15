@@ -16,7 +16,7 @@
   --accent-1: #ff6b35;
   --accent-2: #ff2e63;
   --accent-3: #9d4edd;
-  --accent-grad: linear-gradient(135deg, #ff6b35 0%, #ff2e63 50%, #9d4edd 100%);
+  --accent-grad: linear-gradient(135deg, #ff6b35 0%, #ff2e63 100%);
   --success: #22c55e;
   --error: #ef4444;
   --wa: #25D366;
@@ -72,7 +72,7 @@ img { max-width: 100%; display: block; }
   content: ''; position: absolute; border-radius: 50%; filter: blur(120px); animation: bgFloat 25s ease-in-out infinite;
 }
 .bg-effects::before { top: -10%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(255,107,53,0.04) 0%, transparent 70%); }
-.bg-effects::after { bottom: -10%; right: -10%; width: 40vw; height: 40vw; background: radial-gradient(circle, rgba(157,78,221,0.03) 0%, transparent 70%); animation-delay: -12s; }
+.bg-effects::after { bottom: -10%; right: -10%; width: 40vw; height: 40vw; background: radial-gradient(circle, rgba(255,46,99,0.03) 0%, transparent 70%); animation-delay: -12s; }
 
 @keyframes bgFloat {
   0%, 100% { transform: translate(0, 0) scale(1); }

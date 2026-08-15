@@ -53,12 +53,13 @@
     background: var(--surface); flex-direction: column; justify-content: center;
     gap: 0.5rem; padding: 2rem; transition: right 0.35s ease;
     border-left: 1px solid var(--border); box-shadow: -16px 0 48px rgba(0,0,0,0.6);
+    overflow-y: auto;
   }
   .nav-menu.open { right: 0; }
   .nav-link { font-size: 1.1rem; padding: 0.75rem 1rem; }
 }
 
-.sec { padding: 6rem 1.5rem; }
+.sec { padding: 6rem 0; }
 .sec-dark { background: var(--surface); }
 
 .footer {
