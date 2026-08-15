@@ -245,9 +245,10 @@
 .modal-content-area li::before { content: '→'; color: var(--accent-1); font-weight: 700; flex-shrink: 0; margin-top: 0.1rem; }
 .modal-content-area .stack-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
 .modal-content-area .stack-badge { font-family: var(--font-m); font-size: 0.7rem; font-weight: 700; color: var(--ink); background: var(--surface-raised); border: 1px solid var(--border); padding: 0.3rem 0.7rem; border-radius: var(--r-sm); }
-.modal-content-area .result-box { background: rgba(34, 197, 94, 0.05); border: 1px solid rgba(34, 197, 94, 0.2); border-radius: var(--r-md); padding: 1rem; margin-top: 1.5rem; }
+.modal-content-area .result-box { background: rgba(34, 197, 94, 0.05); border: 1px solid rgba(34, 197, 94, 0.2); border-radius: var(--r-md); padding: 1rem 1rem 0.75rem; margin-top: 1.5rem; }
 .modal-content-area .result-box p { color: var(--success); font-family: var(--font-m); font-size: 0.85rem; font-weight: 700; margin: 0; line-height: 1.5; }
-.modal-content-area .result-box .result-num { font-family: var(--font-d); font-size: 1.5rem; font-weight: 800; color: var(--ink); display: block; margin-bottom: 0.2rem; }
+.modal-content-area .result-box .result-num { font-family: var(--font-d); font-size: 1.5rem; font-weight: 800; color: var(--ink); display: block; margin-bottom: 0.2rem; line-height: 1.2; letter-spacing: -0.01em; }
+.modal-content-area .result-box .result-source { display: block; font-family: var(--font-s); font-size: 0.65rem; font-weight: 400; color: var(--ink-faint); margin-top: 0.5rem; line-height: 1.4; font-style: italic; }
 
 @media (max-width: 640px) {
   .modal-content-area { padding: 1.5rem; }
