@@ -5,9 +5,16 @@ document.addEventListener('DOMContentLoaded', function() {
   /* --- 1. SPOTLIGHT --- */
   const spotlight = document.getElementById('spotlight');
   if (spotlight) {
+    let ticking = false;
     document.addEventListener('mousemove', function(e) {
-      spotlight.style.setProperty('--mx', e.clientX + 'px');
-      spotlight.style.setProperty('--my', e.clientY + 'px');
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          spotlight.style.setProperty('--mx', e.clientX + 'px');
+          spotlight.style.setProperty('--my', e.clientY + 'px');
+          ticking = false;
+        });
+        ticking = true;
+      }
     });
   }
 
@@ -174,10 +181,25 @@ document.addEventListener('DOMContentLoaded', function() {
   const overlay = document.getElementById('modal-overlay');
   const content = document.getElementById('modal-content');
   const closeBtn = document.getElementById('modalClose');
+  const modalBox = document.querySelector('.modal-box');
+  let firstFocusableElement;
+  let lastFocusableElement;
+  let previousActiveElement;
+
+  function updateModalFocusables() {
+    if (!modalBox) return;
+    const focusableElementsString = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+    const focusableContent = modalBox.querySelectorAll(focusableElementsString);
+    if(focusableContent.length === 0) return;
+    firstFocusableElement = focusableContent[0];
+    lastFocusableElement = focusableContent[focusableContent.length - 1];
+  }
 
   function openModal(id) {
     const data = modalData[id];
     if (!data || !overlay || !content) return;
+    
+    previousActiveElement = document.activeElement;
 
     let html = '<span class="modal-tag">' + data.tag + '</span>' +
                '<h2>' + data.title + '</h2>' +
@@ -190,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     html += '</ul>' +
-            '<h4>Stack Tecnica</h4>' +
+            '<h4>Stack Técnica</h4>' +
             '<div class="stack-list">';
     
     data.stack.forEach(function(s) {
@@ -207,6 +229,9 @@ document.addEventListener('DOMContentLoaded', function() {
     overlay.classList.add('open');
     overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    
+    updateModalFocusables();
+    if(firstFocusableElement) firstFocusableElement.focus();
   }
 
   function closeModal() {
@@ -214,6 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
     overlay.classList.remove('open');
     overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    if(previousActiveElement) previousActiveElement.focus();
   }
 
   // Bind card clicks
@@ -251,9 +277,31 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Escape key
+  // Escape key & Tab
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeModal();
+    if (!overlay || !overlay.classList.contains('open')) return;
+    
+    if (e.key === 'Escape') {
+      closeModal();
+      return;
+    }
+
+    if (e.key === 'Tab') {
+      updateModalFocusables();
+      if (!firstFocusableElement) return;
+
+      if (e.shiftKey) { // Shift + Tab
+        if (document.activeElement === firstFocusableElement) {
+          lastFocusableElement.focus();
+          e.preventDefault();
+        }
+      } else { // Tab
+        if (document.activeElement === lastFocusableElement) {
+          firstFocusableElement.focus();
+          e.preventDefault();
+        }
+      }
+    }
   });
 
 });

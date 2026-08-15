@@ -1,0 +1,5 @@
+# Progress and Learnings
+
+- Phase 1 (SEO, Open Graph, Schema.org, HTML semantic elements) completed via Antigravity before Ralph initialization.
+- Project uses strict CSP and simple file structure.
+- Dark mode is heavily prioritized by design system.

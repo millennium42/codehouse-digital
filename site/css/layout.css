@@ -1,7 +1,7 @@
 /* layout.css */
 
 .nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: var(--z-nav, 100);
+  position: fixed; top: 0; left: 0; right: 0; z-index: var(--z-nav);
   background: rgba(8,8,8,0.85);
   backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
@@ -36,7 +36,7 @@
 .theme-btn svg { display: block; }
 
 .hamburger {
-  display: none; flex-direction: column; gap: 5px; padding: 0.5rem; cursor: pointer; z-index: 101;
+  display: none; flex-direction: column; gap: 5px; padding: 0.5rem; cursor: pointer; z-index: var(--z-hamburger);
 }
 .hamburger span {
   display: block; width: 24px; height: 2px; background: var(--ink);
@@ -72,9 +72,9 @@
 .footer-links a:hover { color: var(--accent-1); }
 
 .wa-float {
-  position: fixed; bottom: 2rem; right: 2rem; background: #25D366; color: #fff;
+  position: fixed; bottom: 2rem; right: 2rem; background: var(--wa); color: #fff;
   width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 24px rgba(37,211,102,0.4); z-index: 999; transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 24px rgba(37,211,102,0.4); z-index: var(--z-wa); transition: transform 0.2s, box-shadow 0.2s;
 }
 .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,0.5); }
 

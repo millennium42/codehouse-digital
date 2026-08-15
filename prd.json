@@ -1,0 +1,155 @@
+{
+  "project": "CodeHouse",
+  "branchName": "main",
+  "description": "Resolução dos 18 problemas identificados na plataforma digital Code House",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Atualizar robots.txt",
+      "description": "Atualizar robots.txt para apontar para o novo sitemap.xml",
+      "acceptanceCriteria": [
+        "Adicionar Sitemap: https://pablo-codehouse.surge.sh/sitemap.xml no robots.txt"
+      ],
+      "priority": 1,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "UX e Acessibilidade: Atualizar validação de formulário e alertas no index.html",
+      "description": "Melhorar acessibilidade e UX do formulário de contato",
+      "acceptanceCriteria": [
+        "Adicionar aria-live ou roles apropriados para mensagens de erro/sucesso",
+        "Garantir que os inputs tenham validação de required visível aos leitores de tela"
+      ],
+      "priority": 2,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-003",
+      "title": "UX e Acessibilidade: Ocultar mockup para leitores de tela em index.html",
+      "description": "Os elementos de mockup decorativo devem ter aria-hidden='true'",
+      "acceptanceCriteria": [
+        "Elementos com classe mockup-window ou similares no index.html devem possuir aria-hidden='true'"
+      ],
+      "priority": 3,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-004",
+      "title": "Acessibilidade: Adicionar Focus Trap no menu mobile (nav.js)",
+      "description": "Quando o menu mobile estiver aberto, o foco deve ficar preso dentro dele.",
+      "acceptanceCriteria": [
+        "Implementar rotina de focus trap no arquivo js/nav.js ao abrir menu",
+        "Pressionar ESC deve fechar o menu"
+      ],
+      "priority": 4,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-005",
+      "title": "Acessibilidade: Adicionar Focus Trap no modal de portfolio (examples.js)",
+      "description": "Quando o modal de projeto for aberto em exemplos.html, o foco deve ficar preso.",
+      "acceptanceCriteria": [
+        "Implementar rotina de focus trap no arquivo js/examples.js",
+        "Pressionar ESC deve fechar o modal"
+      ],
+      "priority": 5,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-006",
+      "title": "Performance: Adicionar requestAnimationFrame no examples.js",
+      "description": "Otimizar scroll ou filtros em examples.js usando requestAnimationFrame se houver event listeners de scroll/resize pesados",
+      "acceptanceCriteria": [
+        "Envolver lógicas pesadas de scroll/resize em requestAnimationFrame"
+      ],
+      "priority": 6,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-007",
+      "title": "Performance/UX: Otimizar accordion (faq.js)",
+      "description": "Melhorar a implementação de FAQ accordion",
+      "acceptanceCriteria": [
+        "Transição suave de altura no FAQ",
+        "Usar propriedades CSS modernas e toggle de classes eficiente"
+      ],
+      "priority": 7,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-008",
+      "title": "Modernização: Variáveis em nav.js",
+      "description": "Trocar var por const/let no nav.js",
+      "acceptanceCriteria": [
+        "Nenhum var no js/nav.js"
+      ],
+      "priority": 8,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-009",
+      "title": "Limpeza: Remover/Atualizar alternância de tema em theme.js",
+      "description": "Ajustar lógica de theme dark/light para refletir decisão do usuário",
+      "acceptanceCriteria": [
+        "Se for dark-first/only, remover toggle de luz e forçar data-theme=dark em todo lugar"
+      ],
+      "priority": 9,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-010",
+      "title": "CSS Refactor: Migrar cores e z-index hardcoded no layout.css",
+      "description": "Remover valores hardcoded de layout.css",
+      "acceptanceCriteria": [
+        "Usar vars() do tokens.css para cores e z-indexes em css/layout.css"
+      ],
+      "priority": 10,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-011",
+      "title": "CSS Refactor: Refatorar components.css",
+      "description": "Remover IDs e limpar mockups no components.css",
+      "acceptanceCriteria": [
+        "Sem seletores baseados em ID",
+        "Melhorar nomenclatura de classes"
+      ],
+      "priority": 11,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-012",
+      "title": "CSS Refactor: Desduplicar CSS de modais",
+      "description": "Consolidar estilos de modal entre examples.css e components.css",
+      "acceptanceCriteria": [
+        "Modais usam uma base comum"
+      ],
+      "priority": 12,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-013",
+      "title": "CSS Refactor: Consolidar tokens",
+      "description": "Ajustar css/tokens.css para cobrir todas as variáveis necessárias",
+      "acceptanceCriteria": [
+        "O arquivo tokens.css contém todas as cores, fontes, shadows, e z-index centrais"
+      ],
+      "priority": 13,
+      "passes": true,
+      "notes": ""
+    }
+  ]
+}

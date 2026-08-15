@@ -19,7 +19,11 @@
   --accent-grad: linear-gradient(135deg, #ff6b35 0%, #ff2e63 50%, #9d4edd 100%);
   --success: #22c55e;
   --error: #ef4444;
+  --wa: #25D366;
   --z-nav: 100;
+  --z-hamburger: 101;
+  --z-wa: 999;
+  --z-modal: 1000;
   --sh-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
   --sh-md: 0 8px 24px rgba(0, 0, 0, 0.5);
   --sh-lg: 0 24px 48px rgba(0, 0, 0, 0.6);

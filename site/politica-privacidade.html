@@ -1,52 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Política de Privacidade - Code House</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de Privacidade — Code House</title>
+  <meta name="description" content="Nossa política de privacidade. Saiba como a Code House trata e protege seus dados em conformidade com a LGPD.">
+  <link rel="canonical" href="https://pablo-codehouse.surge.sh/politica-privacidade.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23FF6B35'/%3E%3Ctext x='50%25' y='58%25' font-family='monospace' font-weight='bold' font-size='16' fill='white' text-anchor='middle' dominant-baseline='middle'%3ECH%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <script>(function(){document.documentElement.setAttribute('data-theme','dark');})();</script>
   <style>
-    :root {
-      --bg: #F1F4F8; --cloud: #2D74A0; --ink: #101820; --ink-m: #3D566E; --border: #C2D2E2;
-      --f-display: 'Syne', sans-serif; --f-body: 'Inter', sans-serif; --f-mono: 'Space Mono', monospace;
-    }
-    body { font-family: var(--f-body); background: var(--bg); color: var(--ink-m); line-height: 1.6; margin: 0; padding: 0; }
-    .container { max-width: 800px; margin: 4rem auto; padding: 0 2rem; }
-    h1, h2 { font-family: var(--f-display); color: var(--ink); }
-    h1 { font-size: 2.5rem; margin-bottom: 2rem; }
-    h2 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; }
-    p { margin-bottom: 1rem; }
-    a { color: var(--cloud); text-decoration: none; font-family: var(--f-mono); font-size: 0.9rem; }
-    a:hover { text-decoration: underline; }
-    .back { display: inline-block; margin-bottom: 2rem; }
+    .policy-content { padding: 4rem 0; }
+    .policy-content h2 { color: var(--accent-1); margin-top: 2rem; margin-bottom: 1rem; font-family: var(--font-d); }
+    .policy-content p { margin-bottom: 1rem; color: var(--ink-muted); }
+    .policy-content ul { margin-bottom: 1rem; padding-left: 1.5rem; color: var(--ink-muted); }
+    .policy-content li { margin-bottom: 0.5rem; }
+    .back-link { display: inline-block; margin-bottom: 2rem; font-family: var(--font-m); font-size: 0.9rem; color: var(--ink-muted); text-decoration: none; }
+    .back-link:hover { color: var(--ink); }
   </style>
 </head>
 <body>
-  <div class="container">
-    <a href="/" class="back">← Voltar para a Home</a>
-    <h1>Política de Privacidade</h1>
-    <p>A privacidade dos nossos visitantes é extremamente importante para nós. Esta Política de Privacidade descreve os tipos de informações pessoais que são coletadas e recebidas pela Code House e como elas são usadas.</p>
-    
-    <h2>Coleta de Informações</h2>
-    <p>Coletamos informações apenas quando você preenche voluntariamente nosso formulário de contato. Os dados coletados incluem Nome e E-mail.</p>
-    
-    <h2>Uso das Informações</h2>
-    <p>As informações coletadas no formulário de contato são utilizadas estritamente para:</p>
-    <ul>
-      <li>Responder a sua solicitação ou orçamento.</li>
-      <li>Entrar em contato para agendar reuniões ou enviar propostas solicitadas por você.</li>
-    </ul>
-    
-    <h2>Proteção de Dados</h2>
-    <p>Nós não vendemos, alugamos ou compartilhamos suas informações pessoais com terceiros. Seus dados são mantidos em segurança e utilizados apenas para a comunicação direta entre a Code House e você.</p>
-    
-    <h2>Cookies</h2>
-    <p>Nosso site não utiliza cookies para rastreamento de marketing. Podemos usar armazenamento local (localStorage) apenas para lembrar caso você tenha fechado o aviso de privacidade, garantindo uma melhor experiência de navegação.</p>
-    
-    <h2>Alterações nesta Política</h2>
-    <p>A Code House reserva-se o direito de atualizar esta Política de Privacidade a qualquer momento. Recomendamos que você visite esta página periodicamente para se manter informado sobre como estamos protegendo suas informações.</p>
-  </div>
+  <div class="bg-effects"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">CODE<span>.</span>HOUSE</a>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="exemplos.html" class="nav-link">Exemplos</a>
+        <a href="index.html#contato" class="nav-link">Contato</a>
+      </div>
+      <button id="hamburger" class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="sec policy-content">
+      <div class="container" style="max-width: 800px;">
+        <a href="index.html" class="back-link">← Voltar para a Home</a>
+        <h1 class="section-title">Política de Privacidade</h1>
+        <p>A privacidade dos nossos visitantes é extremamente importante para nós. Esta Política de Privacidade descreve os tipos de informações pessoais que são coletadas e recebidas pela Code House e como elas são usadas.</p>
+        
+        <h2>Coleta de Informações</h2>
+        <p>Coletamos informações apenas quando você preenche voluntariamente nosso formulário de contato. Os dados coletados incluem Nome e E-mail.</p>
+        
+        <h2>Uso das Informações</h2>
+        <p>As informações coletadas no formulário de contato são utilizadas estritamente para:</p>
+        <ul>
+          <li>Responder a sua solicitação ou orçamento.</li>
+          <li>Entrar em contato para agendar reuniões ou enviar propostas solicitadas por você.</li>
+        </ul>
+        
+        <h2>Proteção de Dados e Contato LGPD</h2>
+        <p>Nós não vendemos, alugamos ou compartilhamos suas informações pessoais com terceiros. Seus dados são mantidos em segurança e utilizados apenas para a comunicação direta entre a Code House e você.</p>
+        <p>Para solicitações referentes aos seus dados (consulta, alteração ou exclusão), entre em contato com nosso Encarregado de Dados (DPO) através do e-mail: <strong>codehouse42@gmail.com</strong>.</p>
+        
+        <h2>Cookies</h2>
+        <p>Nosso site não utiliza cookies para rastreamento de marketing. Podemos usar armazenamento local (localStorage) apenas para lembrar caso você tenha fechado o aviso de privacidade, garantindo uma melhor experiência de navegação.</p>
+        
+        <h2>Alterações nesta Política</h2>
+        <p>A Code House reserva-se o direito de atualizar esta Política de Privacidade a qualquer momento. Recomendamos que você visite esta página periodicamente para se manter informado sobre como estamos protegendo suas informações.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>© <span id="yr"></span> Code House — CNPJ: 68.489.569/0001-04</div>
+      <div class="footer-links"><a href="index.html">Início</a><a href="exemplos.html">Exemplos</a><a href="politica-privacidade.html" class="active">Privacidade</a><a href="index.html#contato">Contato</a></div>
+    </div>
+  </footer>
+
+  <script src="js/theme.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/scroll.js" defer></script>
 </body>
 </html>
