@@ -3,9 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Política de Privacidade — Codehouse</title>
-  <meta name="description" content="Política de privacidade da Codehouse. Saiba como tratamos seus dados pessoais com respeito e responsabilidade.">
-  <link rel="canonical" href="https://pablo-codehouse.surge.sh/politica-privacidade.html">
+  <title>Codehouse — Tecnologia que simplifica. Resultados que transformam.</title>
+  <meta name="description" content="Desenvolvemos sistemas personalizados que automatizam processos, conectam áreas e impulsionam o crescimento do seu negócio.">
+  <link rel="canonical" href="https://pablo-codehouse.surge.sh/">
+  <meta property="og:title" content="Codehouse — Tecnologia que simplifica. Resultados que transformam.">
+  <meta property="og:description" content="Desenvolvemos sistemas personalizados que automatizam processos, conectam áreas e impulsionam o crescimento do seu negócio.">
+  <meta property="og:url" content="https://pablo-codehouse.surge.sh/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://pablo-codehouse.surge.sh/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Codehouse — Tecnologia que simplifica. Resultados que transformam.">
+  <meta name="twitter:description" content="Desenvolvemos sistemas personalizados que automatizam processos, conectam áreas e impulsionam o crescimento do seu negócio.">
+  <meta name="twitter:image" content="https://pablo-codehouse.surge.sh/og-image.png">
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300C9FF'/%3E%3Cstop offset='1' stop-color='%237B2FF7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='%230C1221'/%3E%3Cpath d='M16 5 L28 14 L28 27 L4 27 L4 14 Z' fill='none' stroke='url(%23g)' stroke-width='2' stroke-linejoin='round'/%3E%3Ctext x='50%25' y='72%25' font-family='monospace' font-weight='bold' font-size='9' fill='url(%23g)' text-anchor='middle' dominant-baseline='middle'%3E%3C/%3E%3C/text%3E%3C/svg%3E">
@@ -21,14 +30,30 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/landing.css">
 
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Codehouse",
+    "url": "https://pablo-codehouse.surge.sh/",
+    "logo": "https://pablo-codehouse.surge.sh/og-image.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+55-55-99144-1700",
+      "contactType": "customer service"
+    }
+  }
+  </script>
   <script>(function(){document.documentElement.setAttribute('data-theme','dark');})();</script>
 </head>
 <body>
+  <!-- Ambient BG -->
   <div class="bg-effects"></div>
   <div class="bg-mid"></div>
+  <!-- Animated grid overlay -->
   <div class="grid-overlay" aria-hidden="true"></div>
 
-  <!-- NAV -->
   <nav class="nav" id="mainNav">
     <div class="nav-inner">
       <a href="index.html" class="logo" aria-label="Codehouse — início">
@@ -52,11 +77,11 @@
       <div class="nav-menu" id="navMenu">
         <a href="index.html" class="nav-link">Início</a>
         <div class="nav-dropdown">
-          <button class="nav-link nav-dropdown-btn" aria-expanded="false" aria-controls="navDropdownPP" id="solucoesBtnPP">
+          <button class="nav-link nav-dropdown-btn" aria-expanded="false" aria-controls="navDropdown" id="solucoesBtn">
             Soluções
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nav-chevron" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-          <div class="nav-dropdown-menu" id="navDropdownPP" aria-labelledby="solucoesBtnPP">
+          <div class="nav-dropdown-menu" id="navDropdown" aria-labelledby="solucoesBtn">
             <a href="solucoes.html#crm" class="nav-dd-item">
               <span class="nav-dd-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span>
               <span><strong>CRM</strong><small>Gestão de clientes</small></span>
@@ -75,10 +100,10 @@
             </a>
           </div>
         </div>
-        <a href="como-funciona.html" class="nav-link">Como funciona</a>
+        <a href="como-funciona.html" class="nav-link active">Como funciona</a>
         <a href="faq.html" class="nav-link">FAQ</a>
         <a href="contato.html" class="nav-link">Contato</a>
-        <a href="contato.html" class="nav-cta" id="navCtaBtnPP">
+        <a href="contato.html" class="nav-cta" id="navCtaBtn">
           Fale Conosco
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
@@ -90,56 +115,79 @@
   </nav>
 
   <main>
-    <section style="padding: 8rem 0 5rem; position: relative;">
-      <div class="container" style="max-width: 780px;">
-        <p class="eyebrow">// legal</p>
-        <h1 style="font-family: var(--font-d); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em;">Política de Privacidade</h1>
-        <p style="color: var(--ink-muted); font-size: 0.85rem; margin-bottom: 3rem; font-family: var(--font-m);">Atualizado em Janeiro de 2026</p>
+    <section style="padding: 8rem 0 2rem;">
+      <div class="container" style="text-align: center;">
+        <h1 class="hero-v2-title reveal" style="margin-bottom: 1rem;">Como <span class="hero-word-cyan">funciona</span></h1>
+        <p class="hero-v2-sub reveal" style="margin: 0 auto; max-width: 600px;">
+          Entenda como transformamos sua necessidade em uma solução sob medida, de forma transparente e previsível.
+        </p>
+      </div>
+    </section>
 
-        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-2xl); padding: 2.5rem; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--grad);"></div>
+    <!-- ====== PROCESSO ====== -->
+    <section id="processo" class="sec sec-dark">
+      <div class="container">
+        <p class="eyebrow reveal">// como funciona</p>
+        <h2 class="section-title reveal" data-delay="100">Três etapas.<br>Sem sustos.</h2>
+        <div class="steps-3 reveal" data-delay="200">
 
-          <div style="display: flex; flex-direction: column; gap: 2rem;">
-
-            <div>
-              <h2 style="font-family: var(--font-d); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--ink);">1. Informações que Coletamos</h2>
-              <p style="color: var(--ink-muted); font-size: 0.9rem; line-height: 1.75;">Coletamos informações que você nos fornece diretamente, como nome, e-mail e descrição do seu projeto ao preencher nosso formulário de contato. Não coletamos dados sensíveis e não utilizamos cookies de rastreamento de terceiros.</p>
-            </div>
-
-            <div>
-              <h2 style="font-family: var(--font-d); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--ink);">2. Como Usamos suas Informações</h2>
-              <p style="color: var(--ink-muted); font-size: 0.9rem; line-height: 1.75;">Utilizamos as informações coletadas exclusivamente para responder às suas mensagens, entrar em contato sobre possíveis projetos e melhorar nossos serviços. Nunca vendemos ou compartilhamos seus dados com terceiros para fins de marketing.</p>
-            </div>
-
-            <div>
-              <h2 style="font-family: var(--font-d); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--ink);">3. Armazenamento e Segurança</h2>
-              <p style="color: var(--ink-muted); font-size: 0.9rem; line-height: 1.75;">Seus dados são processados pela plataforma <a href="https://formspree.io" target="_blank" rel="noopener" style="color: var(--cyan);">Formspree</a> e armazenados de forma segura. Adotamos medidas técnicas adequadas para proteger suas informações contra acesso não autorizado.</p>
-            </div>
-
-            <div>
-              <h2 style="font-family: var(--font-d); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--ink);">4. Seus Direitos (LGPD)</h2>
-              <p style="color: var(--ink-muted); font-size: 0.9rem; line-height: 1.75;">Em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), você tem o direito de acessar, corrigir ou solicitar a exclusão dos seus dados pessoais a qualquer momento. Para exercer esses direitos, entre em contato pelo e-mail <a href="mailto:codehouse42@gmail.com" style="color: var(--cyan);">codehouse42@gmail.com</a>.</p>
-            </div>
-
-            <div>
-              <h2 style="font-family: var(--font-d); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--ink);">5. Contato</h2>
-              <p style="color: var(--ink-muted); font-size: 0.9rem; line-height: 1.75;">Dúvidas sobre esta política? Entre em contato: <a href="mailto:codehouse42@gmail.com" style="color: var(--cyan);">codehouse42@gmail.com</a> ou acesse nossa <a href="contato.html" style="color: var(--cyan);">página de contato</a>.</p>
-            </div>
-
+          <div class="step">
+            <div class="num">01</div>
+            <h3>A gente te escuta</h3>
+            <p>Conversamos sobre seu dia a dia, seus gargalos, o que funciona e o que te tira o sono. Sem compromisso.</p>
           </div>
-        </div>
 
-        <div style="margin-top: 2rem; text-align: center;">
-          <a href="index.html" class="btn-hero-ghost" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0 1.5rem; min-height: 44px; font-size: 0.85rem;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-            Voltar ao início
-          </a>
+          <div class="step">
+            <div class="num">02</div>
+            <h3>Construímos juntos</h3>
+            <p>Desenvolvemos seu sistema usando suas palavras, suas regras. Você vê funcionando antes de pagar tudo.</p>
+          </div>
+
+          <div class="step">
+            <div class="num">03</div>
+            <h3>Suporte que não some</h3>
+            <p>Depois de entregue, continuamos aqui. Seu negócio muda, o sistema acompanha. Sem cobrança escondida.</p>
+          </div>
+
         </div>
+      </div>
+    </section>
+
+    <!-- ====== CTA CARD ====== -->
+    <section class="sec cta-banner-sec">
+      <div class="container">
+        <a href="contato.html" class="cta-banner reveal" aria-label="Entrar em contato com a Codehouse">
+          <div class="cta-banner-content">
+            <h2 class="cta-banner-title">Pronto para levar seu negócio para o próximo nível?</h2>
+            <p class="cta-banner-sub">Fale com nossos especialistas e descubra como a tecnologia certa pode gerar mais eficiência, controle e crescimento.</p>
+            <span class="btn btn-primary cta-banner-btn" aria-hidden="true">
+              <span>Falar com um especialista</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+          <div class="cta-banner-logo" aria-hidden="true">
+            <svg class="cta-logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="ctaLogoGrad" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#00C9FF"/>
+                  <stop offset="100%" stop-color="#7B2FF7"/>
+                </linearGradient>
+              </defs>
+              <path d="M40 8L70 28V72H10V28L40 8Z" stroke="url(#ctaLogoGrad)" stroke-width="4" stroke-linejoin="round" fill="none"/>
+              <rect x="52" y="8" width="9" height="16" rx="2" stroke="url(#ctaLogoGrad)" stroke-width="3.5" fill="none"/>
+              <text x="40" y="52" font-family="JetBrains Mono, monospace" font-weight="700" font-size="18" fill="url(#ctaLogoGrad)" text-anchor="middle" dominant-baseline="middle">&lt;/&gt;</text>
+              <line x1="5" y1="72" x2="75" y2="72" stroke="url(#ctaLogoGrad)" stroke-width="3.5" stroke-linecap="round"/>
+            </svg>
+            <div class="cta-logo-wordmark">
+              <span class="cta-logo-code">CODE</span>
+              <span class="cta-logo-house">— HOUSE —</span>
+            </div>
+          </div>
+        </a>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -167,8 +215,10 @@
     window.addEventListener('scroll', function() {
       nav.classList.toggle('scrolled', window.scrollY > 20);
     }, { passive: true });
-    var ddBtn = document.getElementById('solucoesBtnPP');
-    var ddMenu = document.getElementById('navDropdownPP');
+
+    // Nav dropdown
+    var ddBtn = document.getElementById('solucoesBtn');
+    var ddMenu = document.getElementById('navDropdown');
     if (ddBtn && ddMenu) {
       ddBtn.addEventListener('click', function(e) {
         var expanded = ddBtn.getAttribute('aria-expanded') === 'true';
