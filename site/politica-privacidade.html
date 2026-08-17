@@ -3,83 +3,184 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Política de Privacidade — Code House</title>
-  <meta name="description" content="Nossa política de privacidade. Saiba como a Code House trata e protege seus dados em conformidade com a LGPD.">
+  <title>Política de Privacidade — Codehouse</title>
+  <meta name="description" content="Política de privacidade da Codehouse. Saiba como tratamos seus dados pessoais com respeito e responsabilidade.">
   <link rel="canonical" href="https://pablo-codehouse.surge.sh/politica-privacidade.html">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23FF6B35'/%3E%3Ctext x='50%25' y='58%25' font-family='monospace' font-weight='bold' font-size='16' fill='white' text-anchor='middle' dominant-baseline='middle'%3ECH%3C/text%3E%3C/svg%3E">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300C9FF'/%3E%3Cstop offset='1' stop-color='%237B2FF7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='%230C1221'/%3E%3Cpath d='M16 5 L28 14 L28 27 L4 27 L4 14 Z' fill='none' stroke='url(%23g)' stroke-width='2' stroke-linejoin='round'/%3E%3Ctext x='50%25' y='72%25' font-family='monospace' font-weight='bold' font-size='9' fill='url(%23g)' text-anchor='middle' dominant-baseline='middle'%3E%3C/%3E%3C/text%3E%3C/svg%3E">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/landing.css">
+
   <script>(function(){document.documentElement.setAttribute('data-theme','dark');})();</script>
-  <style>
-    .policy-content { padding: 4rem 0; }
-    .policy-content h2 { color: var(--accent-1); margin-top: 2rem; margin-bottom: 1rem; font-family: var(--font-d); }
-    .policy-content p { margin-bottom: 1rem; color: var(--ink-muted); }
-    .policy-content ul { margin-bottom: 1rem; padding-left: 1.5rem; color: var(--ink-muted); }
-    .policy-content li { margin-bottom: 0.5rem; }
-    .back-link { display: inline-block; margin-bottom: 2rem; font-family: var(--font-m); font-size: 0.9rem; color: var(--ink-muted); text-decoration: none; }
-    .back-link:hover { color: var(--ink); }
-  </style>
 </head>
 <body>
   <div class="bg-effects"></div>
+  <div class="bg-mid"></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
 
   <!-- NAV -->
-  <nav class="nav">
+  <nav class="nav" id="mainNav">
     <div class="nav-inner">
-      <a href="index.html" class="logo">CODE<span>.</span>HOUSE</a>
+      <a href="index.html" class="logo" aria-label="Codehouse — início">
+        <svg class="logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#00C9FF"/>
+              <stop offset="100%" stop-color="#7B2FF7"/>
+            </linearGradient>
+          </defs>
+          <path d="M18 4L32 14.5V32H4V14.5L18 4Z" stroke="url(#logoGrad)" stroke-width="2.2" stroke-linejoin="round" fill="none"/>
+          <rect x="24" y="4" width="4" height="7" rx="1" stroke="url(#logoGrad)" stroke-width="2" fill="none"/>
+          <text x="18" y="24" font-family="JetBrains Mono, monospace" font-weight="700" font-size="9" fill="url(#logoGrad)" text-anchor="middle" dominant-baseline="middle">&lt;/&gt;</text>
+          <line x1="2" y1="32" x2="34" y2="32" stroke="url(#logoGrad)" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="logo-wordmark">
+          <span class="logo-code">Codehouse</span>
+          <span class="logo-house">sistemas sob medida</span>
+        </div>
+      </a>
       <div class="nav-menu" id="navMenu">
         <a href="index.html" class="nav-link">Início</a>
-        <a href="exemplos.html" class="nav-link">Exemplos</a>
-        <a href="index.html#contato" class="nav-link">Contato</a>
+        <div class="nav-dropdown">
+          <button class="nav-link nav-dropdown-btn" aria-expanded="false" aria-controls="navDropdownPP" id="solucoesBtnPP">
+            Soluções
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nav-chevron" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" id="navDropdownPP" aria-labelledby="solucoesBtnPP">
+            <a href="exemplos.html#crm" class="nav-dd-item">
+              <span class="nav-dd-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span>
+              <span><strong>CRM</strong><small>Gestão de clientes</small></span>
+            </a>
+            <a href="exemplos.html#erp" class="nav-dd-item">
+              <span class="nav-dd-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></span>
+              <span><strong>ERP</strong><small>Gestão operacional</small></span>
+            </a>
+            <a href="exemplos.html#eshop" class="nav-dd-item">
+              <span class="nav-dd-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+              <span><strong>E-commerce</strong><small>Lojas virtuais</small></span>
+            </a>
+            <a href="exemplos.html#sites" class="nav-dd-item">
+              <span class="nav-dd-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+              <span><strong>Sites</strong><small>Presença digital</small></span>
+            </a>
+          </div>
+        </div>
+        <a href="exemplos.html" class="nav-link">Cases</a>
+        <a href="index.html#processo" class="nav-link">Como funciona</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+        <a href="contato.html" class="nav-link">Contato</a>
+        <a href="contato.html" class="nav-cta" id="navCtaBtnPP">
+          Fale Conosco
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
-      <button id="hamburger" class="hamburger" aria-label="Menu">
+      <button id="hamburger" class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
   <main>
-    <section class="sec policy-content">
-      <div class="container" style="max-width: 800px;">
-        <a href="index.html" class="back-link">← Voltar para a Home</a>
-        <h1 class="section-title">Política de Privacidade</h1>
-        <p>A privacidade dos nossos visitantes é extremamente importante para nós. Esta Política de Privacidade descreve os tipos de informações pessoais que são coletadas e recebidas pela Code House e como elas são usadas.</p>
-        
-        <h2>Coleta de Informações</h2>
-        <p>Coletamos informações apenas quando você preenche voluntariamente nosso formulário de contato. Os dados coletados incluem Nome e E-mail.</p>
-        
-        <h2>Uso das Informações</h2>
-        <p>As informações coletadas no formulário de contato são utilizadas estritamente para:</p>
-        <ul>
-          <li>Responder a sua solicitação ou orçamento.</li>
-          <li>Entrar em contato para agendar reuniões ou enviar propostas solicitadas por você.</li>
-        </ul>
-        
-        <h2>Proteção de Dados e Contato LGPD</h2>
-        <p>Nós não vendemos, alugamos ou compartilhamos suas informações pessoais com terceiros. Seus dados são mantidos em segurança e utilizados apenas para a comunicação direta entre a Code House e você.</p>
-        <p>Para solicitações referentes aos seus dados (consulta, alteração ou exclusão), entre em contato com nosso Encarregado de Dados (DPO) através do e-mail: <strong>codehouse42@gmail.com</strong>.</p>
-        
-        <h2>Cookies</h2>
-        <p>Nosso site não utiliza cookies para rastreamento de marketing. Podemos usar armazenamento local (localStorage) apenas para lembrar caso você tenha fechado o aviso de privacidade, garantindo uma melhor experiência de navegação.</p>
-        
-        <h2>Alterações nesta Política</h2>
-        <p>A Code House reserva-se o direito de atualizar esta Política de Privacidade a qualquer momento. Recomendamos que você visite esta página periodicamente para se manter informado sobre como estamos protegendo suas informações.</p>
+    <section style="padding: 8rem 0 5rem; position: relative;">
+      <div class="container" style="max-width: 780px;">
+        <p class="eyebrow">// legal</p>
+        <h1 style="font-family: var(--font-d); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em;">Política de Privacidade</h1>
+        <p style="color: var(--ink-muted); font-size: 0.85rem; margin-bottom: 3rem; font-family: var(--font-m);">Atualizado em Janeiro de 2026</p>
+
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-2xl); padding: 2.5rem; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--grad);"></div>
+
+          <div style="display: flex; flex-direction: column; gap: 2rem;">
+
+            <div>
+              <h2 style="font-family: var(--font-d); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--ink);">1. Informações que Coletamos</h2>
+              <p style="color: var(--ink-muted); font-size: 0.9rem; line-height: 1.75;">Coletamos informações que você nos fornece diretamente, como nome, e-mail e descrição do seu projeto ao preencher nosso formulário de contato. Não coletamos dados sensíveis e não utilizamos cookies de rastreamento de terceiros.</p>
+            </div>
+
+            <div>
+              <h2 style="font-family: var(--font-d); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--ink);">2. Como Usamos suas Informações</h2>
+              <p style="color: var(--ink-muted); font-size: 0.9rem; line-height: 1.75;">Utilizamos as informações coletadas exclusivamente para responder às suas mensagens, entrar em contato sobre possíveis projetos e melhorar nossos serviços. Nunca vendemos ou compartilhamos seus dados com terceiros para fins de marketing.</p>
+            </div>
+
+            <div>
+              <h2 style="font-family: var(--font-d); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--ink);">3. Armazenamento e Segurança</h2>
+              <p style="color: var(--ink-muted); font-size: 0.9rem; line-height: 1.75;">Seus dados são processados pela plataforma <a href="https://formspree.io" target="_blank" rel="noopener" style="color: var(--cyan);">Formspree</a> e armazenados de forma segura. Adotamos medidas técnicas adequadas para proteger suas informações contra acesso não autorizado.</p>
+            </div>
+
+            <div>
+              <h2 style="font-family: var(--font-d); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--ink);">4. Seus Direitos (LGPD)</h2>
+              <p style="color: var(--ink-muted); font-size: 0.9rem; line-height: 1.75;">Em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), você tem o direito de acessar, corrigir ou solicitar a exclusão dos seus dados pessoais a qualquer momento. Para exercer esses direitos, entre em contato pelo e-mail <a href="mailto:codehouse42@gmail.com" style="color: var(--cyan);">codehouse42@gmail.com</a>.</p>
+            </div>
+
+            <div>
+              <h2 style="font-family: var(--font-d); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--ink);">5. Contato</h2>
+              <p style="color: var(--ink-muted); font-size: 0.9rem; line-height: 1.75;">Dúvidas sobre esta política? Entre em contato: <a href="mailto:codehouse42@gmail.com" style="color: var(--cyan);">codehouse42@gmail.com</a> ou acesse nossa <a href="contato.html" style="color: var(--cyan);">página de contato</a>.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center;">
+          <a href="index.html" class="btn-hero-ghost" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0 1.5rem; min-height: 44px; font-size: 0.85rem;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Voltar ao início
+          </a>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
-      <div>© <span id="yr"></span> Code House — CNPJ: 68.489.569/0001-04</div>
-      <div class="footer-links"><a href="index.html">Início</a><a href="exemplos.html">Exemplos</a><a href="politica-privacidade.html" class="active">Privacidade</a><a href="index.html#contato">Contato</a></div>
+      <div class="footer-brand">
+        <span class="footer-logo">CODEHOUSE</span>
+        <span class="footer-tagline">© <span id="yr"></span> — CNPJ: 68.489.569/0001-04</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Início</a>
+        <a href="exemplos.html">Cases</a>
+        <a href="politica-privacidade.html">Privacidade</a>
+        <a href="contato.html">Contato</a>
+      </div>
     </div>
   </footer>
 
-  <script src="js/theme.js" defer></script>
+  <!-- Scripts -->
   <script src="js/nav.js" defer></script>
   <script src="js/scroll.js" defer></script>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    var nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+    var ddBtn = document.getElementById('solucoesBtnPP');
+    var ddMenu = document.getElementById('navDropdownPP');
+    if (ddBtn && ddMenu) {
+      ddBtn.addEventListener('click', function(e) {
+        var expanded = ddBtn.getAttribute('aria-expanded') === 'true';
+        ddBtn.setAttribute('aria-expanded', String(!expanded));
+        ddMenu.classList.toggle('open', !expanded);
+        e.stopPropagation();
+      });
+      document.addEventListener('click', function() {
+        ddBtn.setAttribute('aria-expanded', 'false');
+        ddMenu.classList.remove('open');
+      });
+      ddMenu.addEventListener('click', function(e) { e.stopPropagation(); });
+    }
+  </script>
 </body>
 </html>

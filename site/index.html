@@ -3,32 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Codehouse — Sistemas sob medida para pequenas empresas</title>
-  <meta name="description" content="Desenvolvemos sistemas adaptados ao seu negócio: CRM, ERP, lojas virtuais e sites. Sem templates prontos, sem enrolação.">
+  <title>Codehouse — Tecnologia que simplifica. Resultados que transformam.</title>
+  <meta name="description" content="Desenvolvemos sistemas personalizados que automatizam processos, conectam áreas e impulsionam o crescimento do seu negócio.">
   <link rel="canonical" href="https://pablo-codehouse.surge.sh/">
-  <meta property="og:title" content="Codehouse — Sistemas sob medida para pequenas empresas">
-  <meta property="og:description" content="Desenvolvemos sistemas adaptados ao seu negócio: CRM, ERP, lojas virtuais e sites. Sem templates prontos, sem enrolação.">
+  <meta property="og:title" content="Codehouse — Tecnologia que simplifica. Resultados que transformam.">
+  <meta property="og:description" content="Desenvolvemos sistemas personalizados que automatizam processos, conectam áreas e impulsionam o crescimento do seu negócio.">
   <meta property="og:url" content="https://pablo-codehouse.surge.sh/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://pablo-codehouse.surge.sh/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Codehouse — Sistemas sob medida para pequenas empresas">
-  <meta name="twitter:description" content="Desenvolvemos sistemas adaptados ao seu negócio: CRM, ERP, lojas virtuais e sites. Sem templates prontos, sem enrolação.">
+  <meta name="twitter:title" content="Codehouse — Tecnologia que simplifica. Resultados que transformam.">
+  <meta name="twitter:description" content="Desenvolvemos sistemas personalizados que automatizam processos, conectam áreas e impulsionam o crescimento do seu negócio.">
   <meta name="twitter:image" content="https://pablo-codehouse.surge.sh/og-image.png">
 
-  <!-- Favicon SVG — casa + </> gradient -->
+  <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300C9FF'/%3E%3Cstop offset='1' stop-color='%237B2FF7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='%230C1221'/%3E%3Cpath d='M16 5 L28 14 L28 27 L4 27 L4 14 Z' fill='none' stroke='url(%23g)' stroke-width='2' stroke-linejoin='round'/%3E%3Ctext x='50%25' y='72%25' font-family='monospace' font-weight='bold' font-size='9' fill='url(%23g)' text-anchor='middle' dominant-baseline='middle'%3E%3C/%3E%3C/text%3E%3C/svg%3E">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/landing.css">
 
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -45,31 +45,18 @@
     }
   }
   </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "Quanto tempo leva pra ficar pronto?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Depende do escopo. Um site institucional pode sair em 1-2 semanas. Um CRM completo leva mais. A gente combina um prazo realista no diagnóstico e te mostra funcionando antes de pagar tudo."
-      }
-    }]
-  }
-  </script>
   <script>(function(){document.documentElement.setAttribute('data-theme','dark');})();</script>
 </head>
 <body>
-  <!-- Ambient background -->
+  <!-- Ambient BG -->
   <div class="bg-effects"></div>
   <div class="bg-mid"></div>
+  <!-- Animated grid overlay -->
+  <div class="grid-overlay" aria-hidden="true"></div>
 
-  <!-- NAV -->
+  <!-- ====== NAV ====== -->
   <nav class="nav" id="mainNav">
     <div class="nav-inner">
-      <!-- Logo: SVG icon + wordmark -->
       <a href="index.html" class="logo" aria-label="Codehouse — início">
         <svg class="logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
@@ -78,13 +65,9 @@
               <stop offset="100%" stop-color="#7B2FF7"/>
             </linearGradient>
           </defs>
-          <!-- House outline -->
           <path d="M18 4L32 14.5V32H4V14.5L18 4Z" stroke="url(#logoGrad)" stroke-width="2.2" stroke-linejoin="round" fill="none"/>
-          <!-- Chimney -->
           <rect x="24" y="4" width="4" height="7" rx="1" stroke="url(#logoGrad)" stroke-width="2" fill="none"/>
-          <!-- </> code symbol -->
           <text x="18" y="24" font-family="JetBrains Mono, monospace" font-weight="700" font-size="9" fill="url(#logoGrad)" text-anchor="middle" dominant-baseline="middle">&lt;/&gt;</text>
-          <!-- Ground line -->
           <line x1="2" y1="32" x2="34" y2="32" stroke="url(#logoGrad)" stroke-width="2" stroke-linecap="round"/>
         </svg>
         <div class="logo-wordmark">
@@ -95,9 +78,58 @@
 
       <div class="nav-menu" id="navMenu">
         <a href="index.html" class="nav-link active">Início</a>
-        <a href="exemplos.html" class="nav-link">Exemplos</a>
-        <a href="#contato" class="nav-link">Contato</a>
-        <a href="#contato" class="nav-cta">Fale conosco</a>
+        <div class="nav-dropdown">
+          <button class="nav-link nav-dropdown-btn" aria-expanded="false" aria-controls="navDropdown" id="solucoesBtn">
+            Soluções
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nav-chevron" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" id="navDropdown" aria-labelledby="solucoesBtn">
+            <a href="exemplos.html#crm" class="nav-dd-item">
+              <span class="nav-dd-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              </span>
+              <span>
+                <strong>CRM</strong>
+                <small>Gestão de clientes</small>
+              </span>
+            </a>
+            <a href="exemplos.html#erp" class="nav-dd-item">
+              <span class="nav-dd-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+              </span>
+              <span>
+                <strong>ERP</strong>
+                <small>Gestão operacional</small>
+              </span>
+            </a>
+            <a href="exemplos.html#eshop" class="nav-dd-item">
+              <span class="nav-dd-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+              </span>
+              <span>
+                <strong>E-commerce</strong>
+                <small>Lojas virtuais</small>
+              </span>
+            </a>
+            <a href="exemplos.html#sites" class="nav-dd-item">
+              <span class="nav-dd-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </span>
+              <span>
+                <strong>Sites</strong>
+                <small>Presença digital</small>
+              </span>
+            </a>
+          </div>
+        </div>
+        <a href="exemplos.html" class="nav-link">Cases</a>
+        <a href="#processo" class="nav-link">Como funciona</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="contato.html" class="nav-link">Contato</a>
+        <a href="contato.html" class="nav-cta" id="navCtaBtn">
+          Fale Conosco
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
       <button id="hamburger" class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
@@ -106,72 +138,212 @@
   </nav>
 
   <main>
-    <!-- ========== HERO ========== -->
-    <section class="hero">
-      <div class="hero-grid">
-        <div class="hero-left">
-          <div class="hero-badge reveal" data-delay="0">Soluções de TI para pequenas empresas</div>
-          <h1 class="reveal" data-delay="100">
-            Sistemas que funcionam <span class="gradient-text">do seu jeito</span>, não do jeito do software pronto.
-          </h1>
-          <p class="lead reveal" data-delay="200">
-            A Codehouse desenvolve soluções de TI adaptadas à realidade da sua empresa. CRM, ERP, lojas virtuais e sites. Sem template genérico, sem processo engessado.
-          </p>
-          <div class="hero-btns reveal" data-delay="300">
-            <a href="#contato" class="btn btn-primary btn-lg"><span>Vamos conversar</span></a>
-            <a href="exemplos.html" class="btn btn-ghost btn-lg">Ver o que já fizemos</a>
+    <!-- ====== HERO ====== -->
+    <section class="hero-v2">
+      <!-- Glow orbs -->
+      <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-3" aria-hidden="true"></div>
+
+      <div class="hero-v2-inner">
+        <!-- LEFT: Copy -->
+        <div class="hero-v2-left">
+          <div class="hero-badge-v2 reveal" data-delay="0">
+            <span class="hero-badge-dot" aria-hidden="true"></span>
+            Software sob medida
           </div>
-          <div class="hero-stats reveal" data-delay="400">
-            <div class="hero-stat">
-              <strong>100%</strong>
-              <span>código personalizado</span>
+
+          <h1 class="hero-v2-title reveal" data-delay="80">
+            Tecnologia que
+            <span class="hero-word-cyan">simplifica.</span>
+            <br>Resultados que
+            <span class="hero-word-violet">transformam.</span>
+          </h1>
+
+          <p class="hero-v2-sub reveal" data-delay="160">
+            Desenvolvemos sistemas personalizados que automatizam processos,
+            conectam áreas e impulsionam o crescimento do seu negócio.
+          </p>
+
+          <div class="hero-v2-btns reveal" data-delay="240">
+            <a href="contato.html" class="btn-hero-primary" id="heroCtaBtn">
+              <span>Solicite um orçamento</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="exemplos.html" class="btn-hero-ghost">Ver cases</a>
+          </div>
+
+          <!-- Trust badges -->
+          <div class="hero-trust reveal" data-delay="320">
+            <div class="hero-trust-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <span>Soluções personalizadas<br>para cada negócio</span>
             </div>
-            <div class="hero-stat">
-              <strong>24h</strong>
-              <span>tempo de resposta</span>
+            <div class="hero-trust-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <span>Entrega ágil<br>e transparente</span>
             </div>
-            <div class="hero-stat">
-              <strong>0</strong>
-              <span>lock-in</span>
+            <div class="hero-trust-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <span>Suporte próximo<br>e contínuo</span>
+            </div>
+            <div class="hero-trust-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              <span>Tecnologia moderna<br>e escalável</span>
             </div>
           </div>
         </div>
 
-        <div class="hero-right reveal" data-delay="400">
-          <div class="mock-float" aria-hidden="true">
-            <div class="window">
-              <div class="window-bar">
-                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-                <span class="win-title">CRM — Painel de Clientes</span>
-              </div>
-              <div class="window-body">
-                <div class="sidebar">
-                  <div class="sb-item active">Clientes</div>
-                  <div class="sb-item">Negócios</div>
-                  <div class="sb-item">Tarefas</div>
-                  <div class="sb-item">Relatórios</div>
+        <!-- RIGHT: Dashboard Mockup -->
+        <div class="hero-v2-right reveal" data-delay="200" aria-hidden="true">
+          <div class="dash-wrap">
+            <!-- Main dashboard window -->
+            <div class="dash-main">
+              <div class="dash-topbar">
+                <div class="dash-dots">
+                  <span class="dot r"></span>
+                  <span class="dot y"></span>
+                  <span class="dot g"></span>
                 </div>
-                <div class="main-area">
-                  <div class="stats-row">
-                    <div class="stat-box"><span>Total</span><strong>156</strong></div>
-                    <div class="stat-box"><span>Este mês</span><strong>23</strong></div>
-                    <div class="stat-box"><span>Fechados</span><strong>94%</strong></div>
-                  </div>
-                  <div class="table">
-                    <div class="tr th"><div>Cliente</div><div>Status</div></div>
-                    <div class="tr"><div>João Silva</div><div><span class="tag green">Ativo</span></div></div>
-                    <div class="tr"><div>Maria Souza</div><div><span class="tag blue">Proposta</span></div></div>
-                    <div class="tr"><div>Carlos Maia</div><div><span class="tag green">Ativo</span></div></div>
-                  </div>
+                <span class="dash-title-bar">Visão Geral — Dashboard</span>
+                <div class="dash-topbar-actions">
+                  <span class="dash-topbar-pill">Ao vivo</span>
                 </div>
               </div>
+
+              <div class="dash-body">
+                <!-- Stats row -->
+                <div class="dash-stats-row">
+                  <div class="dash-stat-card">
+                    <div class="dash-stat-label">Faturamento (MRR)</div>
+                    <div class="dash-stat-value">R$&nbsp;247.680<span class="dash-stat-dec">,50</span></div>
+                    <div class="dash-stat-delta up">▲ 12,5%</div>
+                  </div>
+                  <div class="dash-stat-card">
+                    <div class="dash-stat-label">Novos Clientes</div>
+                    <div class="dash-stat-value">128</div>
+                    <div class="dash-stat-delta up">▲ 8,7%</div>
+                  </div>
+                  <div class="dash-stat-card">
+                    <div class="dash-stat-label">Processos Automatizados</div>
+                    <div class="dash-stat-value">532</div>
+                    <div class="dash-stat-delta up">▲ 16,1%</div>
+                  </div>
+                </div>
+
+                <!-- Chart + clients row -->
+                <div class="dash-mid-row">
+                  <!-- Clients list -->
+                  <div class="dash-clients-panel">
+                    <div class="dash-panel-title">Clientes Ativos</div>
+                    <div class="dash-client-item">
+                      <div class="dash-avatar" style="background: linear-gradient(135deg,#00C9FF,#7B2FF7)">JA</div>
+                      <div class="dash-client-info">
+                        <div class="dash-client-name">João Alves</div>
+                        <div class="dash-client-tag active">Ativo</div>
+                      </div>
+                    </div>
+                    <div class="dash-client-item">
+                      <div class="dash-avatar" style="background: linear-gradient(135deg,#7B2FF7,#C84BFF)">MS</div>
+                      <div class="dash-client-info">
+                        <div class="dash-client-name">Maria Silva</div>
+                        <div class="dash-client-tag active">Ativo</div>
+                      </div>
+                    </div>
+                    <div class="dash-client-item">
+                      <div class="dash-avatar" style="background: linear-gradient(135deg,#10D98A,#00C9FF)">PB</div>
+                      <div class="dash-client-info">
+                        <div class="dash-client-name">Prima Boni</div>
+                        <div class="dash-client-tag proposta">Proposta</div>
+                      </div>
+                    </div>
+                    <div class="dash-client-item">
+                      <div class="dash-avatar" style="background: linear-gradient(135deg,#C84BFF,#7B2FF7)">TU</div>
+                      <div class="dash-client-info">
+                        <div class="dash-client-name">Tech University</div>
+                        <div class="dash-client-tag active">Ativo</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Chart -->
+                  <div class="dash-chart-panel">
+                    <div class="dash-panel-title">
+                      Evolução de Resultados
+                      <span class="dash-chart-legend">
+                        <span class="leg-dot" style="background:#00C9FF"></span>Receita
+                        <span class="leg-dot" style="background:#7B2FF7"></span>Custos
+                      </span>
+                    </div>
+                    <svg class="dash-chart-svg" viewBox="0 0 280 90" preserveAspectRatio="none">
+                      <defs>
+                        <linearGradient id="chartGradCyan" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#00C9FF" stop-opacity="0.3"/>
+                          <stop offset="100%" stop-color="#00C9FF" stop-opacity="0"/>
+                        </linearGradient>
+                        <linearGradient id="chartGradViolet" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#7B2FF7" stop-opacity="0.2"/>
+                          <stop offset="100%" stop-color="#7B2FF7" stop-opacity="0"/>
+                        </linearGradient>
+                      </defs>
+                      <!-- Cyan area (revenue) -->
+                      <path d="M0,70 C30,65 50,40 80,35 C110,30 130,50 160,28 C190,10 210,20 240,12 C260,6 270,8 280,5 L280,90 L0,90 Z" fill="url(#chartGradCyan)"/>
+                      <path d="M0,70 C30,65 50,40 80,35 C110,30 130,50 160,28 C190,10 210,20 240,12 C260,6 270,8 280,5" fill="none" stroke="#00C9FF" stroke-width="2" stroke-linecap="round"/>
+                      <!-- Violet area (costs) -->
+                      <path d="M0,80 C30,78 50,70 80,68 C110,65 130,72 160,65 C190,58 210,62 240,55 C260,50 270,52 280,48 L280,90 L0,90 Z" fill="url(#chartGradViolet)"/>
+                      <path d="M0,80 C30,78 50,70 80,68 C110,65 130,72 160,65 C190,58 210,62 240,55 C260,50 270,52 280,48" fill="none" stroke="#7B2FF7" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 2"/>
+                      <!-- X axis labels -->
+                      <text x="0" y="89" fill="#4A5568" font-size="7" font-family="JetBrains Mono">Jan</text>
+                      <text x="50" y="89" fill="#4A5568" font-size="7" font-family="JetBrains Mono">Mar</text>
+                      <text x="105" y="89" fill="#4A5568" font-size="7" font-family="JetBrains Mono">Mai</text>
+                      <text x="158" y="89" fill="#4A5568" font-size="7" font-family="JetBrains Mono">Jul</text>
+                      <text x="210" y="89" fill="#4A5568" font-size="7" font-family="JetBrains Mono">Set</text>
+                      <text x="260" y="89" fill="#4A5568" font-size="7" font-family="JetBrains Mono">Nov</text>
+                    </svg>
+                  </div>
+
+                  <!-- Donut chart -->
+                  <div class="dash-donut-panel">
+                    <div class="dash-panel-title">Distribuição</div>
+                    <div class="dash-donut-wrap">
+                      <svg viewBox="0 0 80 80" class="dash-donut-svg">
+                        <circle cx="40" cy="40" r="28" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="12"/>
+                        <circle cx="40" cy="40" r="28" fill="none" stroke="#00C9FF" stroke-width="12" stroke-dasharray="63 113" stroke-dashoffset="28" stroke-linecap="round"/>
+                        <circle cx="40" cy="40" r="28" fill="none" stroke="#7B2FF7" stroke-width="12" stroke-dasharray="40 136" stroke-dashoffset="-35" stroke-linecap="round"/>
+                        <circle cx="40" cy="40" r="28" fill="none" stroke="#C84BFF" stroke-width="12" stroke-dasharray="25 151" stroke-dashoffset="-75" stroke-linecap="round"/>
+                        <circle cx="40" cy="40" r="28" fill="none" stroke="#10D98A" stroke-width="12" stroke-dasharray="18 158" stroke-dashoffset="-100" stroke-linecap="round"/>
+                        <text x="40" y="44" text-anchor="middle" fill="#F0F4FF" font-size="9" font-weight="700" font-family="Outfit,sans-serif">532</text>
+                      </svg>
+                      <div class="dash-donut-legend">
+                        <div class="ddl-item"><span class="ddl-dot" style="background:#00C9FF"></span><span class="ddl-name">Vendas</span><span class="ddl-val">35%</span></div>
+                        <div class="ddl-item"><span class="ddl-dot" style="background:#7B2FF7"></span><span class="ddl-name">Serviços</span><span class="ddl-val">22%</span></div>
+                        <div class="ddl-item"><span class="ddl-dot" style="background:#C84BFF"></span><span class="ddl-name">Suporte</span><span class="ddl-val">20%</span></div>
+                        <div class="ddl-item"><span class="ddl-dot" style="background:#10D98A"></span><span class="ddl-name">Outros</span><span class="ddl-val">23%</span></div>
+                      </div>
+                    </div>
+                    <div class="dash-mini-stat">
+                      <span class="dash-mini-label">Super Médio</span>
+                      <span class="dash-mini-value">R$ 192,81</span>
+                      <span class="dash-stat-delta up" style="font-size:0.55rem">▲ 8,3%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating icon cards -->
+            <div class="dash-float-card dash-float-top" style="--delay:0.4s">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C9FF" stroke-width="1.8"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+            </div>
+            <div class="dash-float-card dash-float-bot" style="--delay:0.6s">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7B2FF7" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14M14.83 9.17a4 4 0 0 1 0 5.66M9.17 9.17a4 4 0 0 0 0 5.66"/></svg>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== SERVIÇOS ========== -->
+    <!-- ====== SERVIÇOS ====== -->
     <section id="servicos" class="sec sec-alt">
       <div class="container">
         <p class="eyebrow reveal">// o que a gente faz</p>
@@ -179,7 +351,6 @@
         <div class="cards-5 reveal" data-delay="200">
 
           <div class="card">
-            <!-- CRM icon -->
             <svg class="ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
               <circle cx="9" cy="7" r="4"/>
@@ -191,7 +362,6 @@
           </div>
 
           <div class="card">
-            <!-- ERP icon -->
             <svg class="ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
               <line x1="3" y1="9" x2="21" y2="9"/>
@@ -202,7 +372,6 @@
           </div>
 
           <div class="card">
-            <!-- Site icon -->
             <svg class="ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"/>
               <line x1="2" y1="12" x2="22" y2="12"/>
@@ -213,7 +382,6 @@
           </div>
 
           <div class="card">
-            <!-- E-Shop icon -->
             <svg class="ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
               <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
@@ -223,7 +391,6 @@
           </div>
 
           <div class="card">
-            <!-- Custom code icon -->
             <svg class="ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="16 18 22 12 16 6"/>
               <polyline points="8 6 2 12 8 18"/>
@@ -236,7 +403,7 @@
       </div>
     </section>
 
-    <!-- ========== PROCESSO ========== -->
+    <!-- ====== PROCESSO ====== -->
     <section id="processo" class="sec sec-dark">
       <div class="container">
         <p class="eyebrow reveal">// como funciona</p>
@@ -265,7 +432,7 @@
       </div>
     </section>
 
-    <!-- ========== CREDIBILIDADE ========== -->
+    <!-- ====== CREDIBILIDADE ====== -->
     <section class="sec sec-alt">
       <div class="container">
         <div class="cred-grid reveal">
@@ -306,7 +473,7 @@
       </div>
     </section>
 
-    <!-- ========== STACK ========== -->
+    <!-- ====== STACK ====== -->
     <section class="sec sec-dark tech-sec">
       <div class="container">
         <p class="eyebrow reveal">// tecnologias</p>
@@ -362,7 +529,7 @@
       </div>
     </section>
 
-    <!-- ========== FAQ ========== -->
+    <!-- ====== FAQ ====== -->
     <section id="faq" class="sec sec-alt">
       <div class="container">
         <p class="eyebrow reveal">// perguntas frequentes</p>
@@ -435,7 +602,7 @@
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-a" id="faq-a-7" aria-hidden="true">
-              <p>Manda uma mensagem no WhatsApp ou preenche o formulário aqui em baixo. A gente responde em até 24 horas com uma estimativa.</p>
+              <p>Manda uma mensagem no WhatsApp ou preenche o formulário na página de contato. A gente responde em até 24 horas com uma estimativa.</p>
             </div>
           </div>
 
@@ -443,43 +610,37 @@
       </div>
     </section>
 
-    <!-- ========== CONTATO ========== -->
-    <section id="contato" class="sec cta-sec">
+    <!-- ====== CTA CARD ====== -->
+    <section class="sec cta-banner-sec">
       <div class="container">
-        <p class="eyebrow reveal" style="justify-content: center;">// fale com a gente</p>
-        <h2 class="reveal" data-delay="100">Bora tirar sua ideia<br><span class="gradient-text">do papel?</span></h2>
-        <p class="reveal" data-delay="150">Conta o que você precisa. A gente responde em até 24h com uma estimativa.</p>
-
-        <div class="reveal" data-delay="200" style="max-width: 560px; margin: 2.5rem auto 0;">
-          <form id="contactForm" action="https://formspree.io/f/xaewbejg" method="POST"
-            style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-2xl); padding: 2.5rem; position: relative; overflow: hidden;">
-            <!-- Gradient top bar -->
-            <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--grad);"></div>
-
-            <div class="form-group">
-              <label for="nome">Seu nome</label>
-              <input type="text" id="nome" name="nome" required aria-required="true" placeholder="Como te chamamos?">
-              <div class="form-error" id="err-nome" role="alert" aria-live="assertive"></div>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required aria-required="true" placeholder="seu@email.com">
-              <div class="form-error" id="err-email" role="alert" aria-live="assertive"></div>
-            </div>
-            <div class="form-group">
-              <label for="mensagem">O que você precisa?</label>
-              <textarea id="mensagem" name="mensagem" rows="4" required aria-required="true" placeholder="Conta um pouco sobre seu negócio e o que você quer resolver."></textarea>
-              <div class="form-error" id="err-msg" role="alert" aria-live="assertive"></div>
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn" style="width: 100%;"><span>Enviar mensagem</span></button>
-          </form>
-
-          <div id="formSuccess" style="display: none; text-align: center; padding: 3rem; background: var(--surface); border: 1px solid rgba(0,201,255,0.15); border-radius: var(--r-2xl);" role="status" aria-live="polite">
-            <div style="font-size: 3rem; margin-bottom: 1rem;" aria-hidden="true">🚀</div>
-            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; font-family: var(--font-d);">Mensagem enviada!</h3>
-            <p style="color: var(--ink-muted);">A gente vai te responder em breve. Obrigado!</p>
+        <a href="contato.html" class="cta-banner reveal" aria-label="Entrar em contato com a Codehouse">
+          <div class="cta-banner-content">
+            <h2 class="cta-banner-title">Pronto para levar seu negócio para o próximo nível?</h2>
+            <p class="cta-banner-sub">Fale com nossos especialistas e descubra como a tecnologia certa pode gerar mais eficiência, controle e crescimento.</p>
+            <span class="btn btn-primary cta-banner-btn" aria-hidden="true">
+              <span>Falar com um especialista</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
           </div>
-        </div>
+          <div class="cta-banner-logo" aria-hidden="true">
+            <svg class="cta-logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="ctaLogoGrad" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#00C9FF"/>
+                  <stop offset="100%" stop-color="#7B2FF7"/>
+                </linearGradient>
+              </defs>
+              <path d="M40 8L70 28V72H10V28L40 8Z" stroke="url(#ctaLogoGrad)" stroke-width="4" stroke-linejoin="round" fill="none"/>
+              <rect x="52" y="8" width="9" height="16" rx="2" stroke="url(#ctaLogoGrad)" stroke-width="3.5" fill="none"/>
+              <text x="40" y="52" font-family="JetBrains Mono, monospace" font-weight="700" font-size="18" fill="url(#ctaLogoGrad)" text-anchor="middle" dominant-baseline="middle">&lt;/&gt;</text>
+              <line x1="5" y1="72" x2="75" y2="72" stroke="url(#ctaLogoGrad)" stroke-width="3.5" stroke-linecap="round"/>
+            </svg>
+            <div class="cta-logo-wordmark">
+              <span class="cta-logo-code">CODE</span>
+              <span class="cta-logo-house">— HOUSE —</span>
+            </div>
+          </div>
+        </a>
       </div>
     </section>
   </main>
@@ -493,19 +654,12 @@
       </div>
       <div class="footer-links">
         <a href="index.html">Início</a>
-        <a href="exemplos.html">Exemplos</a>
+        <a href="exemplos.html">Cases</a>
         <a href="politica-privacidade.html">Privacidade</a>
-        <a href="#contato">Contato</a>
+        <a href="contato.html">Contato</a>
       </div>
     </div>
   </footer>
-
-  <!-- WhatsApp float -->
-  <a href="https://wa.me/5555991441700" target="_blank" rel="noopener" class="wa-float" aria-label="Fale conosco pelo WhatsApp">
-    <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-    </svg>
-  </a>
 
   <!-- Scripts -->
   <script src="js/nav.js" defer></script>
@@ -513,60 +667,28 @@
   <script src="js/faq.js" defer></script>
 
   <script>
-    // Year
     document.getElementById('yr').textContent = new Date().getFullYear();
-
-    // Nav scroll class
     var nav = document.getElementById('mainNav');
     window.addEventListener('scroll', function() {
       nav.classList.toggle('scrolled', window.scrollY > 20);
     }, { passive: true });
 
-    // Form
-    var form = document.getElementById('contactForm');
-    var success = document.getElementById('formSuccess');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var nome  = document.getElementById('nome');
-      var email = document.getElementById('email');
-      var msg   = document.getElementById('mensagem');
-      var valid = true;
-
-      ['err-nome','err-email','err-msg'].forEach(function(id) {
-        document.getElementById(id).textContent = '';
+    // Nav dropdown
+    var ddBtn = document.getElementById('solucoesBtn');
+    var ddMenu = document.getElementById('navDropdown');
+    if (ddBtn && ddMenu) {
+      ddBtn.addEventListener('click', function(e) {
+        var expanded = ddBtn.getAttribute('aria-expanded') === 'true';
+        ddBtn.setAttribute('aria-expanded', String(!expanded));
+        ddMenu.classList.toggle('open', !expanded);
+        e.stopPropagation();
       });
-      [nome, email, msg].forEach(function(el) { el.classList.remove('error'); });
-
-      if (!nome.value.trim()) {
-        document.getElementById('err-nome').textContent = 'Por favor, informe seu nome.';
-        nome.classList.add('error'); valid = false;
-      }
-      if (!email.value.trim() || !email.value.includes('@')) {
-        document.getElementById('err-email').textContent = 'Email inválido.';
-        email.classList.add('error'); valid = false;
-      }
-      if (!msg.value.trim()) {
-        document.getElementById('err-msg').textContent = 'Conta um pouco sobre o que você precisa.';
-        msg.classList.add('error'); valid = false;
-      }
-      if (!valid) return;
-
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      }).then(function(res) {
-        if (res.ok) {
-          form.style.display = 'none';
-          success.style.display = 'block';
-        } else {
-          alert('Erro ao enviar. Tente novamente ou mande email para codehouse42@gmail.com');
-        }
-      }).catch(function() {
-        alert('Erro de conexão. Tente novamente ou mande email para codehouse42@gmail.com');
+      document.addEventListener('click', function() {
+        ddBtn.setAttribute('aria-expanded', 'false');
+        ddMenu.classList.remove('open');
       });
-    });
+      ddMenu.addEventListener('click', function(e) { e.stopPropagation(); });
+    }
   </script>
 </body>
 </html>
