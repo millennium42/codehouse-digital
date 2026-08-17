@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Exemplos & Portfólio — Code House</title>
+  <title>Exemplos & Portfólio — Codehouse</title>
   <meta name="description" content="Veja sistemas reais entregues: CRMs, ERPs, E-Commerces e landing pages. Interativo, transparente e sem enrolação.">
   <link rel="canonical" href="https://pablo-codehouse.surge.sh/exemplos.html">
-  <meta property="og:title" content="Exemplos & Portfólio — Code House">
+  <meta property="og:title" content="Exemplos & Portfólio — Codehouse">
   <meta property="og:description" content="Veja sistemas reais entregues: CRMs, ERPs, E-Commerces e landing pages. Interativo, transparente e sem enrolação.">
   <meta property="og:url" content="https://pablo-codehouse.surge.sh/exemplos.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://pablo-codehouse.surge.sh/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Exemplos & Portfólio — Code House">
+  <meta name="twitter:title" content="Exemplos & Portfólio — Codehouse">
   <meta name="twitter:description" content="Veja sistemas reais entregues: CRMs, ERPs, E-Commerces e landing pages. Interativo, transparente e sem enrolação.">
   <meta name="twitter:image" content="https://pablo-codehouse.surge.sh/og-image.png">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23FF6B35'/%3E%3Ctext x='50%25' y='58%25' font-family='monospace' font-weight='bold' font-size='16' fill='white' text-anchor='middle' dominant-baseline='middle'%3ECH%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300C9FF'/%3E%3Cstop offset='1' stop-color='%237B2FF7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='%230C1221'/%3E%3Cpath d='M16 5 L28 14 L28 27 L4 27 L4 14 Z' fill='none' stroke='url(%23g)' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
@@ -51,13 +51,31 @@
   <!-- NAV -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="logo">CODE<span>.</span>HOUSE</a>
+      <a href="index.html" class="logo" aria-label="Codehouse — início">
+        <svg class="logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="logoGrad2" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#00C9FF"/>
+              <stop offset="100%" stop-color="#7B2FF7"/>
+            </linearGradient>
+          </defs>
+          <path d="M18 4L32 14.5V32H4V14.5L18 4Z" stroke="url(#logoGrad2)" stroke-width="2.2" stroke-linejoin="round" fill="none"/>
+          <rect x="24" y="4" width="4" height="7" rx="1" stroke="url(#logoGrad2)" stroke-width="2" fill="none"/>
+          <text x="18" y="24" font-family="JetBrains Mono, monospace" font-weight="700" font-size="9" fill="url(#logoGrad2)" text-anchor="middle" dominant-baseline="middle">&lt;/&gt;</text>
+          <line x1="2" y1="32" x2="34" y2="32" stroke="url(#logoGrad2)" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="logo-wordmark">
+          <span class="logo-code">Codehouse</span>
+          <span class="logo-house">sistemas sob medida</span>
+        </div>
+      </a>
       <div class="nav-menu" id="navMenu">
-        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="index.html" class="nav-link">Início</a>
         <a href="exemplos.html" class="nav-link active">Exemplos</a>
         <a href="index.html#contato" class="nav-link">Contato</a>
+        <a href="index.html#contato" class="nav-cta">Fale conosco</a>
       </div>
-      <button id="hamburger" class="hamburger" aria-label="Menu">
+      <button id="hamburger" class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -377,7 +395,7 @@
     <h2>Pronto para ter um sistema <span class="gradient-text">igual ou melhor</span>?</h2>
     <p>Converse sem compromisso. Projeto por projeto, sem mensalidade escondida.</p>
     <div class="cta-btns">
-      <a href="index.html#contato" class="btn btn-primary btn-lg">Iniciar projeto</a>
+      <a href="index.html#contato" class="btn btn-primary btn-lg"><span>Iniciar projeto</span></a>
       <a href="https://wa.me/5555991441700" class="btn btn-ghost btn-lg" target="_blank" rel="noopener">WhatsApp direto</a>
     </div>
   </section>
@@ -386,7 +404,10 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
-      <div>© <span id="yr"></span> Code House — CNPJ: 68.489.569/0001-04</div>
+      <div class="footer-brand">
+        <span class="footer-logo">CODEHOUSE</span>
+        <span class="footer-tagline">© <span id="yr"></span> — CNPJ: 68.489.569/0001-04</span>
+      </div>
       <div class="footer-links"><a href="index.html">Início</a><a href="exemplos.html">Exemplos</a><a href="politica-privacidade.html">Privacidade</a><a href="index.html#contato">Contato</a></div>
     </div>
   </footer>

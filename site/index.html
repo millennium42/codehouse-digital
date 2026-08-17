@@ -3,31 +3,39 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Code House — Soluções de TI sob medida para pequenas empresas</title>
+  <title>Codehouse — Sistemas sob medida para pequenas empresas</title>
   <meta name="description" content="Desenvolvemos sistemas adaptados ao seu negócio: CRM, ERP, lojas virtuais e sites. Sem templates prontos, sem enrolação.">
   <link rel="canonical" href="https://pablo-codehouse.surge.sh/">
-  <meta property="og:title" content="Code House — Soluções de TI sob medida para pequenas empresas">
+  <meta property="og:title" content="Codehouse — Sistemas sob medida para pequenas empresas">
   <meta property="og:description" content="Desenvolvemos sistemas adaptados ao seu negócio: CRM, ERP, lojas virtuais e sites. Sem templates prontos, sem enrolação.">
   <meta property="og:url" content="https://pablo-codehouse.surge.sh/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://pablo-codehouse.surge.sh/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Code House — Soluções de TI sob medida para pequenas empresas">
+  <meta name="twitter:title" content="Codehouse — Sistemas sob medida para pequenas empresas">
   <meta name="twitter:description" content="Desenvolvemos sistemas adaptados ao seu negócio: CRM, ERP, lojas virtuais e sites. Sem templates prontos, sem enrolação.">
   <meta name="twitter:image" content="https://pablo-codehouse.surge.sh/og-image.png">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23FF6B35'/%3E%3Ctext x='50%25' y='58%25' font-family='monospace' font-weight='bold' font-size='16' fill='white' text-anchor='middle' dominant-baseline='middle'%3ECH%3C/text%3E%3C/svg%3E">
+
+  <!-- Favicon SVG — casa + </> gradient -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300C9FF'/%3E%3Cstop offset='1' stop-color='%237B2FF7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='%230C1221'/%3E%3Cpath d='M16 5 L28 14 L28 27 L4 27 L4 14 Z' fill='none' stroke='url(%23g)' stroke-width='2' stroke-linejoin='round'/%3E%3Ctext x='50%25' y='72%25' font-family='monospace' font-weight='bold' font-size='9' fill='url(%23g)' text-anchor='middle' dominant-baseline='middle'%3E%3C/%3E%3C/text%3E%3C/svg%3E">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
+
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Code House",
+    "name": "Codehouse",
     "url": "https://pablo-codehouse.surge.sh/",
     "logo": "https://pablo-codehouse.surge.sh/og-image.png",
     "contactPoint": {
@@ -54,35 +62,81 @@
   <script>(function(){document.documentElement.setAttribute('data-theme','dark');})();</script>
 </head>
 <body>
+  <!-- Ambient background -->
   <div class="bg-effects"></div>
+  <div class="bg-mid"></div>
 
   <!-- NAV -->
-  <nav class="nav">
+  <nav class="nav" id="mainNav">
     <div class="nav-inner">
-      <a href="index.html" class="logo">CODE<span>.</span>HOUSE</a>
+      <!-- Logo: SVG icon + wordmark -->
+      <a href="index.html" class="logo" aria-label="Codehouse — início">
+        <svg class="logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#00C9FF"/>
+              <stop offset="100%" stop-color="#7B2FF7"/>
+            </linearGradient>
+          </defs>
+          <!-- House outline -->
+          <path d="M18 4L32 14.5V32H4V14.5L18 4Z" stroke="url(#logoGrad)" stroke-width="2.2" stroke-linejoin="round" fill="none"/>
+          <!-- Chimney -->
+          <rect x="24" y="4" width="4" height="7" rx="1" stroke="url(#logoGrad)" stroke-width="2" fill="none"/>
+          <!-- </> code symbol -->
+          <text x="18" y="24" font-family="JetBrains Mono, monospace" font-weight="700" font-size="9" fill="url(#logoGrad)" text-anchor="middle" dominant-baseline="middle">&lt;/&gt;</text>
+          <!-- Ground line -->
+          <line x1="2" y1="32" x2="34" y2="32" stroke="url(#logoGrad)" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="logo-wordmark">
+          <span class="logo-code">Codehouse</span>
+          <span class="logo-house">sistemas sob medida</span>
+        </div>
+      </a>
+
       <div class="nav-menu" id="navMenu">
         <a href="index.html" class="nav-link active">Início</a>
         <a href="exemplos.html" class="nav-link">Exemplos</a>
         <a href="#contato" class="nav-link">Contato</a>
+        <a href="#contato" class="nav-cta">Fale conosco</a>
       </div>
-      <button id="hamburger" class="hamburger" aria-label="Menu">
+      <button id="hamburger" class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
   <main>
-    <!-- HERO -->
+    <!-- ========== HERO ========== -->
     <section class="hero">
       <div class="hero-grid">
         <div class="hero-left">
-          <h1 class="reveal" data-delay="100">Sistemas que funcionam do seu jeito, não do jeito do software pronto.</h1>
-          <p class="lead reveal" data-delay="200">A Code House desenvolve soluções de TI adaptadas à realidade de pequenas empresas. CRM, ERP, lojas virtuais e sites. Sem template genérico, sem processo engessado. A gente entende seu fluxo e constrói em cima dele.</p>
+          <div class="hero-badge reveal" data-delay="0">Soluções de TI para pequenas empresas</div>
+          <h1 class="reveal" data-delay="100">
+            Sistemas que funcionam <span class="gradient-text">do seu jeito</span>, não do jeito do software pronto.
+          </h1>
+          <p class="lead reveal" data-delay="200">
+            A Codehouse desenvolve soluções de TI adaptadas à realidade da sua empresa. CRM, ERP, lojas virtuais e sites. Sem template genérico, sem processo engessado.
+          </p>
           <div class="hero-btns reveal" data-delay="300">
-            <a href="#contato" class="btn btn-primary btn-lg">Vamos conversar</a>
+            <a href="#contato" class="btn btn-primary btn-lg"><span>Vamos conversar</span></a>
             <a href="exemplos.html" class="btn btn-ghost btn-lg">Ver o que já fizemos</a>
           </div>
+          <div class="hero-stats reveal" data-delay="400">
+            <div class="hero-stat">
+              <strong>100%</strong>
+              <span>código personalizado</span>
+            </div>
+            <div class="hero-stat">
+              <strong>24h</strong>
+              <span>tempo de resposta</span>
+            </div>
+            <div class="hero-stat">
+              <strong>0</strong>
+              <span>lock-in</span>
+            </div>
+          </div>
         </div>
+
         <div class="hero-right reveal" data-delay="400">
           <div class="mock-float" aria-hidden="true">
             <div class="window">
@@ -117,143 +171,199 @@
       </div>
     </section>
 
-    <!-- SERVIÇOS -->
-    <section id="servicos" class="sec">
+    <!-- ========== SERVIÇOS ========== -->
+    <section id="servicos" class="sec sec-alt">
       <div class="container">
         <p class="eyebrow reveal">// o que a gente faz</p>
-        <h2 class="section-title reveal" data-delay="100">Soluções que se adaptam à sua empresa</h2>
+        <h2 class="section-title reveal" data-delay="100">Soluções que se adaptam<br>à sua empresa</h2>
         <div class="cards-5 reveal" data-delay="200">
+
           <div class="card">
-            <svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <!-- CRM icon -->
+            <svg class="ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
             <h3>CRM</h3>
             <p>Controle de clientes, funil de vendas e histórico completo.</p>
           </div>
+
           <div class="card">
-            <svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            <!-- ERP icon -->
+            <svg class="ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <line x1="3" y1="9" x2="21" y2="9"/>
+              <line x1="9" y1="21" x2="9" y2="9"/>
+            </svg>
             <h3>ERP</h3>
             <p>Financeiro, estoque e operações num só lugar.</p>
           </div>
+
           <div class="card">
-            <svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <!-- Site icon -->
+            <svg class="ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
             <h3>Site</h3>
             <p>Presença digital profissional que comunica confiança.</p>
           </div>
+
           <div class="card">
-            <svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <!-- E-Shop icon -->
+            <svg class="ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
             <h3>E-Shop</h3>
             <p>Loja virtual com catálogo, carrinho e pagamento.</p>
           </div>
+
           <div class="card">
-            <svg class="ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <!-- Custom code icon -->
+            <svg class="ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
             <h3>Sob Medida</h3>
             <p>Qualquer sistema que o seu negócio precise.</p>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- PROCESSO -->
+    <!-- ========== PROCESSO ========== -->
     <section id="processo" class="sec sec-dark">
       <div class="container">
         <p class="eyebrow reveal">// como funciona</p>
-        <h2 class="section-title reveal" data-delay="100">Três etapas. Sem sustos.</h2>
+        <h2 class="section-title reveal" data-delay="100">Três etapas.<br>Sem sustos.</h2>
         <div class="steps-3 reveal" data-delay="200">
+
           <div class="step">
             <div class="num">01</div>
             <h3>A gente te escuta</h3>
             <p>Conversamos sobre seu dia a dia, seus gargalos, o que funciona e o que te tira o sono. Sem compromisso.</p>
           </div>
+
           <div class="step">
             <div class="num">02</div>
             <h3>Construímos juntos</h3>
             <p>Desenvolvemos seu sistema usando suas palavras, suas regras. Você vê funcionando antes de pagar tudo.</p>
           </div>
+
           <div class="step">
             <div class="num">03</div>
             <h3>Suporte que não some</h3>
             <p>Depois de entregue, continuamos aqui. Seu negócio muda, o sistema acompanha. Sem cobrança escondida.</p>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- CREDIBILIDADE -->
-    <section class="sec">
+    <!-- ========== CREDIBILIDADE ========== -->
+    <section class="sec sec-alt">
       <div class="container">
         <div class="cred-grid reveal">
+
           <div class="cred-item">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+            </svg>
             <div>
               <h4>Nada de template pronto</h4>
               <p>Cada linha de código é escrita pensando no seu processo.</p>
             </div>
           </div>
+
           <div class="cred-item">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
             <div>
               <h4>Você é dono do código</h4>
               <p>Entregamos fonte, acesso e documentação. Sem lock-in.</p>
             </div>
           </div>
+
           <div class="cred-item">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
             <div>
               <h4>Suporte pós-entrega</h4>
               <p>O sistema é seu. A manutenção também pode ser, se quiser.</p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- STACK -->
+    <!-- ========== STACK ========== -->
     <section class="sec sec-dark tech-sec">
       <div class="container">
         <p class="eyebrow reveal">// tecnologias</p>
         <h2 class="section-title reveal" data-delay="100">Ferramentas que a gente domina</h2>
-        <p class="reveal" data-delay="150" style="color: var(--ink-muted); margin-bottom: 3rem; max-width: 50ch;">Stack moderna e consolidada, escolhida a dedo pra cada tipo de projeto.</p>
+        <p class="reveal" data-delay="150" style="color: var(--ink-muted); margin-bottom: 3rem; max-width: 50ch;">
+          Stack moderna e consolidada, escolhida a dedo pra cada tipo de projeto.
+        </p>
         <div class="tech-grid reveal" data-delay="200">
+
           <div class="tech-card">
             <svg class="tech-icon" viewBox="0 0 128 128" width="48" height="48"><path fill="#83CD29" d="M112.771 30.334L68.674 4.729c-2.781-1.584-6.402-1.584-9.205 0L14.901 30.334C12.031 31.985 10 35.088 10 38.407v51.142c0 3.319 2.084 6.423 4.954 8.083l11.775 6.688c5.628 2.772 7.617 2.772 10.178 2.772 8.333 0 13.093-5.039 13.093-13.828v-50.49c0-.713-.371-1.774-1.071-1.774h-5.623c-.712 0-2.306 1.061-2.306 1.773v50.49c0 3.896-3.524 7.773-10.11 4.48L18.723 90.73c-.424-.23-.723-.693-.723-1.181V38.407c0-.482.555-.966.982-1.213l44.424-25.561c.415-.235 1.025-.235 1.439 0l43.882 25.555c.42.253.272.722.272 1.219v51.142c0 .488.183.963-.232 1.198l-44.086 25.576c-.378.227-.847.227-1.261 0l-11.307-6.749c-.341-.198-.746-.269-1.073-.086-3.146 1.783-3.726 2.02-6.677 3.043-.726.253-1.797.692.41 1.929l14.798 8.754a9.294 9.294 0 004.647 1.246c1.642 0 3.25-.426 4.667-1.246l43.885-25.582c2.87-1.672 4.23-4.764 4.23-8.083V38.407c0-3.319-1.36-6.414-4.229-8.073zM77.91 81.445c-11.726 0-14.309-3.235-15.17-9.066-.1-.628-.633-1.379-1.272-1.379h-5.731c-.709 0-1.279.86-1.279 1.566 0 7.466 4.059 16.512 23.453 16.512 14.039 0 22.088-5.455 22.088-15.109 0-9.572-6.467-12.084-20.082-13.886-13.762-1.819-15.16-2.738-15.16-5.962 0-2.658 1.184-6.203 11.374-6.203 9.105 0 12.461 1.954 13.842 8.091.118.577.645 1.13 1.255 1.13h5.762c.354 0 .828-.15 1.115-.435.295-.295.465-.745.4-1.197-.885-12.268-9.468-18.153-22.579-18.153-12.954 0-20.332 5.381-20.332 14.327 0 9.772 7.414 12.494 19.746 13.613 14.698 1.323 15.508 3.603 15.508 6.53 0 5.095-4.084 7.285-13.175 7.285z"/></svg>
             <div class="tech-name">Node.js</div>
             <div class="tech-role">APIs e backend</div>
           </div>
+
           <div class="tech-card">
             <svg class="tech-icon" viewBox="0 0 128 128" width="48" height="48"><path fill="#3776AB" d="M63.391 1.988c-4.222.02-8.252.379-11.8 1.007-10.45 1.846-12.346 5.71-12.346 12.837v9.411h24.693v3.137H29.977c-7.176 0-13.46 4.313-15.426 12.521-2.268 9.405-2.368 15.275 0 25.096 1.755 7.311 5.947 12.519 13.124 12.519h8.491V67.234c0-8.151 7.051-15.34 15.426-15.34h24.665c6.866 0 12.346-5.654 12.346-12.548V15.833c0-6.693-5.646-11.72-12.346-12.837-4.244-.706-8.645-1.027-12.866-1.008zM50.037 9.557c2.55 0 4.634 2.117 4.634 4.721 0 2.593-2.083 4.69-4.634 4.69-2.56 0-4.633-2.097-4.633-4.69-.001-2.604 2.073-4.721 4.633-4.721z"/><path fill="#FFD43B" d="M91.682 28.38v10.966c0 8.5-7.208 15.655-15.426 15.655H51.591c-6.756 0-12.346 5.783-12.346 12.549v23.515c0 6.691 5.818 10.628 12.346 12.547 7.816 2.297 15.312 2.713 24.665 0 6.216-1.801 12.346-5.423 12.346-12.547v-9.412H63.938v-3.138h37.012c7.176 0 9.852-5.005 12.348-12.519 2.578-7.735 2.467-15.174 0-25.096-1.774-7.145-5.161-12.521-12.348-12.521h-9.268zM77.809 89.297c2.561 0 4.634 2.097 4.634 4.692 0 2.602-2.074 4.719-4.634 4.719-2.55 0-4.633-2.117-4.633-4.719 0-2.595 2.083-4.692 4.633-4.692z"/></svg>
             <div class="tech-name">Python</div>
             <div class="tech-role">Automação e dados</div>
           </div>
+
           <div class="tech-card">
             <svg class="tech-icon" viewBox="0 0 128 128" width="48" height="48"><circle cx="64" cy="64" r="11.4" fill="#61DAFB"/><g stroke="#61DAFB" stroke-width="6" fill="none"><ellipse cx="64" cy="64" rx="44" ry="17"/><ellipse cx="64" cy="64" rx="44" ry="17" transform="rotate(60 64 64)"/><ellipse cx="64" cy="64" rx="44" ry="17" transform="rotate(120 64 64)"/></g></svg>
             <div class="tech-name">React</div>
             <div class="tech-role">Interfaces modernas</div>
           </div>
+
           <div class="tech-card">
             <svg class="tech-icon" role="img" viewBox="0 0 24 24" width="48" height="48" fill="#3178C6" xmlns="http://www.w3.org/2000/svg"><path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"/></svg>
             <div class="tech-name">TypeScript</div>
             <div class="tech-role">Segurança no código</div>
           </div>
+
           <div class="tech-card">
             <svg class="tech-icon" role="img" viewBox="0 0 24 24" width="48" height="48" fill="#336791" xmlns="http://www.w3.org/2000/svg"><path d="M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191 1.342-2.0482 2.445-4.522 3.0411-6.8297.2714-1.0507.7982-3.5237.1222-4.7316a1.5641 1.5641 0 0 0-.1509-.235C21.6931.9086 19.8007.0248 17.5099.0005c-1.4947-.0158-2.7705.3461-3.1161.4794a9.449 9.449 0 0 0-.5159-.0816 8.044 8.044 0 0 0-1.3114-.1278c-1.1822-.0184-2.2038.2642-3.0498.8406-.8573-.3211-4.7888-1.645-7.2219.0788C.9359 2.1526.3086 3.8733.4302 6.3043c.0409.818.5069 3.334 1.2423 5.7436.4598 1.5065.9387 2.7019 1.4334 3.582.553.9942 1.1259 1.5933 1.7143 1.7895.4474.1491 1.1327.1441 1.8581-.7279.8012-.9635 1.5903-1.8258 1.9446-2.2069.4351.2355.9064.3625 1.39.3772a.0569.0569 0 0 0 .0004.0041 11.0312 11.0312 0 0 0-.2472.3054c-.3389.4302-.4094.5197-1.5002.7443-.3102.064-1.1344.2339-1.1464.8115-.0025.1224.0329.2309.0919.3268.2269.4231.9216.6097 1.015.6331 1.3345.3335 2.5044.092 3.3714-.6787-.017 2.231.0775 4.4174.3454 5.0874.2212.5529.7618 1.9045 2.4692 1.9043.2505 0 .5263-.0291.8296-.0941 1.7819-.3821 2.5557-1.1696 2.855-2.9059.1503-.8707.4016-2.8753.5388-4.1012.0169-.0703.0357-.1207.057-.1362.0007-.0005.0697-.0471.4272.0307a.3673.3673 0 0 0 .0443.0068l.2539.0223.0149.001c.8468.0384 1.9114-.1426 2.5312-.4308.6438-.2988 1.8057-1.0323 1.5951-1.6698z"/></svg>
             <div class="tech-name">PostgreSQL</div>
             <div class="tech-role">Banco de dados</div>
           </div>
+
           <div class="tech-card">
             <svg class="tech-icon" role="img" viewBox="0 0 24 24" width="48" height="48" fill="#2496ED" xmlns="http://www.w3.org/2000/svg"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></svg>
             <div class="tech-name">Docker</div>
             <div class="tech-role">Deploy consistente</div>
           </div>
+
           <div class="tech-card">
             <svg class="tech-icon" viewBox="0 0 128 128" width="48" height="48"><path fill="#252F3E" d="M36.379 56.441c0 1.557.168 2.828.473 3.793a12.258 12.258 0 0 0 1.453 3.066c.234.313.352.625.352.906 0 .406-.25.813-.766 1.219l-2.527 1.688c-.344.219-.688.328-1.016.328-.406 0-.813-.203-1.219-.594a11.94 11.94 0 0 1-1.43-1.859c-.406-.688-.813-1.559-1.25-2.625-2.844 3.328-6.406 4.984-10.688 4.984-3.047 0-5.484-.875-7.313-2.625-1.828-1.75-2.75-4.094-2.75-7.031 0-3.125 1.109-5.656 3.344-7.594 2.234-1.938 5.172-2.906 8.813-2.906 1.188 0 2.406.109 3.672.328 1.266.219 2.563.547 3.906.969v-2.641c0-2.797-.594-4.766-1.781-5.906-1.188-1.141-3.172-1.719-5.953-1.719-1.219 0-2.469.141-3.766.422-1.297.281-2.563.672-3.797 1.172a9.29 9.29 0 0 1-1.344.422 2.65 2.65 0 0 1-.563.094c-.5 0-.75-.375-.75-1.109v-1.781c0-.531.063-.922.219-1.172.156-.25.438-.5.844-.75 1.25-.656 2.75-1.188 4.5-1.594C19.969 32.656 21.813 32.406 23.75 32.406c4.094 0 7.125.922 9.094 2.766 1.969 1.844 2.953 4.672 2.953 8.484v11.281h-.417zm-14.063 5.281c1.156 0 2.344-.219 3.578-.656 1.234-.438 2.344-1.188 3.313-2.25.594-.656 1.031-1.375 1.281-2.156.25-.781.391-1.734.391-2.859v-1.344a22.7 22.7 0 0 0-3.281-.703 20.5 20.5 0 0 0-3.344-.25c-2.344 0-4.063.469-5.156 1.406-1.094.938-1.641 2.297-1.641 4.078 0 1.688.406 2.938 1.219 3.766.813.828 2.016 1.234 3.641 1.234zm28.344 3.594c-.656 0-1.094-.109-1.344-.328-.25-.219-.469-.656-.656-1.313L40.531 34.25c-.203-.672-.297-1.125-.297-1.375 0-.531.297-.813.891-.813h4.25c.688 0 1.156.109 1.391.328.234.219.438.656.625 1.313l5.875 23.031 5.438-23.031c.156-.672.344-1.109.578-1.313.234-.219.719-.328 1.438-.328h3.469c.719 0 1.219.109 1.469.328.25.219.438.656.563 1.313l5.5 23.281 6.063-23.281c.188-.672.406-1.109.625-1.313.219-.219.688-.328 1.375-.328h4.063c.594 0 .891.266.891.813 0 .156-.016.328-.047.516-.031.188-.078.438-.156.75-.078.313-.172.688-.297 1.125l-8.313 29.422c-.188.672-.406 1.109-.656 1.313-.25.219-.688.328-1.313.328h-3.75c-.719 0-1.219-.109-1.469-.328-.25-.219-.438-.672-.563-1.344l-5.375-22.531-5.344 22.5c-.156.672-.344 1.125-.578 1.344-.234.219-.719.328-1.438.328h-3.75zm43.938 1.063c-1.875 0-3.75-.219-5.594-.656-1.844-.438-3.281-.906-4.281-1.406-.594-.281-1-.625-1.156-1a2.35 2.35 0 0 1-.219-.922v-1.844c0-.734.281-1.094.813-1.094.219 0 .438.031.688.094.25.063.609.188 1.063.344 1.25.438 2.609.797 4.063 1.063 1.453.266 2.875.406 4.281.406 2.219 0 3.938-.391 5.156-1.172 1.219-.781 1.844-1.906 1.844-3.391 0-.969-.328-1.781-.969-2.422-.641-.641-1.828-1.234-3.547-1.781l-5.063-1.625c-2.563-.844-4.453-2.109-5.656-3.781-1.203-1.672-1.813-3.547-1.813-5.625 0-1.688.344-3.188 1.031-4.5a10.05 10.05 0 0 1 2.781-3.313c1.188-.922 2.563-1.609 4.125-2.063 1.563-.453 3.219-.688 4.969-.688.875 0 1.766.047 2.656.156.891.109 1.734.266 2.563.453.828.188 1.609.406 2.344.656.734.25 1.344.5 1.844.75.656.344 1.141.703 1.438 1.094.297.375.453.859.453 1.453v1.688c0 .734-.281 1.109-.813 1.109-.281 0-.734-.141-1.375-.422-2.156-.938-4.563-1.406-7.219-1.406-2.031 0-3.609.328-4.75.969-1.141.641-1.719 1.656-1.719 3.031 0 .969.359 1.797 1.094 2.469.734.672 2.031 1.313 3.906 1.938l4.938 1.625c2.531.844 4.359 2.063 5.469 3.656 1.109 1.594 1.656 3.422 1.656 5.484 0 1.719-.344 3.266-1.031 4.641-.688 1.375-1.641 2.547-2.875 3.5-1.234.953-2.688 1.672-4.375 2.156-1.688.484-3.516.734-5.469.734z"/><path fill="#FF9900" d="M118 73.031c-4.156 3.125-10.188 4.75-15.313 4.75-7.219 0-13.703-2.703-18.563-7.156-.391-.359-.031-.859.438-.578 5.25 3.094 11.625 4.938 18.563 4.938 4.719 0 9.938-.984 14.688-3.031.719-.313 1.328.469.719 1.063zM123.219 66.969c-.531-.688-3.516-.328-4.859-.172-.406.047-.469-.313-.094-.578 2.375-1.625 6.219-1.156 6.656-.609.453.563-.125 4.547-2.344 6.453-.344.297-.672.141-.531-.25.438-1.297 1.406-4.188 1.172-4.844z"/></svg>
             <div class="tech-name">AWS</div>
             <div class="tech-role">Cloud escalável</div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="sec">
+    <!-- ========== FAQ ========== -->
+    <section id="faq" class="sec sec-alt">
       <div class="container">
         <p class="eyebrow reveal">// perguntas frequentes</p>
         <h2 class="section-title reveal" data-delay="100">Tira sua dúvida antes de falar com a gente</h2>
@@ -305,7 +415,7 @@
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-a" id="faq-a-5" aria-hidden="true">
-              <p>Esse é o foco. A Code House trabalha com pequenas empresa exatamente porque software sob medida não precisa ser coisa de grande. Se você tem um processo que dá trabalho, a gente resolve.</p>
+              <p>Esse é o foco. A Codehouse trabalha com pequenas empresas exatamente porque software sob medida não precisa ser coisa de grande. Se você tem um processo que dá trabalho, a gente resolve.</p>
             </div>
           </div>
 
@@ -333,14 +443,19 @@
       </div>
     </section>
 
-    <!-- CONTATO -->
+    <!-- ========== CONTATO ========== -->
     <section id="contato" class="sec cta-sec">
       <div class="container">
-        <h2 class="reveal">Bora tirar sua ideia do papel?</h2>
-        <p class="reveal" data-delay="100">Conta o que você precisa. A gente responde em até 24h com uma estimativa.</p>
+        <p class="eyebrow reveal" style="justify-content: center;">// fale com a gente</p>
+        <h2 class="reveal" data-delay="100">Bora tirar sua ideia<br><span class="gradient-text">do papel?</span></h2>
+        <p class="reveal" data-delay="150">Conta o que você precisa. A gente responde em até 24h com uma estimativa.</p>
 
         <div class="reveal" data-delay="200" style="max-width: 560px; margin: 2.5rem auto 0;">
-          <form id="contactForm" action="https://formspree.io/f/xaewbejg" method="POST" style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-xl); padding: 2rem;">
+          <form id="contactForm" action="https://formspree.io/f/xaewbejg" method="POST"
+            style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-2xl); padding: 2.5rem; position: relative; overflow: hidden;">
+            <!-- Gradient top bar -->
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--grad);"></div>
+
             <div class="form-group">
               <label for="nome">Seu nome</label>
               <input type="text" id="nome" name="nome" required aria-required="true" placeholder="Como te chamamos?">
@@ -356,11 +471,12 @@
               <textarea id="mensagem" name="mensagem" rows="4" required aria-required="true" placeholder="Conta um pouco sobre seu negócio e o que você quer resolver."></textarea>
               <div class="form-error" id="err-msg" role="alert" aria-live="assertive"></div>
             </div>
-            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Enviar mensagem</button>
+            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn" style="width: 100%;"><span>Enviar mensagem</span></button>
           </form>
-          <div id="formSuccess" style="display: none; text-align: center; padding: 2rem;" role="status" aria-live="polite">
-            <div style="font-size: 3rem; margin-bottom: 1rem;" aria-hidden="true">✅</div>
-            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Mensagem enviada!</h3>
+
+          <div id="formSuccess" style="display: none; text-align: center; padding: 3rem; background: var(--surface); border: 1px solid rgba(0,201,255,0.15); border-radius: var(--r-2xl);" role="status" aria-live="polite">
+            <div style="font-size: 3rem; margin-bottom: 1rem;" aria-hidden="true">🚀</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; font-family: var(--font-d);">Mensagem enviada!</h3>
             <p style="color: var(--ink-muted);">A gente vai te responder em breve. Obrigado!</p>
           </div>
         </div>
@@ -368,73 +484,86 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
-      <div>© <span id="yr"></span> Code House — CNPJ: 68.489.569/0001-04</div>
-      <div class="footer-links"><a href="index.html">Início</a><a href="exemplos.html">Exemplos</a><a href="politica-privacidade.html">Privacidade</a><a href="#contato">Contato</a></div>
+      <div class="footer-brand">
+        <span class="footer-logo">CODEHOUSE</span>
+        <span class="footer-tagline">© <span id="yr"></span> — CNPJ: 68.489.569/0001-04</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Início</a>
+        <a href="exemplos.html">Exemplos</a>
+        <a href="politica-privacidade.html">Privacidade</a>
+        <a href="#contato">Contato</a>
+      </div>
     </div>
   </footer>
 
-  <a href="https://wa.me/5555991441700" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  <!-- WhatsApp float -->
+  <a href="https://wa.me/5555991441700" target="_blank" rel="noopener" class="wa-float" aria-label="Fale conosco pelo WhatsApp">
+    <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+    </svg>
   </a>
 
-  <script src="js/theme.js" defer></script>
+  <!-- Scripts -->
   <script src="js/nav.js" defer></script>
   <script src="js/scroll.js" defer></script>
   <script src="js/faq.js" defer></script>
+
   <script>
-    // Form validation + submit
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Nav scroll class
+    var nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    // Form
     var form = document.getElementById('contactForm');
     var success = document.getElementById('formSuccess');
-    
-    form.addEventListener('submit', function(e){
+
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
-      var nome = document.getElementById('nome');
+      var nome  = document.getElementById('nome');
       var email = document.getElementById('email');
-      var msg = document.getElementById('mensagem');
+      var msg   = document.getElementById('mensagem');
       var valid = true;
-      
-      document.getElementById('err-nome').textContent = '';
-      document.getElementById('err-email').textContent = '';
-      document.getElementById('err-msg').textContent = '';
-      nome.classList.remove('error');
-      email.classList.remove('error');
-      msg.classList.remove('error');
-      
-      if(!nome.value.trim()) {
+
+      ['err-nome','err-email','err-msg'].forEach(function(id) {
+        document.getElementById(id).textContent = '';
+      });
+      [nome, email, msg].forEach(function(el) { el.classList.remove('error'); });
+
+      if (!nome.value.trim()) {
         document.getElementById('err-nome').textContent = 'Por favor, informe seu nome.';
-        nome.classList.add('error');
-        valid = false;
+        nome.classList.add('error'); valid = false;
       }
-      
-      if(!email.value.trim() || !email.value.includes('@')) {
+      if (!email.value.trim() || !email.value.includes('@')) {
         document.getElementById('err-email').textContent = 'Email inválido.';
-        email.classList.add('error');
-        valid = false;
+        email.classList.add('error'); valid = false;
       }
-      
-      if(!msg.value.trim()) {
+      if (!msg.value.trim()) {
         document.getElementById('err-msg').textContent = 'Conta um pouco sobre o que você precisa.';
-        msg.classList.add('error');
-        valid = false;
+        msg.classList.add('error'); valid = false;
       }
-      
-      if(!valid) return;
-      
-      // Submit to Formspree
+      if (!valid) return;
+
       fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
         headers: { 'Accept': 'application/json' }
-      }).then(function(res){
-        if(res.ok) {
+      }).then(function(res) {
+        if (res.ok) {
           form.style.display = 'none';
           success.style.display = 'block';
         } else {
           alert('Erro ao enviar. Tente novamente ou mande email para codehouse42@gmail.com');
         }
-      }).catch(function(){
+      }).catch(function() {
         alert('Erro de conexão. Tente novamente ou mande email para codehouse42@gmail.com');
       });
     });
